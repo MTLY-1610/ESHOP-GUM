@@ -6,8 +6,19 @@
 
 nav {
   background-color: grey;
-  padding: 1rem 0rem;
-  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.navbar:hover {
+  color: lime;
+  background-color: thistle;
+}
+
+.navbar {
+  color: black;
   text-decoration: none;
   list-style: none;
+  padding: 1rem 3rem;
 }

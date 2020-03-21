@@ -15,9 +15,15 @@ function App() {
     <Router>
       <div>
         <nav>
-          <NavLink to="/"> Home</NavLink>
-          <NavLink to="/products"> Products</NavLink>
-          <NavLink to="/cart"> Cart</NavLink>
+          <NavLink className="navbar" to="/" exact>
+            Home
+          </NavLink>
+          <NavLink className="navbar" to="/products" exact>
+            Products
+          </NavLink>
+          <NavLink className="navbar" to="/cart" exact>
+            Cart
+          </NavLink>
         </nav>
         <div>
           <Route path="/" exact component={Home} />
