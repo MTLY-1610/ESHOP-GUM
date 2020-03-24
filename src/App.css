@@ -7,7 +7,7 @@
 /* LAYOUT */
 
 .container {
-  background-color: rgb(192, 247, 121);
+  background-color: #c0ff0c;
   height: 100vh;
   display: flex;
   justify-content: space-evenly;
@@ -17,7 +17,7 @@
 /* NAVBAR */
 .layout-navbar-flex {
   margin-left: 0.7rem;
-  flex-grow: 1;
+  flex-grow: 0.8;
 }
 .nav {
   width: 70px;
@@ -32,17 +32,17 @@
 /* CONTENT */
 .layout-only-for-flex {
   margin: 0.7rem;
-  flex-grow: 200;
+  flex-grow: 5000;
 }
 .layout-content-flex {
-  padding: 0rem 0.5rem;
+  padding: 0.4rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  column-gap: 0.5rem;
-  row-gap: 0.5rem;
+  column-gap: 0.4rem;
+  row-gap: 0.4rem;
   background-color: white;
-  height: 95vh;
+  height: calc(95vh - 0.8rem);
 }
 
 /* SHOPPING CART AND BURGERBAR LOGO */
@@ -107,19 +107,24 @@
 }
 
 .flex-child {
-  background: #d3d3d3;
   display: flex;
   flex-direction: column;
 }
 
 .img-div {
+  background-color: gray;
   align-items: flex-start;
+  flex-grow: 9;
 }
 
 .brand-model-div {
+  background-color: #707070;
+  font-size: 0.7rem;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  flex-grow: 0;
+  color: #ff5c00;
 }
 .brand-model-div div {
   margin: 0px 5px;

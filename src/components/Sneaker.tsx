@@ -14,7 +14,7 @@ class Sneaker extends React.Component<Props, State> {
     return (
       <div className="flex-child">
         <div className="img-div">
-          <img src={this.props.sneaker.img} alt="img" />
+          {/* <img src={this.props.sneaker.img} alt="img" /> */}
         </div>
         <div className="brand-model-div">
           <div>
