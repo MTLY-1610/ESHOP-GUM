@@ -1,12 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import { BrowserRouter as Route } from "react-router-dom";
+import { ProductProvider } from "./UserContext";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
-  <React.Fragment>
-    <App />
-  </React.Fragment>,
+  <ProductProvider>
+    <Route>
+      <App />
+    </Route>
+  </ProductProvider>,
   document.getElementById("root")
 );
 

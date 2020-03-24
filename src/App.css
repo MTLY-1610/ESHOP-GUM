@@ -1,24 +1,126 @@
 * {
   margin: 0;
   padding: 0;
-  outline: none;
+  font-family: "Hind Vadodara", sans-serif;
 }
 
-nav {
-  background-color: grey;
+/* LAYOUT */
+
+.container {
+  background-color: rgb(192, 247, 121);
+  height: 100vh;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 
-.navbar:hover {
-  color: lime;
-  background-color: thistle;
+/* NAVBAR */
+.layout-navbar-flex {
+  margin-left: 0.7rem;
+  flex-grow: 1;
 }
+.nav {
+  width: 70px;
+  background-color: white;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* CONTENT */
+.layout-only-for-flex {
+  margin: 0.7rem;
+  flex-grow: 200;
+}
+.layout-content-flex {
+  padding: 0rem 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 0.5rem;
+  row-gap: 0.5rem;
+  background-color: white;
+  height: 95vh;
+}
+
+/* SHOPPING CART AND BURGERBAR LOGO */
+
+.nav-shoppingcart-burgerbar-product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+  flex-grow: 0.2;
+}
+
+.nav-onlyshoppingcart-burgerbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-grow: 0.5;
+}
+
+#burgerMenu {
+  cursor: pointer;
+  /* color: #c0f779; */
+}
+
+/* PRODUCT BURGER BAR */
+
+.nav-product {
+  transform: rotate(270deg);
+}
+
+.products {
+  text-decoration: none;
+  list-style: none;
+  font-weight: 100;
+}
+
+/* TITLE, HOME */
+
+.nav-header {
+  height: 4rem;
+}
+
+.nav-header h4 {
+  transform: rotate(270deg);
+  font-weight: 900;
+  font-size: 1.3rem;
+}
+
+/* ALL LINKS */
 
 .navbar {
   color: black;
   text-decoration: none;
-  list-style: none;
-  padding: 1rem 3rem;
+}
+
+/* FLEX LAYOUT */
+.flex-child img {
+  width: 100%;
+  max-height: 200px;
+}
+
+.flex-child {
+  background: #d3d3d3;
+  display: flex;
+  flex-direction: column;
+}
+
+.img-div {
+  align-items: flex-start;
+}
+
+.brand-model-div {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.brand-model-div div {
+  margin: 0px 5px;
 }

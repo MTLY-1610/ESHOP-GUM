@@ -7,7 +7,14 @@ export interface State {}
 
 class Cart extends React.Component<Props, State> {
   render() {
-    return <h5>Your Shopping Cart</h5>;
+    return (
+      <div>
+        <h5>Your Shopping Cart</h5>;
+        <Link to="/payment">
+          <button> Go to Payment</button>
+        </Link>
+      </div>
+    );
   }
 }
 
