@@ -104,6 +104,7 @@
 .flex-child img {
   width: 100%;
   height: auto;
+  max-height: 22vw;
   
 }
 
@@ -116,6 +117,7 @@
   /* background-color: #707070; */
   align-items: flex-end;
   flex-grow: 5;
+  
 }
 
 
@@ -127,7 +129,7 @@
   justify-content: space-between;
  
   color: #ff5c00;
-  position:absolute;
+  
   width: inherit;
   z-index: 1000;
   
