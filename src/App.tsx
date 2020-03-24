@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import Cart from "./components/Cart";
 import Products from "./components/Products";
 import Navbar from "./components/Navbar";
+import Item from "./components/Item";
 import NoPage from "./components/NoPage";
 import "./App.css";
 import Payment from "./components/Payment";
@@ -22,6 +23,7 @@ function App() {
               <Route path="/products" component={Products} />
               <Route path="/cart" component={Cart} />
               <Route path="/payment" component={Payment} />
+              <Route path="/item" component={Item} />
               <Route component={NoPage} />
             </Switch>
           </div>
