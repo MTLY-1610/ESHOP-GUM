@@ -15,7 +15,7 @@ class Sneaker extends React.Component<Props, State> {
       <div className="flex-child">
         <div className="img-div">
           {
-            <img
+            <img className="img-sns"
               src={window.location.origin + this.props.sneaker.img}
               alt="img"
             />
