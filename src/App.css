@@ -104,6 +104,7 @@
 .flex-child img {
   width: 100%;
   height: auto;
+  
 }
 
 .flex-child {
@@ -112,8 +113,8 @@
 }
 
 .img-div {
-  background-color: #707070;
-  align-items: flex-start;
+  /* background-color: #707070; */
+  align-items: flex-end;
   flex-grow: 5;
 }
 
@@ -124,8 +125,13 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  flex-grow: 0;
+ 
   color: #ff5c00;
+  position:absolute;
+  width: inherit;
+  z-index: 1000;
+  
+
 }
 .brand-model-div div {
   margin: 0px 5px;
