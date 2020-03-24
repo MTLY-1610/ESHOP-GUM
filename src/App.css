@@ -104,8 +104,7 @@
 .flex-child img {
   width: 100%;
   height: auto;
-  max-height: 22vw;
-  
+  max-height: 40vh;
 }
 
 .flex-child {
@@ -114,26 +113,17 @@
 }
 
 .img-div {
-  /* background-color: #707070; */
-  align-items: flex-end;
-  flex-grow: 5;
-  
+  display: flex;
+  align-items: stretch;
 }
-
 
 .brand-model-div {
   background-color: #707070;
   font-size: 0.7rem;
   display: flex;
-  align-items: flex-end;
+  align-items: stretch;
   justify-content: space-between;
- 
   color: #ff5c00;
-  
-  width: inherit;
-  z-index: 1000;
-  
-
 }
 .brand-model-div div {
   margin: 0px 5px;
