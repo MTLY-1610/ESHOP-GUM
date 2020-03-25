@@ -6,7 +6,7 @@ export interface State {}
 
 class Payment extends React.Component<Props, State> {
   render() {
-    return <h2>Welcome to payment!</h2>;
+    return <div>Welcome to payment!</div>;
   }
 }
 

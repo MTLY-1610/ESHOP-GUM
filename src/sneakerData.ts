@@ -48,7 +48,7 @@ export const productData: Array<Product> = [
     description:
       "Nike’s latest skateboarding shoe, the Nike SB GTS Return offers a classic look, namely the colorway of the OG Air Max 1. Dressed in red and white, as the original retro runner, the premium skate show reinterprets a classic Nike skate shoe with a cupsole for a more flexible and lightweight construction for daily on and off the deck wear.",
     inCart: false,
-    img: "/images/nike-gts-return-premium.jpg"
+    img: "/images/adidas-stadt.jpg"
   },
   {
     id: 4,

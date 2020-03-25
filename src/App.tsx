@@ -17,16 +17,14 @@ function App() {
           <Navbar />
         </div>
         <div className="layout-only-for-flex">
-          <div className="layout-content-flex">
-            <Switch>
-              <Route path="/" exact component={Home} />
-              <Route path="/products" component={Products} />
-              <Route path="/cart" component={Cart} />
-              <Route path="/payment" component={Payment} />
-              <Route path="/item" component={Item} />
-              <Route component={NoPage} />
-            </Switch>
-          </div>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/products" component={Products} />
+            <Route path="/cart" component={Cart} />
+            <Route path="/payment" component={Payment} />
+            <Route path="/item" component={Item} />
+            <Route component={NoPage} />
+          </Switch>
         </div>
       </div>
     </Router>
