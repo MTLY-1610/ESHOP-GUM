@@ -1,5 +1,7 @@
 import * as React from "react";
 import { Product } from "../sneakerData";
+import { Link } from "react-router-dom";
+import { url } from "inspector";
 
 export interface Props {
   sneaker: Product;
@@ -10,16 +12,19 @@ export interface State {}
 
 class Sneaker extends React.Component<Props, State> {
   render() {
-    console.log(this.props.sneaker);
     return (
       <div className="flex-child">
         <div className="img-div">
-          {
-            <img className="img-sns"
-              src={window.location.origin + this.props.sneaker.img}
-              alt="img"
-            />
-          }
+
+          <Link to="/item">
+            {
+              <img
+                src={window.location.origin + this.props.sneaker.img}
+                alt="img"
+              />
+            }
+          </Link>
+
         </div>
         <div className="brand-model-div">
           <div>
