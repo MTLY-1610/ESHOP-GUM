@@ -18,7 +18,7 @@
 /* NAVBAR */
 
 .layout-navbar-flex {
-  margin-left: 0.7rem;
+  margin-left: 1rem;
   flex-grow: 0.8;
 }
 
@@ -35,9 +35,11 @@
 /* CONTENT */
 
 .layout-only-for-flex {
+
   background-color: white;
   height: 95vh;
   margin: 0.7rem;
+
   flex-grow: 5000;
   overflow-x: hidden;
 }
@@ -99,11 +101,13 @@
 
 /* FLEX LAYOUT */
 
+
 .sneaker-slider {
   position: relative;
   overflow-x: hidden;
   height: 95vh;
   /* margin: 0.3rem */
+
 }
 
 .sneaker-wrapper {
@@ -133,9 +137,10 @@
 .brand-model-div {
   height: 2.2rem;
   background-color: #707070;
+
   font-size: 0.7rem;
   display: flex;
-  align-items: flex-end;
+  align-items: stretch;
   justify-content: space-between;
   color: #ff5c00;
 }

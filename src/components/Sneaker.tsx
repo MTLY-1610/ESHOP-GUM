@@ -15,6 +15,7 @@ class Sneaker extends React.Component<Props, State> {
     return (
       <div className="flex-child">
         <div className="img-div">
+
           <Link to="/item">
             {
               <img
@@ -23,6 +24,7 @@ class Sneaker extends React.Component<Props, State> {
               />
             }
           </Link>
+
         </div>
         <div className="brand-model-div">
           <div>
