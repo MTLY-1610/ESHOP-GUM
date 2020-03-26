@@ -28,8 +28,8 @@ const width: React.CSSProperties = {
   alignItems: "center"
 };
 const styling: React.CSSProperties = {
-  width: "98%",
-  height: "96%",
+  width: "99%",
+  height: "98%",
   backgroundImage:
     "url(https://images.unsplash.com/photo-1576037728058-ab2c538ac8d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3008&q=80)",
   backgroundPosition: "center",

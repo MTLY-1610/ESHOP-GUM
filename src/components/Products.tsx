@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
 import { productData } from "../sneakerData";
 import { ProductConsumer } from "../UserContext";
 import Sneaker from "./Sneaker";
@@ -29,16 +28,14 @@ class Products extends React.Component<Props, State> {
   }
 
   keydown = (event: { keyCode: number }) => {
-    if (event.keyCode == 39) {
-      if (this.state.property != 247) {
+    if (event.keyCode === 39) {
+      if (this.state.property !== 247) {
         this.setState({ property: this.state.property + 1 });
-        console.log(this.state.property);
       }
     }
-    if (event.keyCode == 37) {
-      if (this.state.property != 0) {
+    if (event.keyCode === 37) {
+      if (this.state.property !== 0) {
         this.setState({ property: this.state.property - 1 });
-        console.log(this.state.property);
       }
     }
   };
@@ -56,6 +53,9 @@ class Products extends React.Component<Props, State> {
                 }}
                 className="sneaker-wrapper"
               >
+                <div className="arrow-box">
+                  Use key left and right to scroll
+                </div>
                 {value.products.map(sneaker => {
                   return <Sneaker key={sneaker.id} sneaker={sneaker} />;
                 })}

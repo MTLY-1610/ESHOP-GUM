@@ -1,7 +1,7 @@
 export interface Product {
   id: number;
   brand: string;
-  model?: string;
+  model: string;
   price: string; // todo change to number
   description: string;
   inCart: false;
@@ -50,7 +50,6 @@ export const productData: Array<Product> = [
     inCart: false,
 
     img: "/images/nike-gts-return-premium.jpg"
-
   },
   {
     id: 4,
@@ -82,6 +81,19 @@ export const productData: Array<Product> = [
     inCart: false,
     img: "/images/nike-air-max-720-ispa.jpg"
   },
+  {
+    id: 7,
+    brand: "Nike Sportswear",
+    model: "Air Force 1 '07 QS",
+    price: "130$",
+    description:
+      "Mid-February is the time for most of the NBA to relax and take a quick break if you weren’t selected to participate in the NBA All-Star Game. This year the exhibition and all-around fun game will be held in Chicago, and if you know your sneakers, you know that Nike brings out the big guns for the event. The Nike Air Force 1 ´07 “City of Dreams” is part of the extensive ASG line-up and features a multicolored upper highlighting the diversity of Chi-Town, which is locked-down through a unique heel tap embroidered reading “NIKE CHI.” 3M reflective detailing as well as mismatching gum rubber midsole offering a great finish.",
+    inCart: false,
+    img: "/images/air-force-1-07-qs.jpg"
+  }
+];
+
+export const detailData: Array<Product> = [
   {
     id: 7,
     brand: "Nike Sportswear",

@@ -5,6 +5,10 @@
   scroll-behavior: smooth;
 }
 
+:focus {
+  outline: 0;
+}
+
 /* LAYOUT */
 
 .container {
@@ -35,11 +39,9 @@
 /* CONTENT */
 
 .layout-only-for-flex {
-
   background-color: white;
   height: 95vh;
   margin: 0.7rem;
-
   flex-grow: 5000;
   overflow-x: hidden;
 }
@@ -101,13 +103,11 @@
 
 /* FLEX LAYOUT */
 
-
 .sneaker-slider {
   position: relative;
   overflow-x: hidden;
   height: 95vh;
   /* margin: 0.3rem */
-
 }
 
 .sneaker-wrapper {
@@ -115,30 +115,29 @@
   position: absolute;
 }
 
+.sneaker-wrapper:first-child {
+  margin-left: 0.3rem;
+}
+
 .flex-child {
   flex: 1;
   padding: 0.3rem 0.3rem 0.3rem 0rem;
 }
 
-.flex-child:first-child {
-  flex: 1;
-  margin-left: 0.3rem;
-}
-
 .img-div {
-  height: calc(95vh - 2.8rem);
+  height: calc(95vh - 2.9rem);
   overflow-y: hidden;
 }
 
 .img-div img {
-  height: calc(95vh - 2.8rem);
+  height: calc(95vh - 2.9rem);
+  overflow-y: hidden;
 }
 
 .brand-model-div {
-  height: 2.2rem;
+  height: 2.3rem;
   background-color: #707070;
-
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   display: flex;
   align-items: stretch;
   justify-content: space-between;
@@ -157,14 +156,130 @@
   background-color: black;
   opacity: 0.5;
   border: none;
-  transition: all .5s ease-in;
+  transition: all 0.5s ease-in;
   cursor: pointer;
 }
 
 .buttonStyled:hover {
   opacity: 0.7;
   color: black;
-  text-shadow: -0.7px 0 white, 0 0.7px white, 0.7px 0 white, 0 -0.7px white
+  text-shadow: -0.7px 0 white, 0 0.7px white, 0.7px 0 white, 0 -0.7px white;
 }
 
-;
+.arrow-box {
+  padding: 1.3rem 2rem;
+  font-size: 1.4rem;
+  background-color: black;
+  color: black;
+  text-shadow: -0.7px 0 white, 0 0.7px white, 0.7px 0 white, 0 -0.7px white;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: calc(50% - 2rem);
+  left: calc(50% - 15rem);
+  position: absolute;
+  -webkit-animation: displaying 3.5s;
+  -moz-animation: displaying 3.5s;
+  -o-animation: displaying 3.5s;
+  animation: displaying 3.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes displaying {
+  0% {
+    opacity: 1;
+    display: block;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+.item-flex {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.item-img-div {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-img-div img {
+  width: 90%;
+}
+
+.restOfDetails {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.info-item-div {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.description {
+  /* margin: 2rem 0rem; */
+  width: 85%;
+}
+
+.dropdown {
+  width: 85%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* margin-bottom: 2rem; */
+}
+
+#size {
+  margin-left: 0.5rem;
+  padding: 0.3rem;
+  border: 1px solid #ff5c00;
+  color: #ff5c00;
+  border-radius: 5px;
+}
+
+.buttondiv {
+  width: 85%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.addtocart {
+  width: 100%;
+  padding: 1rem 0rem;
+  text-transform: uppercase;
+  color: #ff5c00;
+  font-size: 1.4rem;
+  background-color: white;
+  border: 1px solid #ff5c00
+}
+
+.styleNav {
+  color: #ff5c00;
+  padding: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #707070;
+  transition: 0.3s linear;
+}
+
+.styleNav:hover {
+  border: none;
+  color: #707070;
+  background-color: #c0ff0c;
+}

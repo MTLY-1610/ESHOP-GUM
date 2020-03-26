@@ -1,10 +1,11 @@
 import * as React from "react";
-import { Product, productData } from "./sneakerData";
+import { Product, productData, detailData } from "./sneakerData";
 
 const defaultState = {
   products: productData,
-  detailPage: () => console.log("welcome to detailpage"),
-  addToCart: () => console.log("added to cart")
+  handleClick: () => console.log("handleClick"),
+  detail: detailData,
+  addToCart: () => console.log("adding to cart")
   // addProduct: () => console.log("defualt context addProduct")
 };
 
@@ -14,6 +15,10 @@ interface Props {}
 
 interface State {
   products: Array<Product>;
+  handleClick: (id: number) => void;
+  addToCart: () => void;
+  detail: Array<Product>;
+
   // addProduct: (product: Product) => void;
   // updateProduct: (product: Product) => void;
   // removeProduct: (product: Product) => void;
@@ -29,10 +34,32 @@ class ProductProvider extends React.Component<Props, State> {
     //   : productData;
 
     this.state = {
-      products: productData
+      products: [],
+      handleClick: this.handleClickForDetail,
+      addToCart: this.addToCart,
+      detail: []
       // addProduct: this.addProduct
     };
   }
+
+  componentDidMount() {
+    this.copyProducts();
+  }
+
+  handleClickForDetail = (id: number) => {
+    this.setState({ detail: [this.state.products[id]] });
+  };
+
+  copyProducts = () => {
+    let copiedProducts: Array<Product> = [];
+    productData.forEach(item => {
+      const shoe = { ...item };
+      copiedProducts = [...copiedProducts, shoe];
+    });
+    this.setState(() => {
+      return { products: copiedProducts };
+    });
+  };
 
   detailPage = () => {
     console.log("detailpage");
@@ -53,11 +80,7 @@ class ProductProvider extends React.Component<Props, State> {
 
   render() {
     return (
-      <ProductContext.Provider
-        value={{
-          ...this.state
-        }}
-      >
+      <ProductContext.Provider value={{ ...this.state }}>
         {this.props.children}
       </ProductContext.Provider>
     );
