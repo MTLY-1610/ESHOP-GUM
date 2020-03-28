@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaShoppingCart as ShoppingCart } from "react-icons/fa";
 import { GiHamburgerMenu as HamburgerMenu } from "react-icons/gi";
 
+
 export interface Props {}
 
 export interface State {
