@@ -29,6 +29,7 @@ class Cart extends React.Component<Props, State> {
                       <div className="qtydiv">{item.count}</div>
                       <div className="sizediv">{item.size}</div>
                       <div className="pricediv">{item.product.price}$</div>
+                      <div className="pricediv"></div>
                     </div>
                   </React.Fragment>
                 );
