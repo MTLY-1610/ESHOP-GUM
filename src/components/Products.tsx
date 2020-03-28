@@ -1,6 +1,6 @@
 import * as React from "react";
 import { productData } from "../sneakerData";
-import { ProductConsumer } from "../UserContext";
+import { ProductConsumer } from "../contexts/ProductContext";
 import Sneaker from "./Sneaker";
 
 export interface Props {}

@@ -1,11 +1,12 @@
 import * as React from "react";
-import { Product, productData, detailData } from "./sneakerData";
+import { Product, productData, detailData } from "../sneakerData";
 
 const defaultState = {
-  products: productData,
-  handleClick: () => console.log("handleClick"),
+  products: [],
+  handleClick: () => {},
   detail: detailData,
-  addToCart: () => console.log("adding to cart")
+  addToCart: () => {},
+  shoppingCart: []
   // addProduct: () => console.log("defualt context addProduct")
 };
 
@@ -16,7 +17,6 @@ interface Props {}
 interface State {
   products: Array<Product>;
   handleClick: (id: number) => void;
-  addToCart: () => void;
   detail: Array<Product>;
 
   // addProduct: (product: Product) => void;
@@ -36,7 +36,6 @@ class ProductProvider extends React.Component<Props, State> {
     this.state = {
       products: [],
       handleClick: this.handleClickForDetail,
-      addToCart: this.addToCart,
       detail: []
       // addProduct: this.addProduct
     };
@@ -61,26 +60,13 @@ class ProductProvider extends React.Component<Props, State> {
     });
   };
 
-  detailPage = () => {
-    console.log("detailpage");
-  };
-
-  addToCart = () => {
-    console.log("added to cart");
-  };
-
-  // addProduct = (product: Product) => {
-  //   // this.setState.....
-  //   console.log("add product");
-  // };
-
   // componentDidUpdate() {
   //   localStorage.setItem("products", JSON.stringify(this.state.products));
   // }
 
   render() {
     return (
-      <ProductContext.Provider value={{ ...this.state }}>
+      <ProductContext.Provider value={this.state}>
         {this.props.children}
       </ProductContext.Provider>
     );

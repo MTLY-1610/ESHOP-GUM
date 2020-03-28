@@ -22,7 +22,7 @@ function App() {
             <Route path="/products" component={Products} />
             <Route path="/cart" component={Cart} />
             <Route path="/payment" component={Payment} />
-            <Route path="/item" component={Item} />} />
+            <Route path="/:item" component={Item} />} />
             <Route component={NoPage} />
           </Switch>
         </div>

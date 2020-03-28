@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Product } from "../sneakerData";
 import { Link } from "react-router-dom";
-import { ProductConsumer } from "../UserContext";
+import { ProductConsumer } from "../contexts/ProductContext";
 
 export interface Props {
   sneaker: Product;
@@ -18,7 +18,7 @@ class Sneaker extends React.Component<Props, State> {
           return (
             <div className="flex-child">
               <div className="img-div">
-                <Link to="/item">
+                <Link to={`item${this.props.sneaker.id}`}>
                   {
                     <img
                       onClick={() => value.handleClick(this.props.sneaker.id)}
@@ -34,7 +34,7 @@ class Sneaker extends React.Component<Props, State> {
                   <p>{this.props.sneaker.model}</p>
                 </div>
                 <div className="price-div">
-                  <p>{this.props.sneaker.price}</p>
+                  <p>{this.props.sneaker.price}$</p>
                 </div>
               </div>
             </div>
