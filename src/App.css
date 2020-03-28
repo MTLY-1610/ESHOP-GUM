@@ -41,7 +41,7 @@
 .layout-only-for-flex {
   background-color: white;
   height: 95vh;
-  margin: 0.7rem;
+  margin: 2.5vh;
   flex-grow: 5000;
   overflow-x: hidden;
 }
@@ -138,6 +138,8 @@
   height: 2.3rem;
   background-color: rgb(112, 112, 112, 0.12);
   font-size: 0.8rem;
+  padding-left: 10px;
+  padding-right: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
