@@ -489,3 +489,23 @@
   border: none;
   border-bottom: 1px solid #ff5c00;
 }
+
+
+/* PAYMENT*/
+
+.cart-Recap {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  height: 30vh;
+  border: 1px solid #ff5c00;
+}
+.cart-Recap-Header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+}
+.cart-Recap-Header h5{
+  display: flex;
+}
