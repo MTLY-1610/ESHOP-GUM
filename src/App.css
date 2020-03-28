@@ -41,7 +41,7 @@
 .layout-only-for-flex {
   background-color: white;
   height: 95vh;
-  margin: 0.7rem;
+  margin: 2.5vh;
   flex-grow: 5000;
   overflow-x: hidden;
 }
@@ -138,6 +138,8 @@
   height: 2.3rem;
   background-color: rgb(112, 112, 112, 0.12);
   font-size: 0.8rem;
+  padding-left: 10px;
+  padding-right: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -367,7 +369,7 @@
   color: #ff5c00;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   padding: 0rem 1rem;
 }
@@ -488,4 +490,84 @@
   flex-grow: 1;
   border: none;
   border-bottom: 1px solid #ff5c00;
+}
+
+
+/* PAYMENT*/
+
+
+.payment-layout{
+  padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Recap */
+
+.Recap{
+  display: flex;
+  flex-direction: row;
+}
+
+.cart-Recap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 20em;
+  width: 20%;
+  flex-grow: 6;
+  height: 30vh;
+  margin-right: .625em;
+  border: 1px solid #ff5c00;
+
+}
+
+.cart-Recap-Header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+}
+
+.cart-Recap-Header h5{
+  display: flex;
+}
+
+.card-Total{
+  display: flex;
+  justify-content: flex-end;
+  width:10rem;
+  margin-left:  0;
+}
+
+
+.adress-Recap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  min-width: 20em;
+  width: 20%;
+  height: 30vh;
+  margin-left: .625em;
+  border: 1px solid #ff5c00;
+}
+
+
+/* NOW */
+.Now {
+  display: flex;
+  flex-direction: row;
+
+}
+.solution {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 6;
+  min-width: 20em;
+  width: 20%;
+  height: 30vh;
+ margin-top: 1.25em;
+  border: 1px solid #ff5c00;
 }
