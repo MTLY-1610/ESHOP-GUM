@@ -575,9 +575,12 @@
 
 .payment-Solution {
   display: flex;
+  min-width: 20em;
 
 }
 
 .delivery-Solution {
   display: flex;
+  min-width: 20em;
+
 }

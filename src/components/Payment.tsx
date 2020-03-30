@@ -1,9 +1,12 @@
 import * as React from "react";
-
+import CreditCardIcon from '@material-ui/icons/CreditCard';
+import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
 import { Link } from "react-router-dom";
 import { ShoppingCartConsumer } from "../contexts/CartContext";
 
-export interface Props {}
+export interface Props {
+  
+}
 
 export interface State {}
 
@@ -49,7 +52,7 @@ class Payment extends React.Component<Props, State> {
 
       <div className="Now">
         <div className="solution">
-          <div className="payment-Solution"><h5 className="cart-img-info-div">PAYMENT METHOD</h5></div>
+          <div className="payment-Solution"><h5 className="cart-img-info-div">PAYMENT METHOD</h5><CreditCardIcon/><AccountBalanceIcon/></div>
           <div className="delivery-Solution"><h5 className="cart-img-info-div">DELIVERY OPTIONS</h5></div>
         </div>
       </div>
