@@ -3,7 +3,6 @@ import * as React from "react";
 import { RouteProps } from "react-router";
 import { Link } from "react-router-dom";
 import { ProductConsumer } from "../contexts/ProductContext";
-import { ShoppingCartConsumer } from "../contexts/CartContext";
 import DetailOfSneaker from "./DetailPageEachSneaker";
 
 export interface Props {}
@@ -31,7 +30,7 @@ class Item extends React.Component<Props & RouteProps, State> {
               ) : (
                 productState.detail.map(item => {
                   // TODO: bryt ut till en egen komponent
-                  return <DetailOfSneaker item={item} />;
+                  return <DetailOfSneaker key={item.id} item={item} />;
                 })
               )}
             </div>
