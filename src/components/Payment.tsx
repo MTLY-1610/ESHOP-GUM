@@ -3,6 +3,10 @@ import CreditCardIcon from '@material-ui/icons/CreditCard';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
 import { Link } from "react-router-dom";
 import { ShoppingCartConsumer } from "../contexts/CartContext";
+import purple from '@material-ui/core/colors/purple';
+import red from '@material-ui/core/colors/red';
+
+
 
 export interface Props {
   
@@ -44,8 +48,9 @@ class Payment extends React.Component<Props, State> {
             <div className="cart-img-info-div">
               <h5>TOTAL</h5>
             </div>
+          
       
-            </div>
+      </div>
       <div className="adress-Recap">
       <h5 className="cart-img-info-div">DELIVERY ADRESS</h5>
       </div>
@@ -65,8 +70,7 @@ class Payment extends React.Component<Props, State> {
             <Link to="/Checkout">
               <button>CONFIRM PAYMENT</button>
             </Link>
-=======
-    return (
+
       <div className="payment-layout">
         <div className="Recap">
           <div className="cart-Recap">
@@ -120,11 +124,6 @@ class Payment extends React.Component<Props, State> {
                             </div>
                           </div>
                         </div>
-                        <div className="paymentbutton">
-                          <Link to="/payment">
-                            <button>PAYMENT</button>
-                          </Link>
-                        </div>
                       </div>
                     </React.Fragment>
                   );
@@ -136,8 +135,24 @@ class Payment extends React.Component<Props, State> {
             </div>
           </div>
         </div>
-      </div>
-    );
+        
+</div>
+
+<div className="Now">
+ 
+</div>
+<div className="payment-chosen-pay">
+<h5 className="cart-img-info-div"> </h5>
+</div>
+
+<div className="paymentbutton">
+      <Link to="/Checkout">
+        <button>CONFIRM PAYMENT</button>
+      </Link>
+</div>
+</div>
+</div>
+
   }
 }
 
