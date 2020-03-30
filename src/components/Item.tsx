@@ -14,6 +14,7 @@ class Item extends React.Component<Props & RouteProps, State> {
     return (
       <ProductConsumer>
         {productState => (
+
           <React.Fragment>
             <div className="item-flex">
               {productState.detail.length === 0 ? (
@@ -24,6 +25,7 @@ class Item extends React.Component<Props & RouteProps, State> {
                       products
                     </Link>
                   </h1>
+
                 </div>
               ) : (
                 productState.detail.map(item => {
