@@ -42,17 +42,26 @@ class Payment extends React.Component<Props, State> {
             </div>
       
             </div>
-      <div className="adress-Recap"></div>
+      <div className="adress-Recap">
+      <h5 className="cart-img-info-div">DELIVERY ADRESS</h5>
+      </div>
       </div>
 
       <div className="Now">
         <div className="solution">
-          <div className="payment-Solution"></div>
-          <div className="delivery-Solution"></div>
+          <div className="payment-Solution"><h5 className="cart-img-info-div">PAYMENT METHOD</h5></div>
+          <div className="delivery-Solution"><h5 className="cart-img-info-div">DELIVERY OPTIONS</h5></div>
         </div>
-
       </div>
-
+      <div className="payment-chosen-pay">
+      <h5 className="cart-img-info-div"> </h5>
+      </div>
+      
+      <div className="paymentbutton">
+            <Link to="/Checkout">
+              <button>CONFIRM PAYMENT</button>
+            </Link>
+      </div>
 
 
     </div>;
