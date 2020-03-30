@@ -354,24 +354,30 @@
   width: 100%;
   height: 100%;
   display: flex;
+  justify-content: space-between;
 }
 
 .box-for-flex {
-  width: 50%;
+  width: 55%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 }
-
-.cart-img-info-div {
-  margin-top: 0.5rem;
-  color: #ff5c00;
+.flex-cart-info {
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+}
+
+.cart-img-info-div {
+  width: 95%;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
-  padding: 0rem 1rem;
+  border-bottom: 1px solid black;
 }
 
 .ITEM-cart {
@@ -379,10 +385,8 @@
 }
 
 .cart-imgdiv {
-  width: 10%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  width: 20%;
+  height: 100%;
 }
 
 .cart-imgdiv img {
@@ -390,22 +394,109 @@
   height: 100%;
 }
 
+.cart-img-info-div-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-img-info-div-header h3 {
+  margin-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cart-img-info-div-header div {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.pricediv {
+  font-size: 1.4rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.qtydiv {
+  font-size: 0.8rem;
+}
+
+.modeldiv {
+  font-size: 1rem;
+}
+
+.icondiv {
+  display: flex;
+  align-items: flex-end;
+  font-weight: 500;
+  font-style: 1rem;
+}
+
+#icon {
+  width: 1.5em;
+  height: 1.5em;
+  font-weight: 900;
+  cursor: pointer;
+}
+.cart-qty-size-price-div {
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.5rem;
+}
+
+.totalDiv {
+  width: 35%;
+  height: 50%;
+  margin-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subheader-total {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5rem;
+}
+
+.header-total h3 {
+  margin-top: 0.5rem;
+}
+.header-total {
+  font-size: 1.5rem;
+  width: 60%;
+  display: flex;
+  justify-content: flex-start;
+}
+
 .paymentbutton {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding-bottom: 1rem;
+}
+.paymentbutton a {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  text-decoration: none;
 }
-
 .paymentbutton button {
+  flex-grow: 1;
   border: none;
   font-size: 1rem;
   padding: 0.5rem 1rem;
   background-color: #ff5c00;
   color: white;
   text-transform: uppercase;
-  margin-right: 1rem;
-  margin-bottom: 1rem;
 }
 
 .personal-button {
@@ -416,7 +507,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  color: #ff5c00
+  color: #ff5c00;
 }
 
 .personalinfo-div {
@@ -492,11 +583,9 @@
   border-bottom: 1px solid #ff5c00;
 }
 
-
 /* PAYMENT*/
 
-
-.payment-layout{
+.payment-layout {
   padding: 1.25rem 1.25rem 1.25rem 1.25rem;
   display: flex;
   flex-direction: column;
@@ -504,7 +593,7 @@
 
 /* Recap */
 
-.Recap{
+.Recap {
   display: flex;
   flex-direction: row;
 }
@@ -517,48 +606,43 @@
   width: 20%;
   flex-grow: 6;
   height: 30vh;
-  margin-right: .625em;
+  margin-right: 0.625em;
   border: 1px solid #ff5c00;
-
 }
 
-.cart-Recap-Header{
+.cart-Recap-Header {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-
 }
 
-.cart-Recap-Header h5{
+.cart-Recap-Header h5 {
   display: flex;
 }
 
-.card-Total{
+.card-Total {
   display: flex;
   justify-content: flex-end;
-  width:10rem;
-  margin-left:  0;
+  width: 10rem;
+  margin-left: 0;
 }
-
 
 .adress-Recap {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
   min-width: 20em;
   width: 20%;
   height: 30vh;
-  margin-left: .625em;
+  margin-left: 0.625em;
   border: 1px solid #ff5c00;
 }
-
 
 /* NOW */
 .Now {
   display: flex;
   flex-direction: row;
-
 }
 .solution {
   display: flex;
@@ -568,6 +652,6 @@
   min-width: 20em;
   width: 20%;
   height: 30vh;
- margin-top: 1.25em;
+  margin-top: 1.25em;
   border: 1px solid #ff5c00;
 }

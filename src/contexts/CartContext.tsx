@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Product, productData } from "../sneakerData";
 
-interface CartItem {
+export interface CartItem {
   product: Product;
   count: number;
   size: number;
@@ -79,4 +79,4 @@ class ShoppingCartProvider extends React.Component<Props, State> {
 
 const ShoppingCartConsumer = ShoppingCartContext.Consumer;
 
-export { ShoppingCartProvider, ShoppingCartConsumer };
+export { ShoppingCartProvider, ShoppingCartConsumer, ShoppingCartContext };

@@ -15,7 +15,7 @@ class DetailOfSneaker extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
-      size: "0"
+      size: "30"
     };
   }
 
