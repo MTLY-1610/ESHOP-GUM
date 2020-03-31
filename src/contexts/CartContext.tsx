@@ -12,7 +12,8 @@ const defaultState = {
   count: 0,
   size: 0,
   addToCart: () => {},
-  shoppingCart: []
+  shoppingCart: [],
+  removeCartRow: () => {}
 };
 
 const ShoppingCartContext = React.createContext<State>(defaultState);
@@ -24,6 +25,7 @@ export interface State {
   count: number;
   size: number;
   addToCart: (item: Product, size: number) => void;
+  removeCartRow: (id: number, count: number) => void;
   shoppingCart: Array<CartItem>;
 }
 
@@ -35,23 +37,35 @@ class ShoppingCartProvider extends React.Component<Props, State> {
       count: 1,
       size: 0,
       addToCart: this.addToCart,
-      shoppingCart: []
+      shoppingCart: [],
+      removeCartRow: this.removeCartRow
     };
   }
+  removeCartRow = (id: number, count: number) => {
+    let copiedCart = this.state.shoppingCart;
+    copiedCart = copiedCart.filter(item => item.product.id !== id);
+    count--;
+    // TODO FIX THE COUNTER
+    if (count === 0) {
+      this.setState({ shoppingCart: copiedCart });
+    } else {
+      this.setState({ count: count });
+    }
+  };
 
   addToCart = (product: Product, size: number) => {
     let cartList = this.state.shoppingCart;
     let indexToUpdate: number;
 
-    let cartItem: CartItem | undefined = cartList.find((itemToFind, index) => {
+    let cartItem: CartItem | undefined = cartList.find(itemToFind => {
       if (
         itemToFind.product.id === product.id &&
         itemToFind.size === Number(size)
       ) {
-        indexToUpdate = index;
         return true;
       }
     });
+
     // Skapa ny CartItem
     if (!cartItem) {
       cartItem = {
@@ -62,8 +76,10 @@ class ShoppingCartProvider extends React.Component<Props, State> {
       this.setState({ shoppingCart: [...this.state.shoppingCart, cartItem] });
     } else {
       // Uppdatera befintlig CartItem
+      const tempIndex = cartList.findIndex(index => index.product === product);
       cartItem.product.price = cartItem.product.price + cartItem.product.price;
       cartItem.count++;
+      cartList[tempIndex] = cartItem;
       this.setState({ shoppingCart: cartList });
     }
   };
