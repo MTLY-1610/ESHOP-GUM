@@ -9,18 +9,18 @@ export interface State {}
 
 class Cart extends React.Component<Props, State> {
   render() {
-    // TODO: CREATE IF STATEMENT TO CONTROL RENDERING IF PRODUCTS EXISTS
     return (
       <div className="flex-cart">
         <div className="box-for-flex">
           <div className="cart-img-info-div-header">
             <h3>Shopping Cart</h3>
           </div>
+          {/* TODO: CREATE IF STATEMENT TO CONTROL RENDERING IF PRODUCTS EXISTS */}
           <ShoppingCartConsumer>
             {value => {
               return value.shoppingCart.map(item => {
                 return (
-                  <React.Fragment>
+                  <React.Fragment key={item.product.id}>
                     <div className="cart-img-info-div">
                       <div className="cart-imgdiv">
                         <img src={item.product.img} alt="img" />
@@ -41,7 +41,12 @@ class Cart extends React.Component<Props, State> {
                             <p className="qtydiv">SIZE: {item.size}</p>
                           </div>
                           <div className="icondiv">
-                            <MdClear id="icon" />
+                            <MdClear
+                              onClick={() =>
+                                value.removeCartRow(item.product.id, item.count)
+                              }
+                              id="icon"
+                            />
                           </div>
                         </div>
                       </div>

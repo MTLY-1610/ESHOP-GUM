@@ -7,7 +7,7 @@ export interface Props {}
 
 export interface State {
   total: number;
-  shipping: number;
+  shipping: number | string;
   subtotal: number;
 }
 
@@ -20,17 +20,40 @@ class TotalBox extends React.Component<Props, State> {
       shipping: 0
     };
   }
+
+  // TODO MAKE THIS FUNCTION CONNECTED TO REMOVE ELEMENT BUTTON
   static contextType = ShoppingCartContext;
   componentDidMount() {
+    let shipping;
+    let subtotal: number = 0;
     // TODO: ADD ITEM.PRODUCT.PRICE TO STATE
     let value = this.context;
-    value.shoppingCart.forEach((element: CartItem) =>
-      console.log(element.product.price)
-    );
+    value.shoppingCart.map((cartRow: CartItem) => {
+      subtotal += cartRow.product.price;
+      this.setState({ subtotal: subtotal });
+    });
+
+    if (subtotal < 150) {
+      shipping = 19;
+      this.setState({ shipping: shipping });
+      this.setState({
+        total: this.state.subtotal + shipping
+      });
+    } else if (subtotal > 150) {
+      shipping = "Free";
+      this.setState({ shipping: shipping });
+      this.setState({ total: subtotal });
+    }
+  }
+
+  componentDidUpdate() {
+    console.log("Jag har uppdaterats");
   }
 
   componentWillUnmount() {
     // this.setState({ total: 0 });
+    // this.setState({ subtotal: 0 });
+    // this.setState({ shipping: 0 });
   }
 
   render() {
@@ -41,11 +64,19 @@ class TotalBox extends React.Component<Props, State> {
         </div>
         <div className="subheader-total">
           <p>Sub-total:</p>
-          <p>{this.state.total}$</p>
+          <p>{this.state.subtotal}$</p>
         </div>
         <div className="subheader-total">
           <p>Shipping:</p>
-          <p>40$</p>
+          <p>
+            {this.state.shipping === "Free"
+              ? this.state.shipping
+              : this.state.shipping + "$"}
+          </p>
+        </div>
+        <div className="total-total">
+          <p>Total:</p>
+          <p>{this.state.total}$</p>
         </div>
         <div className="paymentbutton">
           <Link to="/payment">
