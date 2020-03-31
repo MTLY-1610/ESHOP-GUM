@@ -45,7 +45,7 @@ class ShoppingCartProvider extends React.Component<Props, State> {
     let copiedCart = this.state.shoppingCart;
     copiedCart = copiedCart.filter(item => item.product.id !== id);
     count--;
-    // TODO FIX THE COUNTER
+    // TODO FIX THE COUNTER AND PRICE
     if (count === 0) {
       this.setState({ shoppingCart: copiedCart });
     } else {
@@ -55,7 +55,6 @@ class ShoppingCartProvider extends React.Component<Props, State> {
 
   addToCart = (product: Product, size: number) => {
     let cartList = this.state.shoppingCart;
-    let indexToUpdate: number;
 
     let cartItem: CartItem | undefined = cartList.find(itemToFind => {
       if (
@@ -75,7 +74,7 @@ class ShoppingCartProvider extends React.Component<Props, State> {
       };
       this.setState({ shoppingCart: [...this.state.shoppingCart, cartItem] });
     } else {
-      // Uppdatera befintlig CartItem
+      // TODO FIX THE PRICE
       const tempIndex = cartList.findIndex(index => index.product === product);
       cartItem.product.price = cartItem.product.price + cartItem.product.price;
       cartItem.count++;
