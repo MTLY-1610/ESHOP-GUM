@@ -47,6 +47,24 @@ class Payment extends React.Component<Props, State> {
       this.setState({ name: true });
     }
   };
+  cityValidation = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.value.length <= 1) {
+      event.target.style.borderBottom = "1px dotted red";
+      this.setState({ name: false });
+    } else {
+      event.target.style.borderBottom = "";
+      this.setState({ name: true });
+    }
+  };
+  countryValidation = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.value.length <= 3) {
+      event.target.style.borderBottom = "1px dotted red";
+      this.setState({ name: false });
+    } else {
+      event.target.style.borderBottom = "";
+      this.setState({ name: true });
+    }
+  };
   validDayValidation = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.value.length !== 2 && event.target.value.length !== 0) {
       event.target.style.borderBottom = "1px dotted red";
@@ -195,11 +213,19 @@ class Payment extends React.Component<Props, State> {
             </div>
             <div className="country">
               <span>COUNTRY:</span>
-              <input onKeyDown={this.onlyLetter} type="text" />
+              <input
+                onChange={this.countryValidation}
+                onKeyDown={this.onlyLetter}
+                type="text"
+              />
             </div>
             <div className="country">
               <span>CITY:</span>
-              <input onKeyDown={this.onlyLetter} type="text" />
+              <input
+                onChange={this.cityValidation}
+                onKeyDown={this.onlyLetter}
+                type="text"
+              />
             </div>
              
           </div>
