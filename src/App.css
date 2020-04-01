@@ -675,10 +675,16 @@
 .payment-Solution {
   display: flex;
   min-width: 20em;
+  flex-direction: column;
 }
+.Choices{
+  display:flex;
+  flex-direction: row;
 
+}
 .delivery-Solution {
   display: flex;
+  flex-direction: column;
   min-width: 20em;
 }
 

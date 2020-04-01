@@ -1,8 +1,8 @@
 import * as React from "react";
-import CreditCardIcon from "@material-ui/icons/CreditCard";
-import AccountBalanceIcon from "@material-ui/icons/AccountBalance";
+
 import { Link } from "react-router-dom";
 import { ShoppingCartConsumer } from "../contexts/CartContext";
+import Checkbox from '@material-ui/core/Checkbox';
 
 export interface Props {}
 
@@ -75,11 +75,21 @@ class Payment extends React.Component<Props, State> {
           <div className="solution">
             <div className="payment-Solution">
               <h5 className="headers">PAYMENT METHOD</h5>
-              <CreditCardIcon />
-              <AccountBalanceIcon />
+              <div className="Choices">
+              <Checkbox /> <h5 className="headers">Credit Card</h5>
+              
+              <Checkbox /> <h5 className="headers">Bank Transfer</h5>
+              
+             </div>
             </div>
-            <div className="delivery-Solution">
-              <h5 className="headers">DELIVERY OPTIONS</h5>
+            <div className="payment-Solution">
+              <h5 className="headers">PAYMENT METHOD</h5>
+              <div className="Choices">
+              <Checkbox /> <h5 className="headers">Credit Card</h5>
+              
+              <Checkbox /> <h5 className="headers">Bank Transfer</h5>
+              
+             </div>
             </div>
           </div>
         </div>
