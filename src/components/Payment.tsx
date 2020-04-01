@@ -108,38 +108,34 @@ class Payment extends React.Component<Props, State> {
               <span>FIRSTNAME:</span>
               <input type="text" />
             </div>
+            
+            <div className="adress">
+              <span>Card number:</span>
+              <input type="text" />
+            </div>
             <div className="lastname">
-              <span>LASTNAME:</span>
+              <span>VALIDITY:</span>
               <input type="text" />
             </div>
             <div className="adress">
-              <span>ADRESS:</span>
+              <span>CCV:</span>
               <input type="text" />
             </div>
-            <div className="adress">
-              <span>EMAIL:</span>
-              <input type="text" />
-            </div>
-            <div className="country">
-              <span>COUNTRY:</span>
-              <input type="text" />
-            </div>
-            <div className="zip">
-              <span>ZIPCODE:</span>
-              <input type="text" />
-            </div>
+            
+           
              
           </div>
-        </div>
-        
-          
-        
-        <div className="paymentbutton">
+          <div className="paymentbutton">
           <Link to="/Checkout">
           <Button>PAY</Button>
           </Link>
            
         </div>
+        </div>
+        
+          
+        
+       
       </div>
     );
   }
