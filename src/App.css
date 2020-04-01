@@ -498,21 +498,15 @@
   padding-bottom: 1rem;
 }
 
-
-
 .paymentbutton button {
-  flex-grow: 1;
+  /* flex-grow: 1;
   border: none;
   font-size: 1rem;
   padding: 0.5rem 1rem;
   background-color: #ff5c00;
   color: white;
-  text-transform: uppercase;
+  text-transform: uppercase; */
 }
-
-
-
-
 
 /* PAYMENT*/
 
@@ -559,14 +553,11 @@
   margin-left: 0;
 }
 
-
-
 /* NOW */
 
 .Now {
   display: flex;
   flex-direction: row;
-  
 }
 
 .solution {
@@ -575,7 +566,6 @@
   align-items: center;
   flex-grow: 4;
   min-width: 20em;
-  
   border: 1px solid #ff5c00;
 }
 
@@ -583,17 +573,16 @@
   display: flex;
   min-width: 20em;
   flex-direction: column;
-  
 }
-.Choices{
-  display:flex;
-  flex-direction: row;
 
+.Choices {
+  display: flex;
+  flex-direction: row;
 }
+
 .delivery-Solution {
   display: flex;
   flex-direction: column;
-  
   min-width: 20em;
 }
 
@@ -602,7 +591,7 @@
   height: 2em
 }
 
-.pay{
+.pay {
   display: flex;
   flex-direction: row;
 }
@@ -615,14 +604,31 @@
   width: 20%;
   height: auto;
   margin-top: 1.25em;
-  
   border: 1px solid #ff5c00;
 }
-
 
 .firstname {
   display: flex;
   width: 80%;
+}
+
+.validity-ccv {
+  display: flex;
+  width: 80%;
+}
+
+.validity {
+  display: flex;
+  align-items: flex-start;
+  width: 60%;
+  margin-right: 0.5rem;
+}
+
+.ccv {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .lastname {
@@ -642,13 +648,15 @@
   flex-grow: 1;
 }
 
+.validity input {
+  border: none;
+  border-bottom: 1px solid #ff5c00;
+  width: 100%;
+}
+
 .adress {
   width: 80%;
   display: flex;
-}
-
-.adress span {
-  /* flex-grow: 1; */
 }
 
 .adress input {
@@ -657,7 +665,22 @@
   flex-grow: 1;
 }
 
+.card {
+  width: 80%;
+  display: flex;
+}
 
+.card input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ff5c00;
+}
+
+.ccv input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ff5c00;
+}
 
 .country {
   display: flex;

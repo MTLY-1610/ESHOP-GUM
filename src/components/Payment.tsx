@@ -2,19 +2,87 @@ import * as React from "react";
 
 import { Link } from "react-router-dom";
 import { ShoppingCartConsumer } from "../contexts/CartContext";
-import Checkbox from '@material-ui/core/Checkbox';
-import Button from '@material-ui/core/Button';
+import Checkbox from "@material-ui/core/Checkbox";
+import Button from "@material-ui/core/Button";
 import TotalBox from "./TotalInCart";
-
-
 
 export interface Props {}
 
-export interface State {}
-
-
+export interface State {
+  ccv: boolean;
+  validDay: boolean;
+  validMonth: boolean;
+  creditCard: boolean;
+  checkIfTrue: () => boolean;
+}
 
 class Payment extends React.Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      ccv: false,
+      validMonth: false,
+      validDay: false,
+      creditCard: false,
+      checkIfTrue: this.checkIfTrue
+    };
+  }
+  creditCardValidation = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.value.length !== 4 && event.target.value.length !== 0) {
+      event.target.style.borderBottom = "1px dotted red";
+    } else {
+      event.target.style.borderBottom = "";
+      this.setState({ creditCard: true });
+    }
+  };
+  validDayValidation = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.value.length !== 2 && event.target.value.length !== 0) {
+      event.target.style.borderBottom = "1px dotted red";
+    } else {
+      event.target.style.borderBottom = "";
+      this.setState({ validDay: true });
+    }
+  };
+  validMonthValidation = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.value.length !== 2 && event.target.value.length !== 0) {
+      event.target.style.borderBottom = "1px dotted red";
+    } else {
+      event.target.style.borderBottom = "";
+      this.setState({ validMonth: true });
+    }
+  };
+  ccvValidation = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.value.length !== 3 && event.target.value.length !== 0) {
+      event.target.style.borderBottom = "1px dotted red";
+    } else {
+      event.target.style.borderBottom = "";
+      this.setState({ ccv: true });
+    }
+  };
+
+  checkIfTrue = () => {
+    if (
+      this.state.ccv === true &&
+      this.state.creditCard === true &&
+      this.state.validDay === true &&
+      this.state.validMonth === true
+    ) {
+      return false;
+    } else {
+      return true;
+    }
+  };
+
+  onlyNumber = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    var x = event.which || event.keyCode;
+    if (x >= 65 && x <= 90) {
+      event.preventDefault();
+      return false;
+    } else {
+      return true;
+    }
+  };
+
   render() {
     return (
       <div className="payment-layout">
@@ -46,11 +114,9 @@ class Payment extends React.Component<Props, State> {
             </ShoppingCartConsumer>
             <div className="headers">
               <h5>TOTAL</h5>
-              
               <TotalBox />
             </div>
           </div>
-          
         </div>
          
         <div className="Now">
@@ -58,26 +124,21 @@ class Payment extends React.Component<Props, State> {
             <div className="payment-Solution">
               <h5 className="headers">PAYMENT METHOD</h5>
               <div className="Choices">
-              <Checkbox /> <h5 className="headers">Credit Card</h5>
-              
-              <Checkbox /> <h5 className="headers">Bank Transfer</h5>
-              
-             </div>
+                <Checkbox /> <h5 className="headers">Credit Card</h5>
+                <Checkbox /> <h5 className="headers">Bank Transfer</h5>
+              </div>
             </div>
             <div className="delivery-Solution">
               <h5 className="headers">DELIVERY</h5>
               <div className="Choices">
-              <Checkbox /> <h5 className="headers">EXPRESS</h5>
-              
-              <Checkbox /> <h5 className="headers">REGULAR</h5>
-              
-             </div>
+                <Checkbox /> <h5 className="headers">EXPRESS</h5>
+                <Checkbox /> <h5 className="headers">REGULAR</h5>
+              </div>
             </div>
-            
           </div>
         </div>
         <div className="pay">
-        <div className="adress-Recap">
+          <div className="adress-Recap">
             <h5 className="headers">DELIVERY ADRESS</h5>
             <div className="firstname">
               <span>FIRSTNAME:</span>
@@ -106,39 +167,84 @@ class Payment extends React.Component<Props, State> {
              
           </div>
           <div className="adress-Recap">
-            <h5 className="headers">DELIVERY ADRESS</h5>
+            <h5 className="headers">CARD DETAILS:</h5>
             <div className="firstname">
-              <span>FIRSTNAME:</span>
-              <input type="text" />
+              <span>NAME:</span>
+              <input type="name" />
             </div>
-            
-            <div className="adress">
-              <span>Card number:</span>
-              <input type="text" />
+            <div className="card">
+              <span>CARDNR:</span>
+              <input
+                onKeyDown={this.onlyNumber}
+                onChange={this.creditCardValidation}
+                type="tel"
+                minLength={4}
+                maxLength={4}
+              />
+              <span>-</span>
+              <input
+                onKeyDown={this.onlyNumber}
+                onChange={this.creditCardValidation}
+                type="tel"
+                minLength={4}
+                maxLength={4}
+              />
+              <span>-</span>
+              <input
+                onKeyDown={this.onlyNumber}
+                onChange={this.creditCardValidation}
+                type="tel"
+                minLength={4}
+                maxLength={4}
+              />
+              <span>-</span>
+              <input
+                onKeyDown={this.onlyNumber}
+                onChange={this.creditCardValidation}
+                type="tel"
+                minLength={4}
+                maxLength={4}
+              />
             </div>
-            <div className="lastname">
-              <span>VALIDITY:</span>
-              <input type="text" />
+            <div className="validity-ccv">
+              <div className="validity">
+                <span>VALIDITY:</span>
+                <input
+                  onKeyDown={this.onlyNumber}
+                  onChange={this.validDayValidation}
+                  minLength={2}
+                  maxLength={2}
+                  type="tel"
+                />
+                <span> &nbsp;/&nbsp;</span>
+                <input
+                  onKeyDown={this.onlyNumber}
+                  minLength={2}
+                  maxLength={2}
+                  onChange={this.validMonthValidation}
+                  type="tel"
+                />
+              </div>
+              <div className="ccv">
+                <span>CCV:</span>
+                <input
+                  onKeyDown={this.onlyNumber}
+                  type="tel"
+                  minLength={3}
+                  maxLength={3}
+                  onChange={this.ccvValidation}
+                />
+              </div>
             </div>
-            <div className="adress">
-              <span>CCV:</span>
-              <input type="text" />
-            </div>
-            
-           
              
           </div>
           <div className="paymentbutton">
-          <Link to="/Checkout">
-          <Button>PAY</Button>
-          </Link>
-           
+            <Link to="/Checkout">
+              <button disabled={this.checkIfTrue()}>PAY</button>
+            </Link>
+             
+          </div>
         </div>
-        </div>
-        
-          
-        
-       
       </div>
     );
   }
