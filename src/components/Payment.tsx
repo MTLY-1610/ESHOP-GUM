@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { ShoppingCartConsumer } from "../contexts/CartContext";
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
+import TotalBox from "./TotalInCart";
 
 
 
@@ -45,6 +46,8 @@ class Payment extends React.Component<Props, State> {
             </ShoppingCartConsumer>
             <div className="headers">
               <h5>TOTAL</h5>
+              
+              <TotalBox />
             </div>
           </div>
           
