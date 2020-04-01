@@ -498,12 +498,7 @@
   padding-bottom: 1rem;
 }
 
-.paymentbutton a {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
+
 
 .paymentbutton button {
   flex-grow: 1;
@@ -515,89 +510,9 @@
   text-transform: uppercase;
 }
 
-.personal-button {
-  height: 100%;
-  width: 50%;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  color: #ff5c00;
-}
 
-.personalinfo-div {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  height: 50%;
-}
 
-.namediv {
-  display: flex;
-}
 
-.firstname {
-  display: flex;
-  width: 50%;
-}
-
-.lastname {
-  display: flex;
-  width: 50%;
-}
-
-.firstname input {
-  border: none;
-  border-bottom: 1px solid #ff5c00;
-}
-
-.lastname input {
-  border: none;
-  border-bottom: 1px solid #ff5c00;
-}
-
-.adress {
-  width: 100%;
-  display: flex;
-}
-
-.adress span {
-  /* flex-grow: 1; */
-}
-
-.adress input {
-  border: none;
-  border-bottom: 1px solid #ff5c00;
-  flex-grow: 1;
-}
-
-.countryandzip {
-  width: 100%;
-  display: flex;
-}
-
-.country {
-  display: flex;
-  width: 100%;
-}
-
-.zip {
-  display: flex;
-  width: 100%;
-}
-
-.country input {
-  border: none;
-  border-bottom: 1px solid #ff5c00;
-  flex-grow: 1;
-}
-
-.zip input {
-  flex-grow: 1;
-  border: none;
-  border-bottom: 1px solid #ff5c00;
-}
 
 /* PAYMENT*/
 
@@ -621,7 +536,8 @@
   min-width: 20em;
   width: 20%;
   flex-grow: 6;
-  height: 30vh;
+  min-height: 25vh;
+  height: auto;
   margin-right: 0.625em;
   border: 1px solid #ff5c00;
 }
@@ -643,16 +559,7 @@
   margin-left: 0;
 }
 
-.adress-Recap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 20em;
-  width: 20%;
-  height: 30vh;
-  margin-left: 0.625em;
-  border: 1px solid #ff5c00;
-}
+
 
 /* NOW */
 
@@ -667,7 +574,7 @@
   align-items: center;
   flex-grow: 4;
   min-width: 20em;
-  margin-top: 1.25em;
+  margin-top: .625em;
   padding: 1.25rem 1.25rem 1.25rem 1.25rem;
   border: 1px solid #ff5c00;
 }
@@ -685,10 +592,90 @@
 .delivery-Solution {
   display: flex;
   flex-direction: column;
+
   min-width: 20em;
 }
 
 #shoppingbasket {
   width: 2em;
   height: 2em
+}
+
+.pay{
+  display: flex;
+  flex-direction: row;
+}
+
+.adress-Recap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 20em;
+  width: 20%;
+  height: 20vh;
+  margin-top: 0.625em;
+  padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+  border: 1px solid #ff5c00;
+}
+
+
+.firstname {
+  display: flex;
+  width: 80%;
+}
+
+.lastname {
+  display: flex;
+  width: 80%;
+}
+
+.firstname input {
+  border: none;
+  border-bottom: 1px solid #ff5c00;
+  flex-grow: 1;
+}
+
+.lastname input {
+  border: none;
+  border-bottom: 1px solid #ff5c00;
+  flex-grow: 1;
+}
+
+.adress {
+  width: 80%;
+  display: flex;
+}
+
+.adress span {
+  /* flex-grow: 1; */
+}
+
+.adress input {
+  border: none;
+  border-bottom: 1px solid #ff5c00;
+  flex-grow: 1;
+}
+
+
+
+.country {
+  display: flex;
+  width: 80%;
+}
+
+.zip {
+  display: flex;
+  width: 80%;
+}
+
+.country input {
+  border: none;
+  border-bottom: 1px solid #ff5c00;
+  flex-grow: 1;
+}
+
+.zip input {
+  flex-grow: 1;
+  border: none;
+  border-bottom: 1px solid #ff5c00;
 }
