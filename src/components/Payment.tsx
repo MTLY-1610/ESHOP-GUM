@@ -15,6 +15,8 @@ export interface State {
   creditCard: boolean;
   checkIfTrue: () => boolean;
   name: boolean;
+  city: boolean;
+  country: boolean;
 }
 
 class Payment extends React.Component<Props, State> {
@@ -26,7 +28,9 @@ class Payment extends React.Component<Props, State> {
       validDay: false,
       creditCard: false,
       checkIfTrue: this.checkIfTrue,
-      name: false
+      name: false,
+      city: false,
+      country: false
     };
   }
   creditCardValidation = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -50,19 +54,19 @@ class Payment extends React.Component<Props, State> {
   cityValidation = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.value.length <= 1) {
       event.target.style.borderBottom = "1px dotted red";
-      this.setState({ name: false });
+      this.setState({ city: false });
     } else {
       event.target.style.borderBottom = "";
-      this.setState({ name: true });
+      this.setState({ city: true });
     }
   };
   countryValidation = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.value.length <= 3) {
       event.target.style.borderBottom = "1px dotted red";
-      this.setState({ name: false });
+      this.setState({ country: false });
     } else {
       event.target.style.borderBottom = "";
-      this.setState({ name: true });
+      this.setState({ country: true });
     }
   };
   validDayValidation = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -99,7 +103,9 @@ class Payment extends React.Component<Props, State> {
       this.state.creditCard === true &&
       this.state.validDay === true &&
       this.state.validMonth === true &&
-      this.state.name === true
+      this.state.name === true &&
+      this.state.city === true &&
+      this.state.country === true
     ) {
       return false;
     } else {
