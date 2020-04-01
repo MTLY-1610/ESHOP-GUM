@@ -197,7 +197,6 @@
     opacity: 1;
     display: block;
   }
-
   100% {
     opacity: 0;
     display: none;
@@ -365,6 +364,7 @@
   justify-content: flex-start;
   align-items: center;
 }
+
 .flex-cart-info {
   width: 100%;
   display: flex;
@@ -440,6 +440,7 @@
   font-weight: 900;
   cursor: pointer;
 }
+
 .cart-qty-size-price-div {
   width: 100%;
   height: 100%;
@@ -466,6 +467,7 @@
   justify-content: space-between;
   font-size: 1.5rem;
 }
+
 .total-total {
   border-top: 1px solid #d3d3d3;
   padding-top: 1rem;
@@ -480,6 +482,7 @@
 .header-total h3 {
   margin-top: 0.5rem;
 }
+
 .header-total {
   font-size: 1.5rem;
   width: 60%;
@@ -494,12 +497,14 @@
   text-decoration: none;
   padding-bottom: 1rem;
 }
+
 .paymentbutton a {
   width: 100%;
   display: flex;
   align-items: center;
   text-decoration: none;
 }
+
 .paymentbutton button {
   flex-grow: 1;
   border: none;
@@ -596,7 +601,6 @@
 
 /* PAYMENT*/
 
-
 .payment-layout {
   padding: 1.25rem 1.25rem 1.25rem 1.25rem;
   display: flex;
@@ -608,7 +612,6 @@
 .Recap {
   display: flex;
   flex-direction: row;
-
 }
 
 .cart-Recap {
@@ -618,10 +621,8 @@
   min-width: 20em;
   width: 20%;
   flex-grow: 6;
-
   height: 30vh;
   margin-right: 0.625em;
-
   border: 1px solid #ff5c00;
 }
 
@@ -646,7 +647,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
   min-width: 20em;
   width: 20%;
   height: 30vh;
@@ -655,6 +655,7 @@
 }
 
 /* NOW */
+
 .Now {
   display: flex;
   flex-direction: row;
@@ -666,7 +667,6 @@
   align-items: center;
   flex-grow: 4;
   min-width: 20em;
-
   margin-top: 1.25em;
   padding: 1.25rem 1.25rem 1.25rem 1.25rem;
   border: 1px solid #ff5c00;
@@ -675,12 +675,14 @@
 .payment-Solution {
   display: flex;
   min-width: 20em;
-
 }
 
 .delivery-Solution {
   display: flex;
   min-width: 20em;
-
 }
 
+#shoppingbasket {
+  width: 2em;
+  height: 2em
+}
