@@ -6,6 +6,7 @@ import Products from "./components/Products";
 import Navbar from "./components/Navbar";
 import Item from "./components/Item";
 import NoPage from "./components/NoPage";
+import Checkout from "./components/Checkout";
 import "./App.css";
 import Payment from "./components/Payment";
 
@@ -21,8 +22,9 @@ function App() {
             <Route path="/" exact component={Home} />
             <Route path="/products" component={Products} />
             <Route path="/cart" component={Cart} />
+            <Route path="/checkout" component={Checkout} />
             <Route path="/payment" component={Payment} />
-            <Route path="/:item" component={Item} />} />
+            <Route path="/:item" component={Item}  />
             <Route component={NoPage} />
           </Switch>
         </div>
