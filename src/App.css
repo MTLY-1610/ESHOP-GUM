@@ -665,6 +665,21 @@
   flex-grow: 1;
 }
 
+.mail {
+  width: 80%;
+  display: flex;
+}
+
+.mail>span {
+  width: 100%;
+}
+
+.mail input {
+  border: none;
+  border-bottom: 1px solid #ff5c00;
+  width: 100%;
+}
+
 .card {
   width: 80%;
   display: flex;

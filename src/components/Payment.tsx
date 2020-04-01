@@ -14,6 +14,7 @@ export interface State {
   validMonth: boolean;
   creditCard: boolean;
   checkIfTrue: () => boolean;
+  name: boolean;
 }
 
 class Payment extends React.Component<Props, State> {
@@ -24,20 +25,32 @@ class Payment extends React.Component<Props, State> {
       validMonth: false,
       validDay: false,
       creditCard: false,
-      checkIfTrue: this.checkIfTrue
+      checkIfTrue: this.checkIfTrue,
+      name: false
     };
   }
   creditCardValidation = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.value.length !== 4 && event.target.value.length !== 0) {
       event.target.style.borderBottom = "1px dotted red";
+      this.setState({ creditCard: false });
     } else {
       event.target.style.borderBottom = "";
       this.setState({ creditCard: true });
     }
   };
+  nameValidation = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.value.length <= 1) {
+      event.target.style.borderBottom = "1px dotted red";
+      this.setState({ name: false });
+    } else {
+      event.target.style.borderBottom = "";
+      this.setState({ name: true });
+    }
+  };
   validDayValidation = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.value.length !== 2 && event.target.value.length !== 0) {
       event.target.style.borderBottom = "1px dotted red";
+      this.setState({ validDay: false });
     } else {
       event.target.style.borderBottom = "";
       this.setState({ validDay: true });
@@ -46,6 +59,7 @@ class Payment extends React.Component<Props, State> {
   validMonthValidation = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.value.length !== 2 && event.target.value.length !== 0) {
       event.target.style.borderBottom = "1px dotted red";
+      this.setState({ validMonth: false });
     } else {
       event.target.style.borderBottom = "";
       this.setState({ validMonth: true });
@@ -54,6 +68,7 @@ class Payment extends React.Component<Props, State> {
   ccvValidation = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.value.length !== 3 && event.target.value.length !== 0) {
       event.target.style.borderBottom = "1px dotted red";
+      this.setState({ ccv: false });
     } else {
       event.target.style.borderBottom = "";
       this.setState({ ccv: true });
@@ -65,7 +80,8 @@ class Payment extends React.Component<Props, State> {
       this.state.ccv === true &&
       this.state.creditCard === true &&
       this.state.validDay === true &&
-      this.state.validMonth === true
+      this.state.validMonth === true &&
+      this.state.name === true
     ) {
       return false;
     } else {
@@ -73,9 +89,9 @@ class Payment extends React.Component<Props, State> {
     }
   };
 
-  onlyNumber = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    var x = event.which || event.keyCode;
-    if (x >= 65 && x <= 90) {
+  onlyLetter = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    const x = event.which || event.keyCode;
+    if ((x >= 45 && x <= 57) || (x >= 96 && x <= 105)) {
       event.preventDefault();
       return false;
     } else {
@@ -83,6 +99,15 @@ class Payment extends React.Component<Props, State> {
     }
   };
 
+  onlyNumber = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    const x = event.which || event.keyCode;
+    if (x >= 65 && x <= 90) {
+      event.preventDefault();
+      return false;
+    } else {
+      return true;
+    }
+  };
   render() {
     return (
       <div className="payment-layout">
@@ -142,11 +167,19 @@ class Payment extends React.Component<Props, State> {
             <h5 className="headers">DELIVERY ADRESS</h5>
             <div className="firstname">
               <span>FIRSTNAME:</span>
-              <input type="text" />
+              <input
+                onChange={this.nameValidation}
+                onKeyDown={this.onlyLetter}
+                type="text"
+              />
             </div>
             <div className="lastname">
               <span>LASTNAME:</span>
-              <input type="text" />
+              <input
+                onChange={this.nameValidation}
+                onKeyDown={this.onlyLetter}
+                type="text"
+              />
             </div>
             <div className="adress">
               <span>ADRESS:</span>
@@ -154,15 +187,19 @@ class Payment extends React.Component<Props, State> {
             </div>
             <div className="adress">
               <span>EMAIL:</span>
-              <input type="text" />
+              <input type="email" />
+            </div>
+            <div className="mail">
+              <span>CONFIRM EMAIL:</span>
+              <input type="email" />
             </div>
             <div className="country">
               <span>COUNTRY:</span>
-              <input type="text" />
+              <input onKeyDown={this.onlyLetter} type="text" />
             </div>
-            <div className="zip">
-              <span>ZIPCODE:</span>
-              <input type="text" />
+            <div className="country">
+              <span>CITY:</span>
+              <input onKeyDown={this.onlyLetter} type="text" />
             </div>
              
           </div>
@@ -170,7 +207,11 @@ class Payment extends React.Component<Props, State> {
             <h5 className="headers">CARD DETAILS:</h5>
             <div className="firstname">
               <span>NAME:</span>
-              <input type="name" />
+              <input
+                onChange={this.nameValidation}
+                onKeyDown={this.onlyLetter}
+                type="name"
+              />
             </div>
             <div className="card">
               <span>CARDNR:</span>
