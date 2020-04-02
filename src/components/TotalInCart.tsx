@@ -6,7 +6,9 @@ import {
 } from "../contexts/CartContext";
 import { CartItem } from "../contexts/CartContext";
 
-export interface Props {}
+export interface Props {
+  isChecked: () => void;
+}
 
 export interface State {}
 
