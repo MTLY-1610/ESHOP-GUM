@@ -12,7 +12,10 @@ const defaultState = {
   shoppingCart: [],
   removeCartRow: () => {},
   shipping: () => 0,
-  totalAmount: () => 0
+  totalAmount: () => 0,
+  shippingAmount: 0,
+  date: 0,
+  isDateTrue: false
 };
 
 const ShoppingCartContext = React.createContext<State>(defaultState);
@@ -24,7 +27,11 @@ export interface State {
   removeCartRow: (id: number, count: number) => void;
   shoppingCart: Array<CartItem>;
   totalAmount: () => number;
-  shipping: () => number;
+  shipping: (event: React.ChangeEvent<HTMLInputElement>, value: string) => void;
+  shippingAmount: string | number;
+  date: number | string;
+
+  isDateTrue: boolean;
 }
 
 class ShoppingCartProvider extends React.Component<Props, State> {
@@ -35,23 +42,50 @@ class ShoppingCartProvider extends React.Component<Props, State> {
       shoppingCart: [],
       removeCartRow: this.removeCartRow,
       totalAmount: this.totalAmount,
-      shipping: this.shipping
+      isDateTrue: false,
+      date: 0,
+      shipping: this.shipping,
+      shippingAmount: 0
     };
   }
 
-  shipping = () => {
-    let sum = 0;
-    if (this.state.shoppingCart.length !== 0) {
-      for (const item of this.state.shoppingCart) {
-        sum += item.product.price * item.count;
-      }
-      if (sum > 200) {
-        return 0;
-      } else {
-        return 19;
-      }
-    } else {
-      return 0;
+  shipping = (event: React.ChangeEvent<HTMLInputElement>, value: string) => {
+    let newDate = new Date();
+    let year = newDate.getFullYear();
+    let month = newDate.getMonth();
+    let day = newDate.getDate();
+    let zero = 0;
+
+    let express = `${year}-${month <= 10 ? `0${month + 1}` : month + 1}-${
+      day < 8 || day > 29 ? `0${day + (2 % 31)}` : day + (2 % 31)
+    }`;
+    let regular = `${year}-${month <= 10 ? `0${month + 1}` : month + 1}-${
+      day < 5 || day > 26 ? `0${day + (5 % 31)}` : day + (5 % 31)
+    }`;
+    let free = `${year}-${month <= 10 ? `0${month + 1}` : month + 1}-${
+      day < 2 || day > 23 ? `0${day + (8 % 31)}` : day + (8 % 31)
+    }`;
+
+    if (month < 10) {
+      console.log(zero + month);
+      month = Number("zero" + month);
+    }
+    if (day < 10) {
+      day = Number("zero" + month);
+    }
+
+    if (event.target.value === "Free") {
+      this.setState({ isDateTrue: true });
+      this.setState({ date: free });
+      this.setState({ shippingAmount: 0 });
+    } else if (event.target.value === "Regular") {
+      this.setState({ isDateTrue: true });
+      this.setState({ shippingAmount: "19" });
+      this.setState({ date: regular });
+    } else if (event.target.value === "Express") {
+      this.setState({ isDateTrue: true });
+      this.setState({ date: express });
+      this.setState({ shippingAmount: "29" });
     }
   };
 
