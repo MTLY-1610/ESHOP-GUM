@@ -99,7 +99,6 @@ class Payment extends React.Component<Props, State> {
   };
 
   render() {
-    i;
     if (this.state.swish !== true && this.state.presentCard !== true) {
       return (
         <div className="payment-layout">
