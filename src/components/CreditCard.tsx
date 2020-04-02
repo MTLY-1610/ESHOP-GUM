@@ -3,11 +3,18 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 
-export interface Props {}
+export interface Props {
+  onlyNumber: (event: React.KeyboardEvent<HTMLInputElement>) => void;
+}
 
 export interface State {}
 
 class CreditCard extends React.Component<Props, State> {
+  cardNrMax = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.value.length >= 16) {
+      event.preventDefault();
+    }
+  };
   render() {
     return (
       <div className="adress-Recap">
@@ -24,17 +31,16 @@ class CreditCard extends React.Component<Props, State> {
           <TextField
             type="tel"
             name="cardNumber"
-            //   value={this.state.firstName}
             label="Card Number"
-            // onChange={this.handleChange}
-            //   onKeyDown={this.onlyLetter}
+            onKeyDown={this.props.onlyNumber}
+            onChange={this.cardNrMax}
           />
           <TextField
             type="tel"
             name="Valid Date"
             //   value={this.state.firstName}
             label="Valid (MM/YY)"
-            // onChange={this.handleChange}
+            onKeyDown={this.props.onlyNumber}
             //   onKeyDown={this.onlyLetter}
           />
           <TextField
@@ -43,7 +49,7 @@ class CreditCard extends React.Component<Props, State> {
             //   value={this.state.firstName}
             label="CCV"
             // onChange={this.handleChange}
-            //   onKeyDown={this.onlyLetter}
+            onKeyDown={this.props.onlyNumber}
           />
         </div>
         <div>

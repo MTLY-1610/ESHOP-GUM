@@ -78,24 +78,12 @@ class Payment extends React.Component<Props, State> {
       this.setState({ country: true });
     }
   };
-  validDayValidation = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.value.length !== 2 && event.target.value.length !== 0) {
-      event.target.style.borderBottom = "1px dotted red";
-      this.setState({ validDay: false });
+  validDateValidation = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.value.indexOf("/") !== -1) {
     } else {
-      event.target.style.borderBottom = "";
-      this.setState({ validDay: true });
     }
   };
-  validMonthValidation = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.value.length !== 2 && event.target.value.length !== 0) {
-      event.target.style.borderBottom = "1px dotted red";
-      this.setState({ validMonth: false });
-    } else {
-      event.target.style.borderBottom = "";
-      this.setState({ validMonth: true });
-    }
-  };
+
   ccvValidation = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.value.length !== 3 && event.target.value.length !== 0) {
       event.target.style.borderBottom = "1px dotted red";
@@ -183,7 +171,7 @@ class Payment extends React.Component<Props, State> {
           />
           <div className="delivery-creditcard-form">
             <DeliveryForm checkDelivery={this.deliveryMethod} />
-            <CreditCard />
+            <CreditCard onlyNumber={this.onlyNumber} />
           </div>
         </div>
       );
@@ -196,7 +184,7 @@ class Payment extends React.Component<Props, State> {
           />
           <div className="delivery-creditcard-form">
             <DeliveryForm checkDelivery={this.deliveryMethod} />
-            <Swish />
+            <Swish onlyNumber={this.onlyNumber} />
           </div>
         </div>
       );

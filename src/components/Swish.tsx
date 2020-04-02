@@ -3,7 +3,9 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 
-export interface Props {}
+export interface Props {
+  onlyNumber: (event: React.KeyboardEvent<HTMLInputElement>) => void;
+}
 
 export interface State {}
 
@@ -27,7 +29,7 @@ class Swish extends React.Component<Props, State> {
             //   value={this.state.firstName}
             label="Phone Number"
             // onChange={this.handleChange}
-            //   onKeyDown={this.onlyLetter}
+            onKeyDown={this.props.onlyNumber}
           />
         </div>
         <div>
