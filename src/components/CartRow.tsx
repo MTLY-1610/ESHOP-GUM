@@ -14,9 +14,6 @@ class CartRow extends React.Component<Props, State> {
       <ShoppingCartConsumer>
         {value => (
           <React.Fragment>
-            <div className="cart-img-info-div-header">
-              <h3>Shopping Cart</h3>
-            </div>
             <div className="cart-img-info-div">
               <div className="cart-imgdiv">
                 <img src={this.props.item.product.img} alt="img" />

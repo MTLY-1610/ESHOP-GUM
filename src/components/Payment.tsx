@@ -1,18 +1,24 @@
 import * as React from "react";
-
+import DeliveryForm from "./Delivery";
+import CreditCard from "./CreditCard";
+import PresentCard from "./PresentCard";
+import Swish from "./Swish";
 import { Link } from "react-router-dom";
+import PaymentDeliveryMethod from "./PaymentDeliveryMethods";
 import { ShoppingCartConsumer } from "../contexts/CartContext";
-import Checkbox from "@material-ui/core/Checkbox";
 import Button from "@material-ui/core/Button";
 import TotalBox from "./TotalInCart";
 
 export interface Props {}
 
 export interface State {
+  creditCard: boolean;
+  swish: boolean;
+  presentCard: boolean;
+  delivery: boolean;
   ccv: boolean;
   validDay: boolean;
   validMonth: boolean;
-  creditCard: boolean;
   checkIfTrue: () => boolean;
   name: boolean;
   city: boolean;
@@ -23,10 +29,13 @@ class Payment extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
+      creditCard: false,
+      swish: false,
+      presentCard: false,
+      delivery: false,
       ccv: false,
       validMonth: false,
       validDay: false,
-      creditCard: false,
       checkIfTrue: this.checkIfTrue,
       name: false,
       city: false,
@@ -127,199 +136,84 @@ class Payment extends React.Component<Props, State> {
     const x = event.which || event.keyCode;
     if (x >= 65 && x <= 90) {
       event.preventDefault();
-      return false;
+      return "false";
     } else {
-      return true;
+      return "true";
     }
   };
+
+  deliveryMethod = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    value: string
+  ) => {
+    if (
+      event.target.value === "Free" ||
+      event.target.value === "Regular" ||
+      event.target.value === "Express"
+    ) {
+      this.setState({ delivery: true });
+    }
+  };
+  paymentMethod = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    value: string
+  ) => {
+    if (event.target.value === "CreditCard") {
+      this.setState({ creditCard: true });
+      this.setState({ swish: false });
+      this.setState({ presentCard: false });
+    } else if (event.target.value === "Swish") {
+      this.setState({ swish: true });
+      this.setState({ creditCard: false });
+      this.setState({ presentCard: false });
+    } else if (event.target.value === "PresentCard") {
+      this.setState({ presentCard: true });
+      this.setState({ creditCard: false });
+      this.setState({ swish: false });
+    }
+  };
+
   render() {
-    return (
-      <div className="payment-layout">
-        <div className="Recap">
-          <div className="cart-Recap">
-            <div className="cart-img-info-div">
-              <h5>ITEM:</h5>
-              <h5>QTY:</h5>
-              <h5>SIZE:</h5>
-              <h5>PRICE:</h5>
-            </div>
-            <ShoppingCartConsumer>
-              {value => {
-                return value.shoppingCart.map(item => {
-                  return (
-                    <React.Fragment>
-                      <div className="cart-img-info-div">
-                        <div className="cart-imgdiv">
-                          <img src={item.product.img} alt="img" />
-                        </div>
-                        <div className="qtydiv">{item.count}</div>
-                        <div className="sizediv">{item.size}</div>
-                        <div className="pricediv">{item.product.price}$</div>
-                      </div>
-                    </React.Fragment>
-                  );
-                });
-              }}
-            </ShoppingCartConsumer>
-            <div className="headers">
-              <h5>TOTAL</h5>
-              <TotalBox />
-            </div>
+    if (this.state.swish !== true && this.state.presentCard !== true) {
+      return (
+        <div className="payment-layout">
+          <PaymentDeliveryMethod
+            checkPayment={this.paymentMethod}
+            checkDelivery={this.deliveryMethod}
+          />
+          <div className="delivery-creditcard-form">
+            <DeliveryForm checkDelivery={this.deliveryMethod} />
+            <CreditCard />
           </div>
         </div>
-         
-        <div className="Now">
-          <div className="solution">
-            <div className="payment-Solution">
-              <h5 className="headers">PAYMENT METHOD</h5>
-              <div className="Choices">
-                <Checkbox /> <h5 className="headers">Credit Card</h5>
-                <Checkbox /> <h5 className="headers">Bank Transfer</h5>
-              </div>
-            </div>
-            <div className="delivery-Solution">
-              <h5 className="headers">DELIVERY</h5>
-              <div className="Choices">
-                <Checkbox /> <h5 className="headers">EXPRESS</h5>
-                <Checkbox /> <h5 className="headers">REGULAR</h5>
-              </div>
-            </div>
+      );
+    } else if (this.state.swish === true) {
+      return (
+        <div className="payment-layout">
+          <PaymentDeliveryMethod
+            checkPayment={this.paymentMethod}
+            checkDelivery={this.deliveryMethod}
+          />
+          <div className="delivery-creditcard-form">
+            <DeliveryForm checkDelivery={this.deliveryMethod} />
+            <Swish />
           </div>
         </div>
-        <div className="pay">
-          <div className="adress-Recap">
-            <h5 className="headers">DELIVERY ADRESS</h5>
-            <div className="firstname">
-              <span>FIRSTNAME:</span>
-              <input
-                onChange={this.nameValidation}
-                onKeyDown={this.onlyLetter}
-                type="text"
-              />
-            </div>
-            <div className="lastname">
-              <span>LASTNAME:</span>
-              <input
-                onChange={this.nameValidation}
-                onKeyDown={this.onlyLetter}
-                type="text"
-              />
-            </div>
-            <div className="adress">
-              <span>ADRESS:</span>
-              <input type="text" />
-            </div>
-            <div className="adress">
-              <span>EMAIL:</span>
-              <input type="email" />
-            </div>
-            <div className="mail">
-              <span>CONFIRM EMAIL:</span>
-              <input type="email" />
-            </div>
-            <div className="country">
-              <span>COUNTRY:</span>
-              <input
-                onChange={this.countryValidation}
-                onKeyDown={this.onlyLetter}
-                type="text"
-              />
-            </div>
-            <div className="country">
-              <span>CITY:</span>
-              <input
-                onChange={this.cityValidation}
-                onKeyDown={this.onlyLetter}
-                type="text"
-              />
-            </div>
-             
-          </div>
-          <div className="adress-Recap">
-            <h5 className="headers">CARD DETAILS:</h5>
-            <div className="firstname">
-              <span>NAME:</span>
-              <input
-                onChange={this.nameValidation}
-                onKeyDown={this.onlyLetter}
-                type="name"
-              />
-            </div>
-            <div className="card">
-              <span>CARDNR:</span>
-              <input
-                onKeyDown={this.onlyNumber}
-                onChange={this.creditCardValidation}
-                type="tel"
-                minLength={4}
-                maxLength={4}
-              />
-              <span>-</span>
-              <input
-                onKeyDown={this.onlyNumber}
-                onChange={this.creditCardValidation}
-                type="tel"
-                minLength={4}
-                maxLength={4}
-              />
-              <span>-</span>
-              <input
-                onKeyDown={this.onlyNumber}
-                onChange={this.creditCardValidation}
-                type="tel"
-                minLength={4}
-                maxLength={4}
-              />
-              <span>-</span>
-              <input
-                onKeyDown={this.onlyNumber}
-                onChange={this.creditCardValidation}
-                type="tel"
-                minLength={4}
-                maxLength={4}
-              />
-            </div>
-            <div className="validity-ccv">
-              <div className="validity">
-                <span>VALIDITY:</span>
-                <input
-                  onKeyDown={this.onlyNumber}
-                  onChange={this.validDayValidation}
-                  minLength={2}
-                  maxLength={2}
-                  type="tel"
-                />
-                <span> &nbsp;/&nbsp;</span>
-                <input
-                  onKeyDown={this.onlyNumber}
-                  minLength={2}
-                  maxLength={2}
-                  onChange={this.validMonthValidation}
-                  type="tel"
-                />
-              </div>
-              <div className="ccv">
-                <span>CCV:</span>
-                <input
-                  onKeyDown={this.onlyNumber}
-                  type="tel"
-                  minLength={3}
-                  maxLength={3}
-                  onChange={this.ccvValidation}
-                />
-              </div>
-            </div>
-             
-          </div>
-          <div className="paymentbutton">
-            <Link to="/Checkout">
-              <button disabled={this.checkIfTrue()}>PAY</button>
-            </Link>
-             
+      );
+    } else if (this.state.presentCard === true) {
+      return (
+        <div className="payment-layout">
+          <PaymentDeliveryMethod
+            checkPayment={this.paymentMethod}
+            checkDelivery={this.deliveryMethod}
+          />
+          <div className="delivery-creditcard-form">
+            <DeliveryForm checkDelivery={this.deliveryMethod} />
+            <PresentCard />
           </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
 }
 export default Payment;

@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import TotalBox from "./TotalInCart";
+import PaymentDeliveryMethod from "./PaymentDeliveryMethods";
 import { MdShoppingBasket } from "react-icons/md";
 import { ShoppingCartConsumer } from "../contexts/CartContext";
 import CartRow from "./CartRow";
@@ -13,7 +14,7 @@ class Cart extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
   }
-
+  isChecked = () => {};
   render() {
     return (
       <div className="flex-cart">
@@ -32,6 +33,9 @@ class Cart extends React.Component<Props, State> {
                 </div>
               ) : (
                 <>
+                  <div className="cart-img-info-div-header">
+                    <h3>Shopping Cart</h3>
+                  </div>
                   {value.shoppingCart.map(item => {
                     return <CartRow item={item} />;
                   })}
@@ -42,12 +46,21 @@ class Cart extends React.Component<Props, State> {
         </div>
 
         <div className="totalDiv">
-          <TotalBox />
+          <TotalBox isChecked={this.isChecked} />
         </div>
       </div>
     );
   }
 }
+
+const flexBox: React.CSSProperties = {
+  display: "flex",
+  height: "100%",
+  alignItems: "center",
+  justifyContent: "space-evenly",
+  width: "35%",
+  flexDirection: "column"
+};
 
 const emptyCartDiv: React.CSSProperties = {
   display: "flex",

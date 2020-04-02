@@ -452,8 +452,7 @@
 
 .totalDiv {
   width: 35%;
-  height: 50%;
-  margin-right: 1rem;
+  height: 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -511,9 +510,16 @@
 /* PAYMENT*/
 
 .payment-layout {
-  padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+  width: 100%;
+  height: 95vh;
   display: flex;
+  justify-content: space-evenly;
   flex-direction: column;
+}
+
+.payment-delivery-method {
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 /* Recap */
@@ -555,24 +561,21 @@
 
 /* NOW */
 
-.Now {
-  display: flex;
-  flex-direction: row;
-}
-
-.solution {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  flex-grow: 4;
-  min-width: 20em;
-  border: 1px solid #ff5c00;
-}
-
 .payment-Solution {
   display: flex;
-  min-width: 20em;
-  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.payment-Solution>div {
+  display: flex;
+  justify-content: center;
+}
+
+.delivery-Solution>div {
+  display: flex;
+  justify-content: center;
 }
 
 .Choices {
@@ -582,8 +585,9 @@
 
 .delivery-Solution {
   display: flex;
-  flex-direction: column;
-  min-width: 20em;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 #shoppingbasket {
@@ -591,20 +595,31 @@
   height: 2em
 }
 
+.delivery-creditcard-form {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
 .pay {
   display: flex;
   flex-direction: row;
 }
 
-.adress-Recap {
+.adress-Recap>div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 20em;
-  width: 20%;
-  height: auto;
-  margin-top: 1.25em;
-  border: 1px solid #ff5c00;
+  width: 100%;
+}
+
+.adress-Recap {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  height: 100%;
 }
 
 .firstname {
@@ -636,33 +651,9 @@
   width: 80%;
 }
 
-.firstname input {
-  border: none;
-  border-bottom: 1px solid #ff5c00;
-  flex-grow: 1;
-}
-
-.lastname input {
-  border: none;
-  border-bottom: 1px solid #ff5c00;
-  flex-grow: 1;
-}
-
-.validity input {
-  border: none;
-  border-bottom: 1px solid #ff5c00;
-  width: 100%;
-}
-
 .adress {
   width: 80%;
   display: flex;
-}
-
-.adress input {
-  border: none;
-  border-bottom: 1px solid #ff5c00;
-  flex-grow: 1;
 }
 
 .mail {
@@ -674,27 +665,9 @@
   width: 100%;
 }
 
-.mail input {
-  border: none;
-  border-bottom: 1px solid #ff5c00;
-  width: 100%;
-}
-
 .card {
   width: 80%;
   display: flex;
-}
-
-.card input {
-  width: 100%;
-  border: none;
-  border-bottom: 1px solid #ff5c00;
-}
-
-.ccv input {
-  width: 100%;
-  border: none;
-  border-bottom: 1px solid #ff5c00;
 }
 
 .country {
@@ -705,16 +678,4 @@
 .zip {
   display: flex;
   width: 80%;
-}
-
-.country input {
-  border: none;
-  border-bottom: 1px solid #ff5c00;
-  flex-grow: 1;
-}
-
-.zip input {
-  flex-grow: 1;
-  border: none;
-  border-bottom: 1px solid #ff5c00;
 }
