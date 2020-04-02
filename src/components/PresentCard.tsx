@@ -11,7 +11,7 @@ class PresentCard extends React.Component<Props, State> {
   render() {
     return (
       <div className="payment">
-        <div>
+       
           <h5 className="headers">PRESENTCARD DETAILS:</h5>
           <TextField
             type="name"
@@ -29,7 +29,7 @@ class PresentCard extends React.Component<Props, State> {
             // onChange={this.handleChange}
             //   onKeyDown={this.onlyLetter}
           />
-        </div>
+        
         <div>
           <Link to="/checkout">
             <Button>Next</Button>

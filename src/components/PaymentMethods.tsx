@@ -20,7 +20,7 @@ class PaymentMethods extends React.Component<Props, State> {
       <div className="payment-delivery-method">
         <div className="payment-Solution">
           <h5 className="headers">PAYMENT METHOD</h5>
-          <div className="">
+          
             <RadioGroup  onChange={this.props.checkPayment} style={flex}>
               <FormControlLabel
                 value="CreditCard"
@@ -45,7 +45,7 @@ class PaymentMethods extends React.Component<Props, State> {
                 labelPlacement="end"
               />
             </RadioGroup>
-            </div>
+            
         </div>
         </div>
     

@@ -519,16 +519,25 @@
   
   flex-direction: row;
 }
+@media screen and (max-width: 640px) {
+  .payment-layout {
+    width: 100%;
+    height: 95vh;
+    display: flex;
+    padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+    flex-direction: column;
+  }
+}
 .delivery-box{
   display: flex;
   flex-direction: column;
- 
-  width: 60%;
+  width: 54.5%;
 
 }
 .payment-box{
   display: flex;
   flex-direction: column;
+  width: 40%;
   
  
 
@@ -539,6 +548,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-grow: 1;
+  width: 100%;
   justify-content: space-evenly;
   margin-bottom: .625rem;
   margin-left: .625rem;
@@ -548,15 +559,26 @@
 .radio-div{
   display: flex;
   flex-direction: column;
-  width: 6rem;
+ 
 }
 
+.payment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-left: .625rem;
+  margin-top: .625rem;
+  border: 1px solid #ff5c00;
+  padding: .625rem .625rem .625rem .625rem;
+ 
+}
 .delivery-Solution {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  width: auto;
+ 
   flex-grow: 1;
   margin-bottom: .625rem;
   margin-right: .625rem;
@@ -577,16 +599,7 @@
 
 
 
-.payment {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  margin-left: .625rem;
-  margin-top: .625rem;
-  border: 1px solid #ff5c00;
- 
-}
+
 
 .adress {
   display: flex;

@@ -13,7 +13,7 @@ class Swish extends React.Component<Props, State> {
   render() {
     return (
       <div className="payment">
-        <div>
+        
           <h5 className="headers">SWISH DETAILS:</h5>
           <TextField
             type="name"
@@ -31,7 +31,7 @@ class Swish extends React.Component<Props, State> {
             // onChange={this.handleChange}
             onKeyDown={this.props.onlyNumber}
           />
-        </div>
+        
         <div>
           <Link to="/checkout">
             <Button>Next</Button>
