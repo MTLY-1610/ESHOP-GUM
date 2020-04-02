@@ -21,7 +21,7 @@ class DeliveryForm extends React.Component<Props, State> {
           <TextField id="field" type="name" name="Adress" label="Adress" />
           <TextField id="field" type="email" name="Email" label="Email" />
           <TextField id="field" type="text" name="Country" label="Country"  />
-          <TextField id="field" type="text" name="City" label="City" fullWidth />
+          <TextField id="field" type="text" name="City" label="City"  />
            
       </div>
     );

@@ -12,7 +12,7 @@ export interface State {}
 class Swish extends React.Component<Props, State> {
   render() {
     return (
-      <div className="adress-Recap">
+      <div className="payment">
         <div>
           <h5 className="headers">SWISH DETAILS:</h5>
           <TextField

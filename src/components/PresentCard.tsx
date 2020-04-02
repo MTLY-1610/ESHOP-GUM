@@ -10,7 +10,7 @@ export interface State {}
 class PresentCard extends React.Component<Props, State> {
   render() {
     return (
-      <div className="adress-Recap">
+      <div className="payment">
         <div>
           <h5 className="headers">PRESENTCARD DETAILS:</h5>
           <TextField

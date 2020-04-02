@@ -506,15 +506,7 @@
   padding-bottom: 1rem;
 }
 
-.paymentbutton button {
-  /* flex-grow: 1;
-  border: none;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: #ff5c00;
-  color: white;
-  text-transform: uppercase; */
-}
+
 
 /* PAYMENT*/
 
@@ -522,73 +514,35 @@
   width: 100%;
   height: 95vh;
   display: flex;
-  justify-content: space-evenly;
+  padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+
+  
   flex-direction: row;
 }
 .delivery-box{
   display: flex;
   flex-direction: column;
-  border: 1px solid #ff5c00;
-  width: 50%;
+ 
+  width: 60%;
 
 }
 .payment-box{
   display: flex;
   flex-direction: column;
   
-  border: 1px solid #ff5c00;
+ 
 
 }
-.payment-delivery-method {
-  display: flex;
-  flex-direction: row-reverse;
-}
 
-/* Recap */
-
-.Recap {
-  display: flex;
-  flex-direction: row;
-}
-
-.cart-Recap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 20em;
-  width: 20%;
-  flex-grow: 6;
-  min-height: 25vh;
-  height: auto;
-  padding: 1.25rem 1.25rem 1.25rem 1.25rem;
-  border: 1px solid #ff5c00;
-}
-
-.cart-Recap-Header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-
-.cart-Recap-Header h5 {
-  display: flex;
-}
-
-.card-Total {
-  display: flex;
-  justify-content: flex-end;
-  width: 10rem;
-  margin-left: 0;
-}
-
-/* NOW */
 
 .payment-Solution {
   display: flex;
   flex-direction: column;
- 
   align-items: center;
   justify-content: space-evenly;
+  margin-bottom: .625rem;
+  margin-left: .625rem;
+  padding: .625rem .625rem .625rem .625rem;
   border: 1px solid #ff5c00;
 }
 .radio-div{
@@ -603,6 +557,10 @@
   align-items: center;
   justify-content: space-evenly;
   width: auto;
+  flex-grow: 1;
+  margin-bottom: .625rem;
+  margin-right: .625rem;
+  padding: .625rem .625rem .625rem .625rem;
   border: 1px solid #ff5c00;
 }
 
@@ -617,16 +575,16 @@
   align-items: flex-start;
 }
 
-.pay {
-  display: flex;
-  flex-direction: row;
-}
 
-.adress-Recap>div {
+
+.payment {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+  margin-left: .625rem;
+  margin-top: .625rem;
+  border: 1px solid #ff5c00;
  
 }
 
@@ -635,67 +593,17 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  margin-top: .625rem;
+  margin-right: .625rem;
+  padding: .625rem .625rem .625rem .625rem;
   border: 1px solid #ff5c00;
   
   
 }
 
-.firstname {
-  display: flex;
-  
-}
-
-.validity-ccv {
-  display: flex;
-  
-}
-
-.validity {
-  display: flex;
-  align-items: flex-start;
-  margin-right: 0.5rem;
-}
-
-.ccv {
-  
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.lastname {
-  display: flex;
-}
-
-.adress {
-  
-  display: flex;
-}
-
-.mail {
-  
-  display: flex;
-}
-
-.mail>span {
- 
-}
-
-.card {
-
-  display: flex;
-}
-
-.country {
-  display: flex;
-
-}
-
-.zip {
-  display: flex;
-  
-}
-
 #field {
   width: 30rem !important;
+}
+#field-narrow {
+  width: 15rem !important;
 }

@@ -225,7 +225,7 @@ class Payment extends React.Component<Props, State> {
           
         />
           
-          <PresentCard />
+            <PresentCard />
 
         </div>
       </div>
