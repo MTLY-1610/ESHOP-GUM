@@ -523,9 +523,22 @@
   height: 95vh;
   display: flex;
   justify-content: space-evenly;
-  flex-direction: column;
+  flex-direction: row;
 }
+.delivery-box{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ff5c00;
+  width: 50%;
 
+}
+.payment-box{
+  display: flex;
+  flex-direction: column;
+  
+  border: 1px solid #ff5c00;
+
+}
 .payment-delivery-method {
   display: flex;
   flex-direction: row-reverse;
@@ -572,25 +585,16 @@
 
 .payment-Solution {
   display: flex;
-  width: 100%;
+  flex-direction: column;
+ 
   align-items: center;
   justify-content: space-evenly;
+  border: 1px solid #ff5c00;
 }
-
-.payment-Solution>div {
-  display: flex;
-  justify-content: center;
-}
-
-.delivery-Solution>div {
-  display: flex;
-  justify-content: center;
-}
-
-.Choices {
+.radio-div{
   display: flex;
   flex-direction: column;
-  
+  width: 6rem;
 }
 
 .delivery-Solution {
@@ -598,7 +602,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  width: 100%;
+  width: auto;
+  border: 1px solid #ff5c00;
 }
 
 #shoppingbasket {
@@ -627,11 +632,9 @@
 
 .adress {
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  width: 80%;
-  padding: 1.25rem 1.25rem 1.25rem 1.25rem;
   border: 1px solid #ff5c00;
   
   
@@ -639,23 +642,22 @@
 
 .firstname {
   display: flex;
-  width: 80%;
+  
 }
 
 .validity-ccv {
   display: flex;
-  width: 80%;
+  
 }
 
 .validity {
   display: flex;
   align-items: flex-start;
-  width: 60%;
   margin-right: 0.5rem;
 }
 
 .ccv {
-  width: 40%;
+  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -663,34 +665,37 @@
 
 .lastname {
   display: flex;
-  width: 80%;
 }
 
 .adress {
-  width: 80%;
+  
   display: flex;
 }
 
 .mail {
-  width: 80%;
+  
   display: flex;
 }
 
 .mail>span {
-  width: 100%;
+ 
 }
 
 .card {
-  width: 80%;
+
   display: flex;
 }
 
 .country {
   display: flex;
-  width: 80%;
+
 }
 
 .zip {
   display: flex;
-  width: 80%;
+  
+}
+
+#field {
+  width: 30rem !important;
 }

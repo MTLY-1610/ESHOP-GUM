@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import TotalBox from "./TotalInCart";
-import PaymentDeliveryMethod from "./PaymentDeliveryMethods";
 import { MdShoppingBasket } from "react-icons/md";
 import { ShoppingCartConsumer } from "../contexts/CartContext";
 import CartRow from "./CartRow";

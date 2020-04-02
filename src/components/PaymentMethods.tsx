@@ -9,34 +9,35 @@ export interface Props {
     event: React.ChangeEvent<HTMLInputElement>,
     value: string
   ) => void;
-  checkDelivery: (
-    event: React.ChangeEvent<HTMLInputElement>,
-    value: string
-  ) => void;
+  
 }
 
 export interface State {}
 
-class PaymentDeliveryMethods extends React.Component<Props, State> {
+class PaymentMethods extends React.Component<Props, State> {
   render() {
     return (
       <div className="payment-delivery-method">
         <div className="payment-Solution">
           <h5 className="headers">PAYMENT METHOD</h5>
-          <div>
-            <RadioGroup onChange={this.props.checkPayment} style={flex}>
+          <div className="">
+            <RadioGroup  onChange={this.props.checkPayment} style={flex}>
               <FormControlLabel
                 value="CreditCard"
                 control={<Radio color="primary" />}
                 label="Credit Card"
                 labelPlacement="end"
               />
+              <div className="radio-div">
+                <img src="/images/swish-logo.jpg" alt="bla" width="60 em"/>
+
               <FormControlLabel
                 control={<Radio color="primary" />}
                 value="Swish"
                 label="Swish"
                 labelPlacement="end"
               />
+              </div>
               <FormControlLabel
                 value="PresentCard"
                 control={<Radio color="primary" />}
@@ -44,34 +45,11 @@ class PaymentDeliveryMethods extends React.Component<Props, State> {
                 labelPlacement="end"
               />
             </RadioGroup>
-          </div>
+            </div>
         </div>
-        <div className="delivery-Solution">
-          <h5 className="headers">DELIVERY</h5>
-          <div>
-            <RadioGroup onChange={this.props.checkDelivery} style={flex }>
-              <FormControlLabel
-                value="Express"
-                control={<Radio color="primary" />}
-                label="Express"
-                labelPlacement="end"
-              />
-              <FormControlLabel
-                value="Regular"
-                control={<Radio color="primary" />}
-                label="Regular"
-                labelPlacement="end"
-              />
-              <FormControlLabel
-                value="Free"
-                control={<Radio color="primary" />}
-                label="Free"
-                labelPlacement="end"
-              />
-            </RadioGroup>
-          </div>
         </div>
-      </div>
+    
+      
     );
   }
 }
@@ -79,6 +57,7 @@ class PaymentDeliveryMethods extends React.Component<Props, State> {
 const flex: React.CSSProperties = {
   display: "flex",
   flexDirection: "row"
+  
 };
 
-export default PaymentDeliveryMethods;
+export default PaymentMethods;

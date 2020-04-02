@@ -4,10 +4,12 @@ import CreditCard from "./CreditCard";
 import PresentCard from "./PresentCard";
 import Swish from "./Swish";
 import { Link } from "react-router-dom";
-import PaymentDeliveryMethod from "./PaymentDeliveryMethods";
+import PaymentMethods from "./PaymentMethods";
+import DeliveryMethods from "./DeliveryMethods";
 import { ShoppingCartConsumer } from "../contexts/CartContext";
 import Button from "@material-ui/core/Button";
 import TotalBox from "./TotalInCart";
+
 
 export interface Props {}
 
@@ -165,12 +167,20 @@ class Payment extends React.Component<Props, State> {
     if (this.state.swish !== true && this.state.presentCard !== true) {
       return (
         <div className="payment-layout">
-          <PaymentDeliveryMethod
-            checkPayment={this.paymentMethod}
+          <div className="delivery-box">
+          <DeliveryMethods
+            
             checkDelivery={this.deliveryMethod}
           />
-          <div className="delivery-creditcard-form">
-            <DeliveryForm checkDelivery={this.deliveryMethod} />
+          <DeliveryForm checkDelivery={this.deliveryMethod} />
+          
+          </div>
+         <div className="payment-box">
+         <PaymentMethods
+            checkPayment={this.paymentMethod}
+            
+          />
+            
             <CreditCard onlyNumber={this.onlyNumber} />
           </div>
         </div>
@@ -178,28 +188,49 @@ class Payment extends React.Component<Props, State> {
     } else if (this.state.swish === true) {
       return (
         <div className="payment-layout">
-          <PaymentDeliveryMethod
-            checkPayment={this.paymentMethod}
+          <div className="delivery-box">
+          <DeliveryMethods
+            
             checkDelivery={this.deliveryMethod}
           />
-          <div className="delivery-creditcard-form">
-            <DeliveryForm checkDelivery={this.deliveryMethod} />
+          <DeliveryForm checkDelivery={this.deliveryMethod} />
+          
+          </div>
+         <div className="payment-box">
+         <PaymentMethods
+            checkPayment={this.paymentMethod}
+            
+          />
+            
             <Swish onlyNumber={this.onlyNumber} />
+
           </div>
         </div>
+    
       );
     } else if (this.state.presentCard === true) {
       return (
         <div className="payment-layout">
-          <PaymentDeliveryMethod
-            checkPayment={this.paymentMethod}
-            checkDelivery={this.deliveryMethod}
-          />
-          <div className="delivery-creditcard-form">
-            <DeliveryForm checkDelivery={this.deliveryMethod} />
-            <PresentCard />
-          </div>
+        <div className="delivery-box">
+        <DeliveryMethods
+          
+          checkDelivery={this.deliveryMethod}
+        />
+        <DeliveryForm checkDelivery={this.deliveryMethod} />
+        
         </div>
+       <div className="payment-box">
+       <PaymentMethods
+          checkPayment={this.paymentMethod}
+          
+        />
+          
+          <PresentCard />
+
+        </div>
+      </div>
+         
+          
       );
     }
   }
