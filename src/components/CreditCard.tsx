@@ -17,10 +17,12 @@ class CreditCard extends React.Component<Props, State> {
   };
   render() {
     return (
-      <div className="adress-Recap">
-        <div>
+      <div className="payment">
+        
           <h5 className="headers">CARD DETAILS:</h5>
           <TextField
+            id="field-narrow"
+
             type="name"
             name="Fullname"
             //   value={this.state.firstName}
@@ -29,6 +31,7 @@ class CreditCard extends React.Component<Props, State> {
             //   onKeyDown={this.onlyLetter}
           />
           <TextField
+            id="field-narrow"
             type="tel"
             name="cardNumber"
             label="Card Number"
@@ -36,6 +39,8 @@ class CreditCard extends React.Component<Props, State> {
             onChange={this.cardNrMax}
           />
           <TextField
+            id="field-narrow"
+
             type="tel"
             name="Valid Date"
             //   value={this.state.firstName}
@@ -51,7 +56,7 @@ class CreditCard extends React.Component<Props, State> {
             // onChange={this.handleChange}
             onKeyDown={this.props.onlyNumber}
           />
-        </div>
+      
         <div>
           <Link to="/checkout">
             <Button>Next</Button>

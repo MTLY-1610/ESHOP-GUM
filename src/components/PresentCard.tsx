@@ -10,8 +10,8 @@ export interface State {}
 class PresentCard extends React.Component<Props, State> {
   render() {
     return (
-      <div className="adress-Recap">
-        <div>
+      <div className="payment">
+       
           <h5 className="headers">PRESENTCARD DETAILS:</h5>
           <TextField
             type="name"
@@ -29,7 +29,7 @@ class PresentCard extends React.Component<Props, State> {
             // onChange={this.handleChange}
             //   onKeyDown={this.onlyLetter}
           />
-        </div>
+        
         <div>
           <Link to="/checkout">
             <Button>Next</Button>
