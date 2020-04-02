@@ -49,7 +49,7 @@ class PaymentDeliveryMethods extends React.Component<Props, State> {
         <div className="delivery-Solution">
           <h5 className="headers">DELIVERY</h5>
           <div>
-            <RadioGroup onChange={this.props.checkDelivery} style={flex}>
+            <RadioGroup onChange={this.props.checkDelivery} style={flex }>
               <FormControlLabel
                 value="Express"
                 control={<Radio color="primary" />}

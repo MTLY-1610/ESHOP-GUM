@@ -332,6 +332,7 @@
   cursor: pointer;
   list-style: none;
   flex-wrap: wrap;
+  
 }
 
 .cart {
@@ -348,13 +349,13 @@
   background-color: black;
   color: white;
   cursor: pointer;
+  
 }
 
 .flex-cart {
-  width: 100%;
-  height: 100%;
   display: flex;
   justify-content: space-between;
+  padding: 1.25rem 1.25rem 1.25rem 1.25rem;
 }
 
 .box-for-flex {
@@ -363,12 +364,15 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+  border: 1px solid #ff5c00;
 }
 
 .flex-cart-info {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  
 }
 
 .cart-img-info-div {
@@ -378,7 +382,9 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  border-bottom: 1px solid black;
+  
+
+
 }
 
 .ITEM-cart {
@@ -448,6 +454,7 @@
   display: flex;
   flex-direction: column;
   padding-left: 0.5rem;
+  
 }
 
 .totalDiv {
@@ -457,6 +464,8 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+  border: 1px solid #ff5c00;
 }
 
 .subheader-total {
@@ -580,11 +589,13 @@
 
 .Choices {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  
 }
 
 .delivery-Solution {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
@@ -611,15 +622,19 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+ 
 }
 
-.adress-Recap {
+.adress {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
   width: 80%;
-  height: 100%;
+  padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+  border: 1px solid #ff5c00;
+  
+  
 }
 
 .firstname {

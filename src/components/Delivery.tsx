@@ -13,7 +13,7 @@ export interface State {}
 class DeliveryForm extends React.Component<Props, State> {
   render() {
     return (
-      <div className="adress-Recap">
+      <div className="adress">
         <div>
           <h5 className="headers">DELIVERY ADRESS</h5>
           <TextField type="name" name="firstname" label="First Name" />
