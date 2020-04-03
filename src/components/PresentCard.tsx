@@ -3,6 +3,7 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 
+
 export interface Props {}
 
 export interface State {}
@@ -31,13 +32,16 @@ class PresentCard extends React.Component<Props, State> {
           />
         
         <div>
+        
           <Link to="/checkout">
-            <Button>Next</Button>
+            <Button variant="outlined" color="secondary">Next</Button>
           </Link>
+          
         </div>
       </div>
     );
   }
 }
+
 
 export default PresentCard;

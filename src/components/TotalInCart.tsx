@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
+import Button from "@material-ui/core/Button";
 import {
   ShoppingCartContext,
   ShoppingCartConsumer
@@ -44,9 +45,8 @@ class TotalBox extends React.Component<Props, State> {
                 <p>{value.totalAmount()}$</p>
               </div>
               <div className="paymentbutton">
-                <Link to="/payment">
-                  <button>CHECKOUT</button>
-                </Link>
+              
+              <Button variant="outlined" color="secondary" href="payment">CHECKOUT</Button>
               </div>
             </>
           )

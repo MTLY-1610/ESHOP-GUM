@@ -23,15 +23,18 @@ class PaymentMethods extends React.Component<Props, State> {
           
             <RadioGroup  onChange={this.props.checkPayment} style={flex}>
               <FormControlLabel
+                
+                id="radio"
                 value="CreditCard"
                 control={<Radio color="primary" />}
                 label="Credit Card"
                 labelPlacement="end"
               />
               <div className="radio-div">
-                <img src="/images/swish-logo.jpg" alt="bla" width="60 em"/>
+                <img src="/images/Swish-logo.jpg" alt="" width="60 em"/>
 
               <FormControlLabel
+                id="radio"
                 control={<Radio color="primary" />}
                 value="Swish"
                 label="Swish"
@@ -39,6 +42,7 @@ class PaymentMethods extends React.Component<Props, State> {
               />
               </div>
               <FormControlLabel
+                id="radio"
                 value="PresentCard"
                 control={<Radio color="primary" />}
                 label="Present Card"
@@ -57,7 +61,7 @@ class PaymentMethods extends React.Component<Props, State> {
 const flex: React.CSSProperties = {
   display: "flex",
   flexDirection: "row"
+ 
   
 };
-
 export default PaymentMethods;

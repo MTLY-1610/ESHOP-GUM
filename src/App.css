@@ -467,6 +467,12 @@
   padding: 1.25rem 1.25rem 1.25rem 1.25rem;
   border: 1px solid #ff5c00;
 }
+.totalDiv p{
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+
 
 .subheader-total {
   width: 60%;
@@ -566,6 +572,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  
   width: 100%;
   margin-left: .625rem;
   margin-top: .625rem;
@@ -619,4 +626,7 @@
 }
 #field-narrow {
   width: 15rem !important;
+}
+#radio{
+  font-size: 4pt !important;
 }
