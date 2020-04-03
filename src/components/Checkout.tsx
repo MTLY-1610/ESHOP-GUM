@@ -81,8 +81,9 @@ class Checkout extends React.Component<Props, State> {
                   </div>
                 )}
               </CheckoutConsumer>
-              <Link to="/confirmation">
-                <Button>Confirm order</Button>
+              <Link   to="/confirmation" style={{ textDecoration: 'none' }}>
+              <Button id="next-button" variant="contained" color="primary" >CONFIRM ORDER
+              </Button>
               </Link>
             </div>
           )

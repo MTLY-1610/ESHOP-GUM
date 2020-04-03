@@ -17,7 +17,7 @@ export interface State {}
 class PaymentMethods extends React.Component<Props, State> {
   render() {
     return (
-      <div className="payment-delivery-method">
+      
         <div className="payment-Solution">
           <h5 className="headers">PAYMENT METHOD</h5>
           
@@ -47,7 +47,7 @@ class PaymentMethods extends React.Component<Props, State> {
             </RadioGroup>
             
         </div>
-        </div>
+        
     
       
     );
