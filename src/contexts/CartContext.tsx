@@ -13,8 +13,12 @@ const defaultState = {
   removeCartRow: () => {},
   shipping: () => 0,
   totalAmount: () => 0,
+  expressChecked: () => false,
+  regularChecked: () => false,
+  freeChecked: () => false,
   shippingAmount: 0,
   date: 0,
+  radio: "",
   isDateTrue: false
 };
 
@@ -27,9 +31,13 @@ export interface State {
   removeCartRow: (id: number, count: number) => void;
   shoppingCart: Array<CartItem>;
   totalAmount: () => number;
+  expressChecked: () => boolean;
+  regularChecked: () => boolean;
+  freeChecked: () => boolean;
   shipping: (event: React.ChangeEvent<HTMLInputElement>, value: string) => void;
   shippingAmount: string | number;
   date: number | string;
+  radio: string;
 
   isDateTrue: boolean;
 }
@@ -42,12 +50,38 @@ class ShoppingCartProvider extends React.Component<Props, State> {
       shoppingCart: [],
       removeCartRow: this.removeCartRow,
       totalAmount: this.totalAmount,
+      expressChecked: this.expressChecked,
+      regularChecked: this.regularChecked,
+      freeChecked: this.freeChecked,
       isDateTrue: false,
       date: 0,
+      radio: "",
       shipping: this.shipping,
       shippingAmount: 0
     };
   }
+
+  expressChecked = () => {
+    if (this.state.radio === "Express") {
+      return true;
+    } else {
+      return false;
+    }
+  };
+  regularChecked = () => {
+    if (this.state.radio === "Regular") {
+      return true;
+    } else {
+      return false;
+    }
+  };
+  freeChecked = () => {
+    if (this.state.radio === "Free") {
+      return true;
+    } else {
+      return false;
+    }
+  };
 
   shipping = (event: React.ChangeEvent<HTMLInputElement>, value: string) => {
     let newDate = new Date();
@@ -75,14 +109,17 @@ class ShoppingCartProvider extends React.Component<Props, State> {
     }
 
     if (event.target.value === "Free") {
+      this.setState({ radio: "Free" });
       this.setState({ isDateTrue: true });
       this.setState({ date: free });
       this.setState({ shippingAmount: 0 });
     } else if (event.target.value === "Regular") {
+      this.setState({ radio: "Regular" });
       this.setState({ isDateTrue: true });
       this.setState({ shippingAmount: "19" });
       this.setState({ date: regular });
     } else if (event.target.value === "Express") {
+      this.setState({ radio: "Express" });
       this.setState({ isDateTrue: true });
       this.setState({ date: express });
       this.setState({ shippingAmount: "29" });
