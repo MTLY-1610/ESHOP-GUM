@@ -1,22 +1,31 @@
 {
   "files": {
     "main.css": "/sneakers/static/css/main.bb600456.chunk.css",
-    "main.js": "/sneakers/static/js/main.a2e64603.chunk.js",
-    "main.js.map": "/sneakers/static/js/main.a2e64603.chunk.js.map",
+    "main.js": "/sneakers/static/js/main.d6542a4a.chunk.js",
+    "main.js.map": "/sneakers/static/js/main.d6542a4a.chunk.js.map",
     "runtime-main.js": "/sneakers/static/js/runtime-main.da45dab3.js",
     "runtime-main.js.map": "/sneakers/static/js/runtime-main.da45dab3.js.map",
-    "static/js/2.b6e09112.chunk.js": "/sneakers/static/js/2.b6e09112.chunk.js",
-    "static/js/2.b6e09112.chunk.js.map": "/sneakers/static/js/2.b6e09112.chunk.js.map",
+    "static/js/2.a2ad7a7c.chunk.js": "/sneakers/static/js/2.a2ad7a7c.chunk.js",
+    "static/js/2.a2ad7a7c.chunk.js.map": "/sneakers/static/js/2.a2ad7a7c.chunk.js.map",
     "index.html": "/sneakers/index.html",
-    "precache-manifest.70a6c3ba62e7a1007248f1fa797849ad.js": "/sneakers/precache-manifest.70a6c3ba62e7a1007248f1fa797849ad.js",
+    "precache-manifest.b6688298c3a1654aa10d18ff669fec20.js": "/sneakers/precache-manifest.b6688298c3a1654aa10d18ff669fec20.js",
     "service-worker.js": "/sneakers/service-worker.js",
     "static/css/main.bb600456.chunk.css.map": "/sneakers/static/css/main.bb600456.chunk.css.map",
-    "static/js/2.b6e09112.chunk.js.LICENSE.txt": "/sneakers/static/js/2.b6e09112.chunk.js.LICENSE.txt"
+    "static/js/2.a2ad7a7c.chunk.js.LICENSE.txt": "/sneakers/static/js/2.a2ad7a7c.chunk.js.LICENSE.txt",
+    "static/media/adidas-lxcon-x-wm.jpg": "/sneakers/static/media/adidas-lxcon-x-wm.484ebaa3.jpg",
+    "static/media/air-force-1-07-qs.jpg": "/sneakers/static/media/air-force-1-07-qs.d2f95448.jpg",
+    "static/media/converse-pro-leather-og-ox.jpg": "/sneakers/static/media/converse-pro-leather-og-ox.8af8beb5.jpg",
+    "static/media/miror.png": "/sneakers/static/media/miror.7c98aac5.png",
+    "static/media/nike-air-max-720-ispa.jpg": "/sneakers/static/media/nike-air-max-720-ispa.d8270ad7.jpg",
+    "static/media/nike-air-wildwood-acg.jpg": "/sneakers/static/media/nike-air-wildwood-acg.f3b90589.jpg",
+    "static/media/nike-gts-return-premium.jpg": "/sneakers/static/media/nike-gts-return-premium.62c32cc2.jpg",
+    "static/media/sweet-liberty.png": "/sneakers/static/media/sweet-liberty.0b1842cc.png",
+    "static/media/vans-og-old-skool-lx.jpg": "/sneakers/static/media/vans-og-old-skool-lx.800f52a4.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.da45dab3.js",
-    "static/js/2.b6e09112.chunk.js",
+    "static/js/2.a2ad7a7c.chunk.js",
     "static/css/main.bb600456.chunk.css",
-    "static/js/main.a2e64603.chunk.js"
+    "static/js/main.d6542a4a.chunk.js"
   ]
 }
