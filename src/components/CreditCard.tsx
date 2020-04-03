@@ -54,10 +54,11 @@ class CreditCard extends React.Component<Props, State> {
                 onKeyDown={this.props.onlyNumber}
               />
             </div>
-            <div>
-            <Link   to="/checkout" style={{ textDecoration: 'none' }}>
-              <Button id="next-button" variant="contained" color="primary" >CHECKOUT
-              </Button>
+            <div className="buttonDiv">
+              <Link to="/checkout" style={{ textDecoration: "none" }}>
+                <Button id="next-button" variant="contained" color="primary">
+                  CHECKOUT
+                </Button>
               </Link>
             </div>
           </div>

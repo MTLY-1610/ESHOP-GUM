@@ -35,10 +35,15 @@ class PresentCard extends React.Component<Props, State> {
                 //   onKeyDown={this.onlyLetter}
               />
             </div>
-            <div>
-            <Button id="next-button" variant="contained" color="primary" href="checkout">
-  CHECKOUT
-</Button>
+            <div className="buttonDiv">
+              <Button
+                id="next-button"
+                variant="contained"
+                color="primary"
+                href="checkout"
+              >
+                CHECKOUT
+              </Button>
             </div>
           </div>
         )}

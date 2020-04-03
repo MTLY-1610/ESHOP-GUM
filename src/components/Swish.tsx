@@ -37,10 +37,11 @@ class Swish extends React.Component<Props, State> {
                 inputProps={{ maxLength: 10 }}
               />
             </div>
-            <div>
-            <Link   to="/checkout" style={{ textDecoration: 'none' }}>
-              <Button id="next-button" variant="contained" color="primary" >CHECK out
-              </Button>
+            <div className="buttonDiv">
+              <Link to="/checkout" style={{ textDecoration: "none" }}>
+                <Button id="next-button" variant="contained" color="primary">
+                  CHECK out
+                </Button>
               </Link>
             </div>
           </div>
