@@ -59,9 +59,7 @@ class CreditCard extends React.Component<Props, State> {
           />
       
         <div>
-          <Link to="/checkout">
-            <Button>Next</Button>
-          </Link>
+        <Button id="button-overide" variant="contained" color="primary" href="checkout">CHECKOUT</Button>
         </div>
       </div>
     );

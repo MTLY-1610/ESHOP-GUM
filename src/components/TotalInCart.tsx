@@ -46,7 +46,7 @@ class TotalBox extends React.Component<Props, State> {
               </div>
               <div className="paymentbutton">
               
-              <Button variant="outlined" color="secondary" href="payment">CHECKOUT</Button>
+              <Button id="button-overide" variant="outlined" color="secondary" href="payment">CHECKOUT</Button>
               </div>
             </>
           )
