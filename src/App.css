@@ -856,11 +856,22 @@
   }
   .checkout-delivery-payment-wrapper {
     display: flex;
+    flex-direction: row;
     width: 80%;
-    justify-content: space-between;
+    justify-content: stretch;
     align-items: center;
     padding: .625rem .625rem .625rem .625rem;
     background-color: rgb(112, 112, 112, 0.12);
+  }
+  .checkout-delivery {
+    display: flex;
+    flex-direction: column;
+
+  }
+  
+  .checkout-payment {
+    display: flex;
+    flex-direction: column;
   }
   
 }
