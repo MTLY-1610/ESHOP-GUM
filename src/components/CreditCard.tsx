@@ -17,7 +17,7 @@ class CreditCard extends React.Component<Props, State> {
       <CheckoutConsumer>
         {value => (
           <div className="adress-Recap">
-            <div>
+            <div className="payment-details">
               <h5 className="headers">CARD DETAILS:</h5>
               <TextField
                 type="name"
@@ -55,9 +55,10 @@ class CreditCard extends React.Component<Props, State> {
               />
             </div>
             <div>
-            <Button id="next-button" variant="contained" color="primary" href="checkout">
-  CHECKOUT
-</Button>
+            <Link   to="/checkout" style={{ textDecoration: 'none' }}>
+              <Button id="next-button" variant="contained" color="primary" >CHECKOUT
+              </Button>
+              </Link>
             </div>
           </div>
         )}

@@ -28,8 +28,8 @@ class PaymentMethods extends React.Component<Props, State> {
                 label="Credit Card"
                 labelPlacement="end"
               />
-              <div className="radio-div">
-                <img src="/images/swish-logo.jpg" alt="bla" width="60 em"/>
+              
+                
 
               <FormControlLabel
                 control={<Radio color="primary" />}
@@ -37,7 +37,7 @@ class PaymentMethods extends React.Component<Props, State> {
                 label="Swish"
                 labelPlacement="end"
               />
-              </div>
+              
               <FormControlLabel
                 value="PresentCard"
                 control={<Radio color="primary" />}

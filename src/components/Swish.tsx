@@ -17,7 +17,7 @@ class Swish extends React.Component<Props, State> {
       <CheckoutConsumer>
         {value => (
           <div className="adress-Recap">
-            <div>
+            <div className="payment-details">
               <h5 className="headers">SWISH DETAILS:</h5>
               <TextField
                 type="name"

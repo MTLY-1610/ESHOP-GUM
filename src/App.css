@@ -514,12 +514,15 @@
   width: 100%;
   height: 95vh;
   display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
   padding: 1.25rem 1.25rem 1.25rem 1.25rem;
 
   
   flex-direction: row;
 }
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 840px) {
   .payment-layout {
     width: 100%;
     height: 95vh;
@@ -531,7 +534,7 @@
 .delivery-box{
   display: flex;
   flex-direction: column;
-  width: 54.5%;
+  width: 40%;
 
 }
 .payment-box{
@@ -583,7 +586,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
- 
+  width: 100%;
   flex-grow: 1;
   margin-bottom: .625rem;
   margin-right: .625rem;
@@ -602,7 +605,30 @@
   align-items: flex-start;
 }
 
+.payment-details{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: .625rem;
+  width: 100%;
+  margin-left: .625rem;
+  flex-grow: 1;
+  padding: .625rem .625rem 1.625rem .625rem;
+  border: 1px solid #ff5c00;
 
+}
+
+.delivery-details{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: .625rem;
+  padding: .625rem .625rem 1.625rem .625rem;
+  border: 1px solid #ff5c00;
+
+}
 
 
 
@@ -613,7 +639,7 @@
   align-items: center;
   margin-top: .625rem;
   margin-right: .625rem;
-  padding: .625rem .625rem .625rem .625rem;
+  padding: .625rem .625rem 1.625rem .625rem;
   border: 1px solid #ff5c00;
   
   
@@ -621,7 +647,9 @@
 
 #field {
   width: 30rem !important;
+  min-width: 15rem !important;
 }
+
 
 #field-narrow {
   width: 15rem !important;

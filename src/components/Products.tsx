@@ -30,12 +30,12 @@ class Products extends React.Component<Props, State> {
   keydown = (event: { keyCode: number }) => {
     if (event.keyCode === 39) {
       if (this.state.property !== 247) {
-        this.setState({ property: this.state.property + 1 });
+        this.setState({ property: this.state.property + 50 });
       }
     }
     if (event.keyCode === 37) {
       if (this.state.property !== 0) {
-        this.setState({ property: this.state.property - 1 });
+        this.setState({ property: this.state.property - 50 });
       }
     }
   };

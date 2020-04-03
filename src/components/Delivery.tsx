@@ -17,8 +17,8 @@ class DeliveryForm extends React.Component<Props, State> {
     return (
       <CheckoutConsumer>
         {value => (
-          <div className="adress">
-            <div>
+          
+            <div className="delivery-details">
               <h5 className="headers">DELIVERY ADRESS</h5>
               <TextField
                 id="field"
@@ -66,7 +66,7 @@ class DeliveryForm extends React.Component<Props, State> {
               />
                
             </div>
-          </div>
+          
         )}
       </CheckoutConsumer>
     );
