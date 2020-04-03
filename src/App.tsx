@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
+import Confirmation from "./components/Confirmation";
 import Cart from "./components/Cart";
 import Products from "./components/Products";
 import Navbar from "./components/Navbar";
@@ -24,7 +25,8 @@ function App() {
             <Route path="/cart" component={Cart} />
             <Route path="/checkout" component={Checkout} />
             <Route path="/payment" component={Payment} />
-            <Route path="/:item" component={Item}  />
+            <Route path="/confirmation" component={Confirmation} />
+            <Route path="/:item" component={Item} />
             <Route component={NoPage} />
           </Switch>
         </div>

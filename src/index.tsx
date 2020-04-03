@@ -4,14 +4,17 @@ import App from "./App";
 import { BrowserRouter as Route } from "react-router-dom";
 import { ProductProvider } from "./contexts/ProductContext";
 import { ShoppingCartProvider } from "./contexts/CartContext";
+import { CheckoutProvider } from "./contexts/CheckoutContext";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <ProductProvider>
     <ShoppingCartProvider>
-      <Route>
-        <App />
-      </Route>
+      <CheckoutProvider>
+        <Route>
+          <App />
+        </Route>
+      </CheckoutProvider>
     </ShoppingCartProvider>
   </ProductProvider>,
   document.getElementById("root")
