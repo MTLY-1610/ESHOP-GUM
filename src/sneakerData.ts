@@ -17,7 +17,7 @@ export const productData: Array<Product> = [
     description:
       "Debuted in the late ’90s as a running sneaker alternative to the already pretty stacked Nike running catalog, the Nike Air Max Triax 96 SP returns in a full camo look for the inner-city camouflage-fit finish. Constructed with a lightweight mesh and synthetic upper, boasting a large-volume visible Air unit, the Safari Camo Nike Air Max Triax 96 is more than just a camo sneaker, it’s the cherry on the ice of all camo sneakers.",
     inCart: false,
-    img: require("../images/miror.png"),
+    img: require("./images/miror.png"),
   },
   {
     id: 1,
@@ -27,7 +27,7 @@ export const productData: Array<Product> = [
     description:
       "Converse nods to its extensive basketball history in the ‘70s and ‘80s with the “Raise Your Game” pack. The homage to vintage basketball shoes includes the Converse Pro Leather OG, kept in a subtle cream/white, boasting a gold foil “Pro Leather” logo as well as the signature Chevron logo. Made from premium leather and featuring luxe leather lining, this blast from the past celebrates the rich history of Converse basketball and is round off by an American flag sockliner.",
     inCart: false,
-    img: require("/..images/converse-pro-leather-og-ox.jpg"),
+    img: require("./images/converse-pro-leather-og-ox.jpg"),
   },
 
   {
@@ -38,7 +38,7 @@ export const productData: Array<Product> = [
     description:
       "Long-time adidas partner and Japanese brand White Mountaineering reimagine one of adidas’ bold sneakers that reappeared over the previous months. The adidas LXCON, a reinterpretation of the adidas Lexicon comes equipped with a futuristic retro look featuring a unique piping construction that flips the lacing system into buckles.",
     inCart: false,
-    img: require("../images/adidas-lxcon-x-wm.jpg"),
+    img: require("./images/adidas-lxcon-x-wm.jpg"),
   },
   {
     id: 3,
@@ -48,7 +48,7 @@ export const productData: Array<Product> = [
     description:
       "Nike’s latest skateboarding shoe, the Nike SB GTS Return offers a classic look, namely the colorway of the OG Air Max 1. Dressed in red and white, as the original retro runner, the premium skate show reinterprets a classic Nike skate shoe with a cupsole for a more flexible and lightweight construction for daily on and off the deck wear.",
     inCart: false,
-    img: require("../images/nike-gts-return-premium.jpg"),
+    img: require("./images/nike-gts-return-premium.jpg"),
   },
   {
     id: 4,
@@ -58,7 +58,7 @@ export const productData: Array<Product> = [
     description:
       "Premium versions of classic shoes are well-seen item (at least here in our office), this Vans Old Skool looks to the original design but utilizes a luce update, featuring an all-suede upper and vulcanized off-white midsole for a great contrast. The leather Vans sidestripe rounds off a staple that shouldn’t be missing your rotation.",
     inCart: false,
-    img: require("../images/vans-og-old-skool-lx.jpg"),
+    img: require("./images/vans-og-old-skool-lx.jpg"),
   },
   {
     id: 5,
@@ -68,7 +68,7 @@ export const productData: Array<Product> = [
     description:
       "Sending you straight back to 1989 with these Nike Air Wildwood ACGs. The perfect mix of sneaker and outdoor shoe, made with a leather upper, the Nike Air Wildwood ACG is the truth, like Paul Pierce. Get the latest drop now.",
     inCart: false,
-    img: require("../images/nike-air-wildwood-acg.jpg"),
+    img: require("./images/nike-air-wildwood-acg.jpg"),
   },
   {
     id: 6,
@@ -78,7 +78,7 @@ export const productData: Array<Product> = [
     description:
       "The Nike ISPA Air Max 720 combines Nike innovation and a futuristic Ninja-themed feeling. The technical sneaker from Nike’s improvise, scavenge, protect and adapt thinktank is inspired by the Zoom Turf 96, featuring Nike’s biggest heel Air boasting “Contains High Pressure Nitrogen” lettering, to cushion every step of yours like a cloud. The eye-catching rubber outsole comes with rubber pods to provide a grippy stand.",
     inCart: false,
-    img: require("../images/nike-air-max-720-ispa.jpg"),
+    img: require("./images/nike-air-max-720-ispa.jpg"),
   },
   {
     id: 7,
@@ -88,7 +88,7 @@ export const productData: Array<Product> = [
     description:
       "Mid-February is the time for most of the NBA to relax and take a quick break if you weren’t selected to participate in the NBA All-Star Game. This year the exhibition and all-around fun game will be held in Chicago, and if you know your sneakers, you know that Nike brings out the big guns for the event. The Nike Air Force 1 ´07 “City of Dreams” is part of the extensive ASG line-up and features a multicolored upper highlighting the diversity of Chi-Town, which is locked-down through a unique heel tap embroidered reading “NIKE CHI.” 3M reflective detailing as well as mismatching gum rubber midsole offering a great finish.",
     inCart: false,
-    img: require("../images/air-force-1-07-qs.jpg"),
+    img: require("./images/air-force-1-07-qs.jpg"),
   },
 ];
 
@@ -101,6 +101,6 @@ export const detailData: Array<Product> = [
     description:
       "Mid-February is the time for most of the NBA to relax and take a quick break if you weren’t selected to participate in the NBA All-Star Game. This year the exhibition and all-around fun game will be held in Chicago, and if you know your sneakers, you know that Nike brings out the big guns for the event. The Nike Air Force 1 ´07 “City of Dreams” is part of the extensive ASG line-up and features a multicolored upper highlighting the diversity of Chi-Town, which is locked-down through a unique heel tap embroidered reading “NIKE CHI.” 3M reflective detailing as well as mismatching gum rubber midsole offering a great finish.",
     inCart: false,
-    img: require("/images/air-force-1-07-qs.jpg"),
+    img: require("./images/air-force-1-07-qs.jpg"),
   },
 ];

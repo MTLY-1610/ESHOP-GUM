@@ -30,7 +30,7 @@ const width: React.CSSProperties = {
 const styling: React.CSSProperties = {
   width: "99%",
   height: "98%",
-  backgroundImage: require("../images/sweet-liberty.png)"),
+  backgroundImage: require("./images/sweet-liberty.png)"),
 
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
