@@ -8,9 +8,7 @@ import { CartItem } from "../contexts/CartContext";
 import Button from "@material-ui/core/Button";
 import { RadioGroup, FormControlLabel, Radio } from "@material-ui/core";
 
-export interface Props {
-  isChecked: () => void;
-}
+export interface Props {}
 
 export interface State {}
 
@@ -82,9 +80,7 @@ class TotalBox extends React.Component<Props, State> {
               </div>
               <div className="paymentbutton">
                 <Link to="/payment" style={{ textDecoration: "none" }}>
-                  <Button id="next-button" variant="contained" color="primary">
-                    TO PAYMENT
-                  </Button>
+                  <Button id="next-button">TO PAYMENT</Button>
                 </Link>
               </div>
             </>

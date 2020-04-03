@@ -14,7 +14,6 @@ class Cart extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
   }
-  isChecked = () => {};
   render() {
     return (
       <ShoppingCartConsumer>
@@ -49,7 +48,7 @@ class Cart extends React.Component<Props, State> {
               </div>
 
               <div className="totalDiv">
-                <TotalBox isChecked={this.isChecked} />
+                <TotalBox />
               </div>
             </div>
           )
