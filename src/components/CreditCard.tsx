@@ -23,7 +23,7 @@ class CreditCard extends React.Component<Props, State> {
                 type="name"
                 name="Fullname"
                 //   value={this.state.firstName}
-                label="Name on card"
+                label="Full name"
                 onChange={value.getName}
                 //   onKeyDown={this.onlyLetter}
               />
@@ -39,7 +39,7 @@ class CreditCard extends React.Component<Props, State> {
                 type="tel"
                 name="Valid Date"
                 //   value={this.state.firstName}
-                label="Valid (MM/YY)"
+                label="Valid(MM/YY)"
                 inputProps={{ maxLength: 5 }}
                 onKeyDown={this.props.onlyNumber}
                 onChange={value.getExpireDay}
