@@ -17,7 +17,7 @@ export const productData: Array<Product> = [
     description:
       "Debuted in the late ’90s as a running sneaker alternative to the already pretty stacked Nike running catalog, the Nike Air Max Triax 96 SP returns in a full camo look for the inner-city camouflage-fit finish. Constructed with a lightweight mesh and synthetic upper, boasting a large-volume visible Air unit, the Safari Camo Nike Air Max Triax 96 is more than just a camo sneaker, it’s the cherry on the ice of all camo sneakers.",
     inCart: false,
-    img: "/images/miror.png"
+    img: "images/miror.png"
   },
   {
     id: 1,
@@ -27,7 +27,7 @@ export const productData: Array<Product> = [
     description:
       "Converse nods to its extensive basketball history in the ‘70s and ‘80s with the “Raise Your Game” pack. The homage to vintage basketball shoes includes the Converse Pro Leather OG, kept in a subtle cream/white, boasting a gold foil “Pro Leather” logo as well as the signature Chevron logo. Made from premium leather and featuring luxe leather lining, this blast from the past celebrates the rich history of Converse basketball and is round off by an American flag sockliner.",
     inCart: false,
-    img: "/images/converse-pro-leather-og-ox.jpg"
+    img: "images/converse-pro-leather-og-ox.jpg"
   },
 
   {

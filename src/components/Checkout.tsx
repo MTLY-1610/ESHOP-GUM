@@ -20,15 +20,16 @@ class Checkout extends React.Component<Props, State> {
     };
   }
   delayConfirmation = (
-    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     setTimeout(() => {
       this.setState({ confirmation: true });
     }, 1000);
   };
+
   render() {
     if (this.state.confirmation === true) {
-      <Confirmation />;
+      return <Confirmation />;
     } else {
       return (
         <ShoppingCartConsumer>
@@ -102,14 +103,9 @@ class Checkout extends React.Component<Props, State> {
                   )}
                 </CheckoutConsumer>
 
-                <Link
-                  onClick={this.delayConfirmation}
-                  style={{ textDecoration: "none" }}
-                >
-                  <Button id="next-button" variant="contained" color="primary">
-                    CONFIRM ORDER
-                  </Button>
-                </Link>
+                <button onClick={this.delayConfirmation} id="next-button">
+                  CONFIRM ORDER
+                </button>
               </div>
             )
           }
