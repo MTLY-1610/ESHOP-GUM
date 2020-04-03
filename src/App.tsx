@@ -13,7 +13,7 @@ import Payment from "./components/Payment";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/sneakers">
       <div className="container">
         <div className="layout-navbar-flex">
           <Navbar />
