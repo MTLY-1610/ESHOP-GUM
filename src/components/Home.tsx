@@ -25,19 +25,19 @@ const width: React.CSSProperties = {
   background: "white",
   display: "flex",
   justifyContent: "center",
-  alignItems: "center"
+  alignItems: "center",
 };
 const styling: React.CSSProperties = {
   width: "99%",
   height: "98%",
-  backgroundImage: "url(../../images/sweet-liberty.png)",
+  backgroundImage: require("/images/sweet-liberty.png)"),
 
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
   display: "flex",
   justifyContent: "center",
-  alignItems: "center"
+  alignItems: "center",
 };
 
 export default Home;

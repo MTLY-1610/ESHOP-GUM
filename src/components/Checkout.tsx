@@ -103,7 +103,11 @@ class Checkout extends React.Component<Props, State> {
                   )}
                 </CheckoutConsumer>
 
-                <button onClick={this.delayConfirmation} id="next-button">
+                <button
+                  style={button}
+                  onClick={this.delayConfirmation}
+                  id="next-button"
+                >
                   CONFIRM ORDER
                 </button>
               </div>
@@ -122,6 +126,10 @@ const flex: React.CSSProperties = {
   textAlign: "center",
   width: "100%",
   height: "100%"
+};
+const button: React.CSSProperties = {
+  padding: "1rem",
+  border: "none"
 };
 
 export default Checkout;
