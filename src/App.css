@@ -804,14 +804,20 @@
   align-items: center;
   flex-direction: column;
 }
-
+.checkout.box{
+  display: flex;
+  flex-direction: column;
+ 
+  padding: .625rem .625rem .625rem .625rem;
+  background-color: rgb(112, 112, 112, 0.12);
+}
 .checkout-products {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   width: 40%;
   padding: .625rem .625rem .625rem .625rem;
-    border: 1px solid #ff5c00;
+  background-color: rgb(112, 112, 112, 0.12);
 }
 
 .checkout-products-brandmodel {
@@ -826,7 +832,7 @@
   flex-direction: column;
   width: 40%;
   padding: .625rem .625rem .625rem .625rem;
-    border: 1px solid #ff5c00;
+  background-color: rgb(112, 112, 112, 0.12);
 }
 
 .checkout-shipping {
@@ -850,7 +856,7 @@
   justify-content: space-between;
   align-items: center;
   padding: .625rem .625rem .625rem .625rem;
-    border: 1px solid #ff5c00;
+  background-color: rgb(112, 112, 112, 0.12);
 }
 
 .checkout-delivery {

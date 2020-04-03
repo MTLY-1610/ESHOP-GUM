@@ -38,9 +38,10 @@ class Swish extends React.Component<Props, State> {
               />
             </div>
             <div>
-            <Button id="next-button" variant="contained" color="primary" href="checkout">
-  CHECKOUT
-</Button>
+            <Link   to="/checkout" style={{ textDecoration: 'none' }}>
+              <Button id="next-button" variant="contained" color="primary" >CHECK out
+              </Button>
+              </Link>
             </div>
           </div>
         )}
