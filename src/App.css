@@ -784,6 +784,19 @@
     flex-direction: column;
   }
   @media screen and (max-width: 840px) {
+    .flex-cart{
+      flex-direction: column;
+      align-items: center;
+     
+      height: auto;
+    }
+    .box-for-flex{
+      width: 80%;
+    }.totalDiv{
+      width: 80%;
+      height:auto;
+    }
+    .
     .zip {
       display: flex;
       width: 80%;
