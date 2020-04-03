@@ -36,6 +36,18 @@
   align-items: center;
 }
 
+@media screen and (max-width: 840px) {
+  .nav {
+    width: 35px;
+    background-color: white;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
 /* CONTENT */
 
 .layout-only-for-flex {
