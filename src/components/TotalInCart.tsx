@@ -5,6 +5,7 @@ import {
   ShoppingCartConsumer
 } from "../contexts/CartContext";
 import { CartItem } from "../contexts/CartContext";
+import Button from "@material-ui/core/Button";
 import { RadioGroup, FormControlLabel, Radio } from "@material-ui/core";
 
 export interface Props {
@@ -80,9 +81,9 @@ class TotalBox extends React.Component<Props, State> {
                 <p>{value.totalAmount() + Number(value.shippingAmount)}$</p>
               </div>
               <div className="paymentbutton">
-                <Link to="/payment">
-                  <button>CHECKOUT</button>
-                </Link>
+              <Button id="next-button" variant="contained" color="primary" href="PAYMENT">
+                    TO PAYMENT
+                    </Button>
               </div>
             </>
           )

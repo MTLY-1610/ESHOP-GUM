@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import TotalBox from "./TotalInCart";
+import Button from "@material-ui/core/Button";
 import { MdShoppingBasket } from "react-icons/md";
 import { ShoppingCartConsumer } from "../contexts/CartContext";
 import CartRow from "./CartRow";
@@ -25,9 +26,9 @@ class Cart extends React.Component<Props, State> {
                   <div style={emptyCartDiv}>
                     <MdShoppingBasket id="shoppingbasket" />
                     <h2>Your cart is currently empty</h2>
-                    <Link to="/products">
-                      <h3>Continue Shopping</h3>
-                    </Link>
+                    <Button id="next-button" variant="contained" color="primary" href="PRODUCTS">
+                    CONTINUE SHOPPING
+                    </Button>
                   </div>
                 </div>
               ) : (

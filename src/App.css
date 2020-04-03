@@ -626,10 +626,16 @@
 #field-narrow {
   width: 15rem !important;
 }
-
+#next-button{
+  background-color: #ff5c00;
+  color: white;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
 .zip {
   display: flex;
   width: 80%;
+
 }
 
 .checkout-flex {
