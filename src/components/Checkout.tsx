@@ -60,7 +60,7 @@ class Checkout extends React.Component<Props, State> {
                   {value => (
                     <div className="checkout-delivery-payment-wrapper">
                       <div className="checkout-delivery">
-                        <h3>Delivery</h3>
+                        <h5>Delivery</h5>
                         <h5>{value.fullname}</h5>
                         <h5>{value.adress}</h5>
                         <h5>
@@ -68,7 +68,7 @@ class Checkout extends React.Component<Props, State> {
                         </h5>
                       </div>
                       <div className="checkout-payment">
-                        <h3>Payment details</h3>
+                        <h5>Payment details</h5>
                         <h5>{value.fullname}</h5>
                         {value.cardNr.length !== 4 ? (
                           <></>
