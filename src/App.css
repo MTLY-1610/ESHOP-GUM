@@ -634,6 +634,7 @@
 }
 
 @media screen and (max-width: 840px) {
+
   .layout-only-for-flex {
     background-color: white;
     height: 95vh;
@@ -744,7 +745,7 @@
   display: flex;
   width: 80%;
 }
-
+/* CHECKOUT*/
 .checkout-flex {
   height: 100%;
   width: 100%;
@@ -773,6 +774,7 @@
 .checkout-products-brandmodel {
   display: flex;
   flex-direction: column;
+
 }
 
 .checkout-shipping-total-wrapper {
@@ -825,4 +827,40 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+@media screen and (max-width: 840px) {
+  .checkout-flex {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+  }
+  .checkout-products {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80%;
+    padding: .625rem .625rem .625rem .625rem;
+    background-color: rgb(112, 112, 112, 0.12);
+  }
+  .checkout-shipping-total-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    padding: .625rem .625rem .625rem .625rem;
+    background-color: rgb(112, 112, 112, 0.12);
+  }
+  .checkout-delivery-payment-wrapper {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+    padding: .625rem .625rem .625rem .625rem;
+    background-color: rgb(112, 112, 112, 0.12);
+  }
+  
 }
