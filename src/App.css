@@ -184,37 +184,6 @@
   text-shadow: -0.7px 0 white, 0 0.7px white, 0.7px 0 white, 0 -0.7px white;
 }
 
-.arrow-box {
-  padding: 1.3rem 2rem;
-  font-size: 1.4rem;
-  background-color: black;
-  color: black;
-  text-shadow: -0.7px 0 white, 0 0.7px white, 0.7px 0 white, 0 -0.7px white;
-  text-transform: uppercase;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: calc(50% - 2rem);
-  left: calc(50% - 15rem);
-  position: absolute;
-  -webkit-animation: displaying 3.5s;
-  -moz-animation: displaying 3.5s;
-  -o-animation: displaying 3.5s;
-  animation: displaying 3.5s;
-  animation-fill-mode: forwards;
-}
-
-@keyframes displaying {
-  0% {
-    opacity: 1;
-    display: block;
-  }
-  100% {
-    opacity: 0;
-    display: none;
-  }
-}
-
 .item-flex {
   display: flex;
   justify-content: space-between;
@@ -738,91 +707,129 @@
     margin-bottom: 2rem;
     margin-top: 2rem;
   }
-}
-
-.zip {
-  display: flex;
-  width: 80%;
-}
-
-.checkout-flex {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: column;
-}
-
-.checkout.box {
-  display: flex;
-  flex-direction: column;
-  padding: .625rem .625rem .625rem .625rem;
-  background-color: rgb(112, 112, 112, 0.12);
-}
-
-.checkout-products {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 40%;
-  padding: .625rem .625rem .625rem .625rem;
-  background-color: rgb(112, 112, 112, 0.12);
-}
-
-.checkout-products-brandmodel {
-  display: flex;
-  flex-direction: column;
-}
-
-.checkout-shipping-total-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 40%;
-  padding: .625rem .625rem .625rem .625rem;
-  background-color: rgb(112, 112, 112, 0.12);
-}
-
-.checkout-shipping {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.checkout-total {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.checkout-delivery-payment-wrapper {
-  display: flex;
-  width: 40%;
-  justify-content: space-between;
-  align-items: center;
-  padding: .625rem .625rem .625rem .625rem;
-  background-color: rgb(112, 112, 112, 0.12);
-}
-
-.checkout-delivery {
-  display: flex;
-  flex-direction: column;
-}
-
-.checkout-payment {
-  display: flex;
-  flex-direction: column;
-}
-
-.confirmed {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  .zip {
+    display: flex;
+    width: 80%;
+  }
+  .checkout-flex {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+  }
+  .checkout.box {
+    display: flex;
+    flex-direction: column;
+    padding: .625rem .625rem .625rem .625rem;
+    background-color: rgb(112, 112, 112, 0.12);
+  }
+  .checkout-products {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 40%;
+    padding: .625rem .625rem .625rem .625rem;
+    background-color: rgb(112, 112, 112, 0.12);
+  }
+  .checkout-products-brandmodel {
+    display: flex;
+    flex-direction: column;
+  }
+  .checkout-shipping-total-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 40%;
+    padding: .625rem .625rem .625rem .625rem;
+    background-color: rgb(112, 112, 112, 0.12);
+  }
+  .checkout-shipping {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .checkout-total {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .checkout-delivery-payment-wrapper {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+    align-items: center;
+    padding: .625rem .625rem .625rem .625rem;
+    background-color: rgb(112, 112, 112, 0.12);
+  }
+  .checkout-delivery {
+    display: flex;
+    flex-direction: column;
+  }
+  .checkout-payment {
+    display: flex;
+    flex-direction: column;
+  }
+  .confirmed {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  /* sneaker products slider */
+  .sneaker-slider {
+    position: relative;
+    overflow-x: hidden;
+    width: 100%;
+    /* margin: 0.3rem */
+  }
+  .sneaker-wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+  }
+  .sneaker-wrapper:first-child {
+    margin-left: 0.3rem;
+  }
+  .flex-child {
+    width: 80%;
+    flex: 1;
+    padding: 0.3rem 0.3rem 0.3rem 0rem;
+  }
+  .img-div {
+    width: 100%;
+    height: 40%;
+    overflow-y: hidden;
+  }
+  .img-div img {
+    height: 100%;
+    width: 100%;
+    overflow-y: hidden;
+  }
+  .brand-model-div {
+    height: 3.3rem;
+    background-color: rgb(112, 112, 112, 0.12);
+    font-size: 0.8rem;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ff5c00;
+  }
+  .brand-model-div div {
+    margin: 0px 5px;
+  }
+  .price-div {
+    font-size: 1rem;
+  }
 }
