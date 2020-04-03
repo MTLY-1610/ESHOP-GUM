@@ -24,10 +24,11 @@ class Cart extends React.Component<Props, State> {
               <div style={emptyCartDiv}>
                 <MdShoppingBasket id="shoppingbasket" />
                 <h2>Your cart is currently empty</h2>
-                <Link   to="/products" style={{ textDecoration: 'none' }}>
-              <Button id="next-button" variant="contained" color="primary" >PRODUCTS
-              </Button>
-              </Link>
+                <Link to="/products" style={{ textDecoration: "none" }}>
+                  <Button id="next-button" variant="contained" color="primary">
+                    PRODUCTS
+                  </Button>
+                </Link>
               </div>
             </div>
           ) : (
@@ -72,6 +73,7 @@ const emptyCartDiv: React.CSSProperties = {
   height: "100%",
   alignItems: "center",
   justifyContent: "center",
+  textAlign: "center",
   flexDirection: "column",
   letterSpacing: "1px",
   lineHeight: "2.5rem"

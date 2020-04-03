@@ -89,15 +89,12 @@ class DetailOfSneaker extends React.Component<Props, State> {
               <div className="secondButtondiv">
                 <Link className="link" to="/cart">
                   <div className="basket">
-                    <span>view </span>
-                    <span>basket</span>
+                    <p>view basket</p>
                   </div>
                 </Link>
                 <Link className="link" to="/products">
                   <div className="cart">
-                    <span>continue </span>
-
-                    <span>shopping</span>
+                    <p>continue shopping</p>
                   </div>
                 </Link>
               </div>

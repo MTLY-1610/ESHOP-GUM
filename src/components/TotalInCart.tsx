@@ -54,7 +54,7 @@ class TotalBox extends React.Component<Props, State> {
                   <p className="date">{value.date}</p>
                 </div>
               )}
-              <div style={widthAdjust}>
+              <div className="delivery-radio">
                 <RadioGroup onChange={value.shipping} style={flex}>
                   <FormControlLabel
                     value="Express"
@@ -81,11 +81,11 @@ class TotalBox extends React.Component<Props, State> {
                 <p>{value.totalAmount() + Number(value.shippingAmount)}$</p>
               </div>
               <div className="paymentbutton">
-              <Link   to="/payment" style={{ textDecoration: 'none' }}>
-              <Button id="next-button" variant="contained" color="primary" >TO PAYMENT
-              </Button>
-              </Link>
-                    
+                <Link to="/payment" style={{ textDecoration: "none" }}>
+                  <Button id="next-button" variant="contained" color="primary">
+                    TO PAYMENT
+                  </Button>
+                </Link>
               </div>
             </>
           )
@@ -95,10 +95,6 @@ class TotalBox extends React.Component<Props, State> {
   }
 }
 const flex: React.CSSProperties = {
-  display: "flex",
-  flexDirection: "row"
-};
-const widthAdjust: React.CSSProperties = {
   display: "flex",
   flexDirection: "row"
 };
