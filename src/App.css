@@ -548,7 +548,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-<<<<<<< HEAD
   flex-grow: 1;
   width: 100%;
   justify-content: space-evenly;
@@ -556,13 +555,11 @@
   margin-left: .625rem;
   padding: .625rem .625rem .625rem .625rem;
   border: 1px solid #ff5c00;
-=======
   justify-content: center;
 }
 
 .payment-Solution h5 {
   margin-right: 1rem;
->>>>>>> functionality-of-checkout
 }
 .radio-div{
   display: flex;
@@ -625,10 +622,10 @@
 #field {
   width: 30rem !important;
 }
-<<<<<<< HEAD
+
 #field-narrow {
   width: 15rem !important;
-=======
+}
 
 .zip {
   display: flex;
@@ -702,5 +699,5 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
->>>>>>> functionality-of-checkout
+
 }
