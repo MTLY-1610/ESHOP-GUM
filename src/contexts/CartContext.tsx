@@ -15,11 +15,12 @@ const defaultState = {
   totalAmount: () => 0,
   expressChecked: () => false,
   regularChecked: () => false,
+  buttonValidation: () => true,
   freeChecked: () => false,
   shippingAmount: 0,
   date: 0,
   radio: "",
-  isDateTrue: false
+  isDateTrue: false,
 };
 
 const ShoppingCartContext = React.createContext<State>(defaultState);
@@ -33,6 +34,7 @@ export interface State {
   totalAmount: () => number;
   expressChecked: () => boolean;
   regularChecked: () => boolean;
+  buttonValidation: () => boolean;
   freeChecked: () => boolean;
   shipping: (event: React.ChangeEvent<HTMLInputElement>, value: string) => void;
   shippingAmount: string | number;
@@ -46,6 +48,7 @@ class ShoppingCartProvider extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
+      buttonValidation: this.buttonValidation,
       addToCart: this.addToCart,
       shoppingCart: [],
       removeCartRow: this.removeCartRow,
@@ -57,7 +60,7 @@ class ShoppingCartProvider extends React.Component<Props, State> {
       date: 0,
       radio: "",
       shipping: this.shipping,
-      shippingAmount: 0
+      shippingAmount: 0,
     };
   }
 
@@ -81,6 +84,11 @@ class ShoppingCartProvider extends React.Component<Props, State> {
     } else {
       return false;
     }
+  };
+
+  buttonValidation = () => {
+    if (this.state.isDateTrue) return false;
+    return true;
   };
 
   shipping = (event: React.ChangeEvent<HTMLInputElement>, value: string) => {
@@ -146,14 +154,14 @@ class ShoppingCartProvider extends React.Component<Props, State> {
     }
 
     this.setState({
-      shoppingCart: copiedCart.filter(item => item.product.id !== id)
+      shoppingCart: copiedCart.filter((item) => item.product.id !== id),
     });
   };
 
   addToCart = (product: Product, size: number) => {
     let cartList: CartItem[] = Object.assign([], this.state.shoppingCart);
 
-    let cartItem: CartItem | undefined = cartList.find(itemToFind => {
+    let cartItem: CartItem | undefined = cartList.find((itemToFind) => {
       if (
         itemToFind.product.id === product.id &&
         itemToFind.size === Number(size)
@@ -167,7 +175,7 @@ class ShoppingCartProvider extends React.Component<Props, State> {
       cartItem = {
         product: product,
         size: size,
-        count: 1
+        count: 1,
       };
       this.setState({ shoppingCart: [...this.state.shoppingCart, cartItem] });
     } else {

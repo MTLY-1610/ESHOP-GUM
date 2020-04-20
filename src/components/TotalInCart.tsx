@@ -2,7 +2,7 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import {
   ShoppingCartContext,
-  ShoppingCartConsumer
+  ShoppingCartConsumer,
 } from "../contexts/CartContext";
 import { CartItem } from "../contexts/CartContext";
 import Button from "@material-ui/core/Button";
@@ -16,7 +16,7 @@ class TotalBox extends React.Component<Props, State> {
   render() {
     return (
       <ShoppingCartConsumer>
-        {value =>
+        {(value) =>
           value.shoppingCart.length === 0 ? (
             <></>
           ) : (
@@ -80,7 +80,9 @@ class TotalBox extends React.Component<Props, State> {
               </div>
               <div className="paymentbutton">
                 <Link to="/payment" style={{ textDecoration: "none" }}>
-                  <Button id="next-button">TO PAYMENT</Button>
+                  <Button disabled={value.buttonValidation()} id="next-button">
+                    TO PAYMENT
+                  </Button>
                 </Link>
               </div>
             </>
@@ -92,7 +94,7 @@ class TotalBox extends React.Component<Props, State> {
 }
 const flex: React.CSSProperties = {
   display: "flex",
-  flexDirection: "row"
+  flexDirection: "row",
 };
 
 export default TotalBox;

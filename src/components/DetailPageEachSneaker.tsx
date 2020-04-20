@@ -15,7 +15,7 @@ class DetailOfSneaker extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
-      size: "30"
+      size: "30",
     };
   }
 
@@ -26,7 +26,7 @@ class DetailOfSneaker extends React.Component<Props, State> {
   render() {
     return (
       <ShoppingCartConsumer>
-        {cartState => (
+        {(cartState) => (
           <React.Fragment key={this.props.item.id}>
             <div className="item-img-div">
               <img src={this.props.item.img} alt="img" />
