@@ -18,7 +18,7 @@ class DeliveryMethods extends React.Component<Props, State> {
   render() {
     return (
       <ShoppingCartConsumer>
-        {value =>
+        {(value) =>
           value.radio !== "Free" &&
           value.radio !== "Regular" &&
           value.radio !== "Express" ? (
@@ -98,7 +98,7 @@ class DeliveryMethods extends React.Component<Props, State> {
 
 const flex: React.CSSProperties = {
   display: "flex",
-  flexDirection: "row"
+  flexDirection: "row",
 };
 
 export default DeliveryMethods;

@@ -15,12 +15,12 @@ const defaultState = {
   totalAmount: () => 0,
   expressChecked: () => false,
   regularChecked: () => false,
-  buttonValidation: () => true,
+  // buttonValidation: () => true,
   freeChecked: () => false,
   shippingAmount: 0,
   date: 0,
   radio: "",
-  isDateTrue: false,
+  isDateTrue: true,
 };
 
 const ShoppingCartContext = React.createContext<State>(defaultState);
@@ -34,7 +34,7 @@ export interface State {
   totalAmount: () => number;
   expressChecked: () => boolean;
   regularChecked: () => boolean;
-  buttonValidation: () => boolean;
+  // buttonValidation: () => boolean;
   freeChecked: () => boolean;
   shipping: (event: React.ChangeEvent<HTMLInputElement>, value: string) => void;
   shippingAmount: string | number;
@@ -48,7 +48,7 @@ class ShoppingCartProvider extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
-      buttonValidation: this.buttonValidation,
+      // buttonValidation: this.buttonValidation,
       addToCart: this.addToCart,
       shoppingCart: [],
       removeCartRow: this.removeCartRow,
@@ -56,7 +56,7 @@ class ShoppingCartProvider extends React.Component<Props, State> {
       expressChecked: this.expressChecked,
       regularChecked: this.regularChecked,
       freeChecked: this.freeChecked,
-      isDateTrue: false,
+      isDateTrue: true,
       date: 0,
       radio: "",
       shipping: this.shipping,
@@ -86,26 +86,21 @@ class ShoppingCartProvider extends React.Component<Props, State> {
     }
   };
 
-  buttonValidation = () => {
-    if (this.state.isDateTrue) return false;
-    return true;
-  };
-
   shipping = (event: React.ChangeEvent<HTMLInputElement>, value: string) => {
     let newDate = new Date();
-    let year = newDate.getFullYear();
+
     let month = newDate.getMonth();
     let day = newDate.getDate();
     let zero = 0;
 
-    let express = `${year}-${month <= 10 ? `0${month + 1}` : month + 1}-${
-      day < 8 || day > 29 ? `0${day + (2 % 31)}` : day + (2 % 31)
+    let express = `${month <= 10 ? `0${month + 1}` : month + 1}/${
+      day < 8 || day > 29 ? `0${(day + 2) % 31}` : (day + 2) % 31
     }`;
-    let regular = `${year}-${month <= 10 ? `0${month + 1}` : month + 1}-${
-      day < 5 || day > 26 ? `0${day + (5 % 31)}` : day + (5 % 31)
+    let regular = `${month <= 10 ? `0${month + 1}` : month + 1}/${
+      day < 5 || day > 26 ? `0${(day + 5) % 31}` : (day + 5) % 31
     }`;
-    let free = `${year}-${month <= 10 ? `0${month + 1}` : month + 1}-${
-      day < 2 || day > 23 ? `0${day + (8 % 31)}` : day + (8 % 31)
+    let free = `${month <= 10 ? `0${month + 1}` : month + 1}/${
+      day < 2 || day > 23 ? `0${(day + 8) % 31}` : (day + 8) % 31
     }`;
 
     if (month < 10) {
@@ -118,20 +113,21 @@ class ShoppingCartProvider extends React.Component<Props, State> {
 
     if (event.target.value === "Free") {
       this.setState({ radio: "Free" });
-      this.setState({ isDateTrue: true });
+      this.setState({ isDateTrue: false });
       this.setState({ date: free });
       this.setState({ shippingAmount: 0 });
     } else if (event.target.value === "Regular") {
       this.setState({ radio: "Regular" });
-      this.setState({ isDateTrue: true });
+      this.setState({ isDateTrue: false });
       this.setState({ shippingAmount: "19" });
       this.setState({ date: regular });
     } else if (event.target.value === "Express") {
       this.setState({ radio: "Express" });
-      this.setState({ isDateTrue: true });
+      this.setState({ isDateTrue: false });
       this.setState({ date: express });
       this.setState({ shippingAmount: "29" });
     }
+    console.log(this.state.isDateTrue);
   };
 
   totalAmount = () => {

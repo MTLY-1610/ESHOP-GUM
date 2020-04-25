@@ -16,57 +16,69 @@ class DeliveryForm extends React.Component<Props, State> {
   render() {
     return (
       <CheckoutConsumer>
-        {value => (
-          
-            <div className="delivery-details">
-              <h5 className="headers">DELIVERY ADRESS</h5>
-              <TextField
-                id="field"
-                inputProps={{ minLength: 2 }}
-                type="name"
-                name="firstname"
-                label="First Name"
-              />
-              <TextField
-                id="field"
-                inputProps={{ minLength: 2 }}
-                type="name"
-                name="lastName"
-                label="Last Name"
-              />
-              <TextField
-                id="field"
-                onChange={value.getAdress}
-                type="name"
-                name="Adress"
-                label="Adress"
-              />
-              <TextField
-                id="field"
-                onChange={value.getEmail}
-                type="email"
-                name="Email"
-                label="Email"
-              />
-              <TextField
-                id="field"
-                onChange={value.getCountry}
-                inputProps={{ minLength: 4 }}
-                type="text"
-                name="Country"
-                label="Country"
-              />
-              <TextField
-                id="field"
-                onChange={value.getCity}
-                inputProps={{ minLength: 2 }}
-                type="text"
-                name="City"
-                label="City"
-              />
-               
-            </div>
-          
+        {(value) => (
+          <div className="delivery-details">
+            <h5 className="headers">DELIVERY ADRESS</h5>
+            <TextField
+              id="field"
+              inputProps={{ minLength: 2 }}
+              type="name"
+              name="firstname"
+              label="First Name"
+              onChange={value.change}
+              helperText={value.firstnameError}
+              value={value.firstname}
+            />
+            <TextField
+              id="field"
+              inputProps={{ minLength: 2 }}
+              type="name"
+              name="lastname"
+              label="Last Name"
+              onChange={value.change}
+              value={value.lastname}
+              helperText={value.lastnameError}
+            />
+            <TextField
+              id="field"
+              onChange={value.change}
+              type="name"
+              name="adress"
+              label="Adress"
+              value={value.adress}
+              helperText={value.adressError}
+            />
+            <TextField
+              id="field"
+              onChange={value.change}
+              type="email"
+              name="email"
+              label="Email"
+              value={value.email}
+              helperText={value.emailError}
+            />
+            <TextField
+              id="field"
+              onChange={value.change}
+              inputProps={{ minLength: 4 }}
+              type="text"
+              name="country"
+              label="Country"
+              value={value.country}
+              helperText={value.countryError}
+            />
+            <TextField
+              id="field"
+              onChange={value.change}
+              inputProps={{ minLength: 2 }}
+              type="text"
+              name="city"
+              label="City"
+              value={value.city}
+              helperText={value.cityError}
+            />
+             
+          </div>
         )}
       </CheckoutConsumer>
     );

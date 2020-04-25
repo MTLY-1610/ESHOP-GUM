@@ -58,6 +58,10 @@
   overflow-x: hidden;
 }
 
+#cursor {
+  cursor: pointer;
+}
+
 /* SHOPPING CART AND BURGERBAR LOGO */
 
 .nav-shoppingcart-burgerbar-product {
@@ -333,6 +337,16 @@
 
 .delivery-radio>div>label {
   margin: 0;
+}
+
+/* .delivery-radio>div>label>span {
+  padding-left: 0px;
+} */
+
+.delivery-radio {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .flex-cart {
@@ -694,6 +708,11 @@
 .checkout-payment {
   display: flex;
   flex-direction: column;
+}
+
+.delivery-radio>div {
+  display: flex;
+  flex-direction: row;
 }
 
 @media screen and (max-width: 840px) {
@@ -1156,6 +1175,17 @@
     display: flex;
     flex-direction: column;
     padding-left: 0.5rem;
+  }
+  .delivery-radio {
+    width: 60%;
+    justify-content: flex-start;
+  }
+  .delivery-radio>div {
+    display: flex;
+    flex-direction: column;
+  }
+  .delivery-radio>div>label>span {
+    padding-left: 0px;
   }
   .totalDiv {
     margin-top: 1rem;

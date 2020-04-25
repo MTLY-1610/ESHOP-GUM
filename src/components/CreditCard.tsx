@@ -4,63 +4,63 @@ import Button from "@material-ui/core/Button";
 
 import { Link } from "react-router-dom";
 import { CheckoutConsumer } from "../contexts/CheckoutContext";
+import Checkout from "./Checkout";
 
-export interface Props {
-  onlyNumber: (event: React.KeyboardEvent<HTMLInputElement>) => void;
-}
+export interface Props {}
 
 export interface State {}
 
 class CreditCard extends React.Component<Props, State> {
+  onlyNumber = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    const x = event.which || event.keyCode;
+    if (x >= 65 && x <= 90) {
+      event.preventDefault();
+      return "false";
+    } else {
+      return "true";
+    }
+  };
+
   render() {
     return (
       <CheckoutConsumer>
-        {value => (
-          <div className="adress-Recap">
-            <div className="payment-details">
-              <h5 className="headers">CARD DETAILS:</h5>
-              <TextField
-                type="name"
-                name="Fullname"
-                //   value={this.state.firstName}
-                label="Full name"
-                onChange={value.getName}
-                //   onKeyDown={this.onlyLetter}
-              />
-              <TextField
-                type="tel"
-                name="cardNumber"
-                label="Card Number"
-                onKeyDown={this.props.onlyNumber}
-                inputProps={{ maxLength: 16 }}
-                onChange={value.getCardNr}
-              />
-              <TextField
-                type="tel"
-                name="Valid Date"
-                //   value={this.state.firstName}
-                label="Valid(MM/YY)"
-                inputProps={{ maxLength: 5 }}
-                onKeyDown={this.props.onlyNumber}
-                onChange={value.getExpireDay}
-              />
-              <TextField
-                type="tel"
-                name="ccv"
-                inputProps={{ maxLength: 3 }}
-                //   value={this.state.firstName}
-                label="CCV"
-                // onChange={this.handleChange}
-                onKeyDown={this.props.onlyNumber}
-              />
-            </div>
-            <div className="buttonDiv">
-              <Link to="/checkout" style={{ textDecoration: "none" }}>
-                <Button id="next-button" variant="contained" color="primary">
-                  CHECKOUT
-                </Button>
-              </Link>
-            </div>
+        {(value) => (
+          <div className="payment-details">
+            <h5 className="headers">CARD DETAILS:</h5>
+            <TextField
+              type="name"
+              name="Fullname"
+              label="Full name"
+              value={`${value.firstname} ${value.lastname}`}
+            />
+            <TextField
+              type="tel"
+              name="cardnumber"
+              label="Card Number"
+              onKeyDown={this.onlyNumber}
+              inputProps={{ maxLength: 16 }}
+              onChange={value.changecardnr}
+              helperText={value.cardnumberError}
+            />
+            <TextField
+              type="tel"
+              name="validdate"
+              //   value={this.state.firstName}
+              label="Valid(MM/YY)"
+              inputProps={{ maxLength: 5 }}
+              onKeyDown={this.onlyNumber}
+              onChange={value.change}
+              helperText={value.validdateError}
+            />
+            <TextField
+              type="tel"
+              name="ccv"
+              inputProps={{ maxLength: 3 }}
+              label="CCV"
+              onKeyDown={this.onlyNumber}
+              onChange={value.change}
+              helperText={value.ccvError}
+            />
           </div>
         )}
       </CheckoutConsumer>

@@ -1,6 +1,7 @@
 import * as React from "react";
 import { ShoppingCartConsumer, CartItem } from "../contexts/CartContext";
 import { MdClear } from "react-icons/md";
+import AddIcon from "@material-ui/icons/Add";
 
 export interface Props {
   item: CartItem;
@@ -12,7 +13,7 @@ class CartRow extends React.Component<Props, State> {
   render() {
     return (
       <ShoppingCartConsumer>
-        {value => (
+        {(value) => (
           <React.Fragment>
             <div className="cart-img-info-div">
               <div className="cart-imgdiv">
@@ -36,6 +37,16 @@ class CartRow extends React.Component<Props, State> {
                     <p className="qtydiv">SIZE: {this.props.item.size}</p>
                   </div>
                   <div className="icondiv">
+                    <AddIcon
+                      onClick={() =>
+                        value.addToCart(
+                          this.props.item.product,
+                          this.props.item.size
+                        )
+                      }
+                      id="cursor"
+                    />
+
                     <MdClear
                       onClick={() =>
                         value.removeCartRow(

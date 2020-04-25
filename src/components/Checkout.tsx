@@ -16,7 +16,7 @@ class Checkout extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
-      confirmation: false
+      confirmation: false,
     };
   }
   delayConfirmation = (
@@ -33,7 +33,7 @@ class Checkout extends React.Component<Props, State> {
     } else {
       return (
         <ShoppingCartConsumer>
-          {value =>
+          {(value) =>
             value.shoppingCart.length === 0 ? (
               <div style={flex}>
                 <h1>
@@ -45,8 +45,8 @@ class Checkout extends React.Component<Props, State> {
               <div className="checkout-flex">
                 <h3>Order summary</h3>
                 <ShoppingCartConsumer>
-                  {value =>
-                    value.shoppingCart.map(cartRow => (
+                  {(value) =>
+                    value.shoppingCart.map((cartRow) => (
                       <div className="checkout-products">
                         <div className="checkout-products-brandmodel">
                           <h4>{cartRow.product.brand}</h4>
@@ -58,7 +58,7 @@ class Checkout extends React.Component<Props, State> {
                   }
                 </ShoppingCartConsumer>
                 <ShoppingCartConsumer>
-                  {value => (
+                  {(value) => (
                     <div className="checkout-shipping-total-wrapper">
                       <div className="checkout-shipping">
                         <h5>Shipping</h5>
@@ -77,11 +77,11 @@ class Checkout extends React.Component<Props, State> {
                   )}
                 </ShoppingCartConsumer>
                 <CheckoutConsumer>
-                  {value => (
+                  {(value) => (
                     <div className="checkout-delivery-payment-wrapper">
                       <div className="checkout-delivery">
                         <h5>Delivery</h5>
-                        <h5>{value.fullname}</h5>
+                        <h5>{`${value.firstname} ${value.lastname}`}</h5>
                         <h5>{value.adress}</h5>
                         <h5>
                           {value.city}, {value.country}
@@ -89,13 +89,13 @@ class Checkout extends React.Component<Props, State> {
                       </div>
                       <div className="checkout-payment">
                         <h5>Payment details</h5>
-                        <h5>{value.fullname}</h5>
-                        {value.cardNr.length !== 4 ? (
+                        <h5>{`${value.firstname} ${value.lastname}`}</h5>
+                        {value.cardnumber.length !== 4 ? (
                           <></>
                         ) : (
                           <>
-                            <h5>XXXX-XXXX-XXXX-{value.cardNr}</h5>
-                            <h5>{value.expireDay}</h5>
+                            <h5>XXXX-XXXX-XXXX-{value.cardnumber}</h5>
+                            <h5>{value.validdate}</h5>
                           </>
                         )}
                       </div>
@@ -125,11 +125,11 @@ const flex: React.CSSProperties = {
   justifyContent: "center",
   textAlign: "center",
   width: "100%",
-  height: "100%"
+  height: "100%",
 };
 const button: React.CSSProperties = {
   padding: "1rem",
-  border: "none"
+  border: "none",
 };
 
 export default Checkout;

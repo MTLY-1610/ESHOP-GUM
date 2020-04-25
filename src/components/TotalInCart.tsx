@@ -44,7 +44,7 @@ class TotalBox extends React.Component<Props, State> {
                     : `${value.shippingAmount}$`}
                 </p>
               </div>
-              {value.isDateTrue == false ? (
+              {value.isDateTrue === true ? (
                 <></>
               ) : (
                 <div className="subheader-total">
@@ -53,7 +53,7 @@ class TotalBox extends React.Component<Props, State> {
                 </div>
               )}
               <div className="delivery-radio">
-                <RadioGroup onChange={value.shipping} style={flex}>
+                <RadioGroup onChange={value.shipping}>
                   <FormControlLabel
                     value="Express"
                     control={<Radio color="primary" />}
@@ -71,6 +71,7 @@ class TotalBox extends React.Component<Props, State> {
                     control={<Radio color="primary" />}
                     label="Free"
                     labelPlacement="end"
+                    // checkedIcon={true}
                   />
                 </RadioGroup>
               </div>
@@ -80,7 +81,7 @@ class TotalBox extends React.Component<Props, State> {
               </div>
               <div className="paymentbutton">
                 <Link to="/payment" style={{ textDecoration: "none" }}>
-                  <Button disabled={value.buttonValidation()} id="next-button">
+                  <Button disabled={value.isDateTrue} id="next-button">
                     TO PAYMENT
                   </Button>
                 </Link>
@@ -92,9 +93,5 @@ class TotalBox extends React.Component<Props, State> {
     );
   }
 }
-const flex: React.CSSProperties = {
-  display: "flex",
-  flexDirection: "row",
-};
 
 export default TotalBox;

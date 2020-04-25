@@ -1,20 +1,28 @@
 import * as React from "react";
 
 const defaultState = {
-  getName: () => {},
-  getCity: () => {},
-  getCountry: () => {},
-  getAdress: () => {},
-  getCardNr: () => {},
-  getEmail: () => {},
-  getExpireDay: () => {},
-  fullname: "",
-  mail: "",
+  onSubmit: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {},
+  change: (event: React.ChangeEvent<HTMLInputElement>) => {},
+  changecardnr: (event: React.ChangeEvent<HTMLInputElement>) => {},
+  firstname: "",
+  firstnameError: "",
+  cardnumber: "",
+  cardnumberError: "",
+  lastname: "",
+  lastnameError: "",
   country: "",
+  ccv: "",
+  ccvError: "",
+  countryError: "",
   city: "",
+  cityError: "",
   adress: "",
-  expireDay: "",
-  cardNr: ""
+  adressError: "",
+  validdate: "",
+  validdateError: "",
+  email: "",
+  noError: false,
+  emailError: "",
 };
 
 const CheckoutContext = React.createContext<State>(defaultState);
@@ -22,73 +30,137 @@ const CheckoutContext = React.createContext<State>(defaultState);
 export interface Props {}
 
 export interface State {
-  getCardNr: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  getExpireDay: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  getName: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  getCity: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  getCountry: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  getAdress: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  getEmail: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  fullname: string;
+  change: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  changecardnr: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onSubmit: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  noError: boolean;
+  firstname: string;
+  firstnameError: string;
+  lastnameError: string;
+  emailError: string;
+  countryError: string;
+  cityError: string;
+  ccv: string;
+  ccvError: string;
+  adressError: string;
+  validdateError: string;
+  cardnumberError: string;
+  lastname: string;
   country: string;
-  mail: string;
+  email: string;
   city: string;
   adress: string;
-  expireDay: string;
-  cardNr: string;
+  validdate: string;
+  cardnumber: string;
 }
 
 class CheckoutProvider extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
-      fullname: "",
+      firstname: "",
+      firstnameError: "",
+      cardnumber: "",
+      cardnumberError: "",
+      lastname: "",
+      lastnameError: "",
       country: "",
+      countryError: "",
       city: "",
+      cityError: "",
+      ccv: "",
+      ccvError: "",
       adress: "",
-      expireDay: "",
-      cardNr: "",
-      mail: "",
-      getEmail: this.getEmail,
-      getName: this.getName,
-      getCountry: this.getCountry,
-      getCity: this.getCity,
-      getAdress: this.getAdress,
-      getExpireDay: this.getExpireDay,
-      getCardNr: this.getCardNr
+      adressError: "",
+      validdate: "",
+      validdateError: "",
+      email: "",
+      emailError: "",
+      noError: false,
+      change: this.change,
+      changecardnr: this.changecardnr,
+      onSubmit: this.onSubmit,
     };
   }
 
-  getCardNr = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const lastFour = event.target.value.substr(12);
-    this.setState({ cardNr: lastFour });
+  change = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const e = event.target;
+    this.setState({ [e.name]: e.value } as any);
   };
-  getExpireDay = (event: React.ChangeEvent<HTMLInputElement>) => {
+  changecardnr = (event: React.ChangeEvent<HTMLInputElement>) => {
     const e = event.target.value;
-    this.setState({ expireDay: e });
-  };
-  getName = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const e = event.target.value;
-    this.setState({ fullname: e });
+    this.setState({ cardnumber: e.substring(12) });
   };
 
-  getCity = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const e = event.target.value;
-    this.setState({ city: e });
-  };
-  getEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const e = event.target.value;
-    this.setState({ mail: e });
+  validate = () => {
+    let isError = false;
+    if (
+      this.state.email.indexOf("@") === -1 ||
+      this.state.email.indexOf(".") === -1
+    ) {
+      this.setState({ emailError: "Must contain '@' and '.'" });
+      isError = true;
+    }
+    if (this.state.validdate.indexOf("/") === -1) {
+      this.setState({ validdateError: "Must contain '/'." });
+      isError = true;
+    }
+    if (this.state.country.length <= 3) {
+      this.setState({ countryError: "Not a valid country" });
+      isError = true;
+    }
+    if (this.state.firstname.length <= 2) {
+      this.setState({
+        firstnameError: "Your name must have more than 2 letters",
+      });
+      isError = true;
+    }
+    if (this.state.lastname.length <= 2) {
+      this.setState({
+        lastnameError: "Your name must have more than 2 letters",
+      });
+      isError = true;
+    }
+    if (this.state.ccv.length < 3) {
+      this.setState({ ccvError: "Minimum 3 numbers" });
+      isError = true;
+    }
+    if (this.state.cardnumber.length + 12 < 16) {
+      this.setState({ cardnumberError: "Cardnumber must be 16 numbers" });
+      isError = true;
+    }
+
+    console.log(this.state.cardnumber.length);
+    return isError;
   };
 
-  getCountry = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const e = event.target.value;
-    this.setState({ country: e });
-  };
-
-  getAdress = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const e = event.target.value;
-    this.setState({ adress: e });
+  onSubmit = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    event.preventDefault();
+    this.setState({
+      firstnameError: "",
+      cardnumberError: "",
+      lastnameError: "",
+      countryError: "",
+      cityError: "",
+      adressError: "",
+      validdateError: "",
+      emailError: "",
+      ccvError: "",
+    });
+    const error = this.validate();
+    if (!error) {
+      this.setState({
+        noError: true,
+        firstnameError: "",
+        cardnumberError: "",
+        lastnameError: "",
+        countryError: "",
+        cityError: "",
+        adressError: "",
+        validdateError: "",
+        emailError: "",
+      });
+    }
   };
 
   render() {
