@@ -1,41 +1,47 @@
 import * as React from "react";
 // import { Product } from "../sneakerData";
-import { RouteProps } from "react-router";
+import { RouteProps, RouteComponentProps } from "react-router";
 import { Link } from "react-router-dom";
 import { ProductConsumer } from "../contexts/ProductContext";
 import DetailOfSneaker from "./DetailPageEachSneaker";
 
-export interface Props {}
+interface Params {
+  item: string;
+}
 
-export interface State {}
+interface Props extends RouteComponentProps<Params> {}
+
+interface State {}
 
 class Item extends React.Component<Props & RouteProps, State> {
   render() {
     return (
       <ProductConsumer>
-        {productState => (
+        {(productState) => {
+          const { params } = this.props.match;
+          const product = productState.products.find(
+            (product) => product.id === Number(params.item)
+          );
 
-          <React.Fragment>
-            <div className="item-flex">
-              {productState.detail.length === 0 ? (
-                <div style={centralizeDiv}>
-                  <h1>
-                    NO PRODUCT CHOSEN, GO BACK TO{" "}
-                    <Link className="styleNav" to="/products">
-                      products
-                    </Link>
-                  </h1>
-
-                </div>
-              ) : (
-                productState.detail.map(item => {
-                  // TODO: bryt ut till en egen komponent
-                  return <DetailOfSneaker key={item.id} item={item} />;
-                })
-              )}
-            </div>
-          </React.Fragment>
-        )}
+          return (
+            <React.Fragment>
+              <div className="item-flex">
+                {!product ? (
+                  <div style={centralizeDiv}>
+                    <h1>
+                      NO PRODUCT CHOSEN, GO BACK TO{" "}
+                      <Link className="styleNav" to="/products">
+                        products
+                      </Link>
+                    </h1>
+                  </div>
+                ) : (
+                  <DetailOfSneaker key={product.id} item={product} />
+                )}
+              </div>
+            </React.Fragment>
+          );
+        }}
       </ProductConsumer>
     );
   }
@@ -46,7 +52,7 @@ const centralizeDiv: React.CSSProperties = {
   height: "100%",
   display: "flex",
   justifyContent: "center",
-  alignItems: "center"
+  alignItems: "center",
 };
 
 export default Item;

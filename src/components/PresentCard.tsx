@@ -45,11 +45,12 @@ class PresentCard extends React.Component<Props, State> {
             />
             <TextField
               type="tel"
-              name="PresentCard"
+              name="presentcardnumber"
               label="Present Card"
               inputProps={{ maxLength: 15 }}
-              // onChange={this.handleChange}
+              onChange={value.change}
               onKeyDown={this.onlyLetter}
+              helperText={value.presentcardnumberError}
             />
           </div>
         )}

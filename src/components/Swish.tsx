@@ -35,12 +35,13 @@ class Swish extends React.Component<Props, State> {
             />
             <TextField
               type="tel"
-              name="PhoneNumber"
+              name="phonenumber"
               //   value={this.state.firstName}
               label="Phone Number"
-              // onChange={this.handleChange}
+              onChange={value.change}
               onKeyDown={this.onlyNumber}
               inputProps={{ maxLength: 10 }}
+              helperText={value.phonenumberError}
             />
           </div>
         )}

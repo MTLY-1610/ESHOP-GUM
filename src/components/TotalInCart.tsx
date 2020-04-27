@@ -80,11 +80,11 @@ class TotalBox extends React.Component<Props, State> {
                 <p>{value.totalAmount() + Number(value.shippingAmount)}$</p>
               </div>
               <div className="paymentbutton">
-                <Link to="/payment" style={{ textDecoration: "none" }}>
-                  <Button disabled={value.isDateTrue} id="next-button">
+                <Button disabled={value.disabledButton()} id="next-button">
+                  <Link to="/payment" style={{ textDecoration: "none" }}>
                     TO PAYMENT
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
               </div>
             </>
           )

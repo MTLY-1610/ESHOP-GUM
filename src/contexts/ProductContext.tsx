@@ -6,7 +6,7 @@ const defaultState = {
   handleClick: () => {},
   detail: detailData,
   addToCart: () => {},
-  shoppingCart: []
+  shoppingCart: [],
   // addProduct: () => console.log("defualt context addProduct")
 };
 
@@ -34,30 +34,15 @@ class ProductProvider extends React.Component<Props, State> {
     //   : productData;
 
     this.state = {
-      products: [],
+      products: productData,
       handleClick: this.handleClickForDetail,
-      detail: []
+      detail: [],
       // addProduct: this.addProduct
     };
   }
 
-  componentDidMount() {
-    this.copyProducts();
-  }
-
   handleClickForDetail = (id: number) => {
     this.setState({ detail: [this.state.products[id]] });
-  };
-
-  copyProducts = () => {
-    let copiedProducts: Array<Product> = [];
-    productData.forEach(item => {
-      const shoe = { ...item };
-      copiedProducts = [...copiedProducts, shoe];
-    });
-    this.setState(() => {
-      return { products: copiedProducts };
-    });
   };
 
   // componentDidUpdate() {

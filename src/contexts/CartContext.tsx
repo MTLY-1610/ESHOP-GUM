@@ -14,6 +14,7 @@ const defaultState = {
   shipping: () => 0,
   totalAmount: () => 0,
   expressChecked: () => false,
+  disabledButton: () => true,
   regularChecked: () => false,
   // buttonValidation: () => true,
   freeChecked: () => false,
@@ -34,6 +35,7 @@ export interface State {
   totalAmount: () => number;
   expressChecked: () => boolean;
   regularChecked: () => boolean;
+  disabledButton: () => boolean;
   // buttonValidation: () => boolean;
   freeChecked: () => boolean;
   shipping: (event: React.ChangeEvent<HTMLInputElement>, value: string) => void;
@@ -60,6 +62,7 @@ class ShoppingCartProvider extends React.Component<Props, State> {
       date: 0,
       radio: "",
       shipping: this.shipping,
+      disabledButton: this.disabledButton,
       shippingAmount: 0,
     };
   }
@@ -83,6 +86,18 @@ class ShoppingCartProvider extends React.Component<Props, State> {
       return true;
     } else {
       return false;
+    }
+  };
+
+  disabledButton = () => {
+    if (
+      this.state.radio === "Free" ||
+      this.state.radio === "Express" ||
+      this.state.radio === "Regular"
+    ) {
+      return false;
+    } else {
+      return true;
     }
   };
 
@@ -127,6 +142,7 @@ class ShoppingCartProvider extends React.Component<Props, State> {
       this.setState({ date: express });
       this.setState({ shippingAmount: "29" });
     }
+
     console.log(this.state.isDateTrue);
   };
 

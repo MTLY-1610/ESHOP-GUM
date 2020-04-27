@@ -65,7 +65,6 @@ class DeliveryForm extends React.Component<Props, State> {
               name="country"
               label="Country"
               value={value.country}
-              helperText={value.countryError}
             />
             <TextField
               id="field"

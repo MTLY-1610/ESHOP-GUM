@@ -7,6 +7,11 @@ const defaultState = {
   changecardnr: (event: React.ChangeEvent<HTMLInputElement>) => {},
   firstname: "",
   firstnameError: "",
+  presentcardnumber: "",
+  presentcardnumberError: "",
+
+  phonenumber: "",
+  phonenumberError: "",
   cardnumber: "",
   cardnumberError: "",
   lastname: "",
@@ -41,6 +46,10 @@ export interface State {
   noError: boolean;
   firstname: string;
   firstnameError: string;
+  presentcardnumber: string;
+  presentcardnumberError: string;
+  phonenumber: string;
+  phonenumberError: string;
   lastnameError: string;
   emailError: string;
   countryError: string;
@@ -69,6 +78,8 @@ class CheckoutProvider extends React.Component<Props, State> {
       creditCard: false,
       swish: false,
       presentCard: false,
+      presentcardnumber: "",
+      presentcardnumberError: "",
       firstname: "",
       firstnameError: "",
       cardnumber: "",
@@ -83,6 +94,8 @@ class CheckoutProvider extends React.Component<Props, State> {
       ccvError: "",
       adress: "",
       adressError: "",
+      phonenumber: "",
+      phonenumberError: "",
       validdate: "",
       validdateError: "",
       email: "",
@@ -156,7 +169,43 @@ class CheckoutProvider extends React.Component<Props, State> {
         });
         isError = true;
       }
-    } else {
+    }
+
+    if (this.state.swish === true) {
+      if (this.state.phonenumber.length <= 9) {
+        this.setState({
+          phonenumberError: "Your number must be 10 letters (07XXXXXXXX)",
+        });
+        isError = true;
+      }
+      if (
+        this.state.email.indexOf("@") === -1 ||
+        this.state.email.indexOf(".") === -1
+      ) {
+        this.setState({ emailError: "Must contain '@' and '.'" });
+        isError = true;
+      }
+      if (this.state.country.length <= 3) {
+        this.setState({ countryError: "Not a valid country" });
+        isError = true;
+      }
+      if (this.state.firstname.length <= 2) {
+        this.setState({
+          firstnameError: "Your firstname must have more than 2 letters",
+        });
+        isError = true;
+      }
+      if (this.state.lastname.length <= 2) {
+        this.setState({
+          lastnameError: "Your lastname must have more than 2 letters",
+        });
+        isError = true;
+      }
+    }
+    if (this.state.presentCard === true) {
+      if (this.state.presentcardnumber.length <= 8) {
+        this.setState({ presentcardnumberError: "Minimum 8 characters" });
+      }
       if (
         this.state.email.indexOf("@") === -1 ||
         this.state.email.indexOf(".") === -1
@@ -181,8 +230,6 @@ class CheckoutProvider extends React.Component<Props, State> {
         isError = true;
       }
     }
-
-    console.log(isError);
     return isError;
   };
 
