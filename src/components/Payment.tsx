@@ -44,51 +44,32 @@ class Payment extends React.Component<Props, State> {
       this.setState({ delivery: true });
     }
   };
-  paymentMethod = (
-    event: React.ChangeEvent<HTMLInputElement>,
-    value: string
-  ) => {
-    if (event.target.value === "CreditCard") {
-      this.setState({ creditCard: true });
-      this.setState({ swish: false });
-      this.setState({ presentCard: false });
-    } else if (event.target.value === "Swish") {
-      this.setState({ swish: true });
-      this.setState({ creditCard: false });
-      this.setState({ presentCard: false });
-    } else if (event.target.value === "PresentCard") {
-      this.setState({ presentCard: true });
-      this.setState({ creditCard: false });
-      this.setState({ swish: false });
-    }
-  };
-
   render() {
     return (
       <CheckoutConsumer>
         {(value) =>
           value.noError === true ? (
             <Checkout />
-          ) : this.state.swish !== true &&
-            this.state.presentCard !== true &&
-            this.state.creditCard !== true ? (
+          ) : value.swish !== true &&
+            value.presentCard !== true &&
+            value.creditCard !== true ? (
             <div className="payment-layout">
               <div className="delivery-box">
                 <DeliveryMethods checkDelivery={this.deliveryMethod} />
                 <DeliveryForm checkDelivery={this.deliveryMethod} />
               </div>
               <div className="payment-box">
-                <PaymentMethods checkPayment={this.paymentMethod} />
+                <PaymentMethods />
               </div>
             </div>
-          ) : this.state.swish === true ? (
+          ) : value.swish === true ? (
             <div className="payment-layout">
               <div className="delivery-box">
                 <DeliveryMethods checkDelivery={this.deliveryMethod} />
                 <DeliveryForm checkDelivery={this.deliveryMethod} />
               </div>
               <div className="payment-box">
-                <PaymentMethods checkPayment={this.paymentMethod} />
+                <PaymentMethods />
                 <div className="adress-Recap">
                   <Swish />
                   <div className="buttonDiv">
@@ -106,14 +87,14 @@ class Payment extends React.Component<Props, State> {
                 </div>
               </div>
             </div>
-          ) : this.state.presentCard === true ? (
+          ) : value.presentCard === true ? (
             <div className="payment-layout">
               <div className="delivery-box">
                 <DeliveryMethods checkDelivery={this.deliveryMethod} />
                 <DeliveryForm checkDelivery={this.deliveryMethod} />
               </div>
               <div className="payment-box">
-                <PaymentMethods checkPayment={this.paymentMethod} />
+                <PaymentMethods />
                 <div className="adress-Recap">
                   <PresentCard />
                   <div className="buttonDiv">
@@ -131,14 +112,14 @@ class Payment extends React.Component<Props, State> {
                 </div>
               </div>
             </div>
-          ) : this.state.creditCard === true ? (
+          ) : value.creditCard === true ? (
             <div className="payment-layout">
               <div className="delivery-box">
                 <DeliveryMethods checkDelivery={this.deliveryMethod} />
                 <DeliveryForm checkDelivery={this.deliveryMethod} />
               </div>
               <div className="payment-box">
-                <PaymentMethods checkPayment={this.paymentMethod} />
+                <PaymentMethods />
                 <div className="adress-Recap">
                   <CreditCard />
                   <div className="buttonDiv">

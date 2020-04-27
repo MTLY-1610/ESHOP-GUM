@@ -8,7 +8,11 @@ import Checkout from "./Checkout";
 
 export interface Props {}
 
-export interface State {}
+export interface State {
+  ccv: string;
+  cardnumber: string;
+  validate: string;
+}
 
 class CreditCard extends React.Component<Props, State> {
   onlyNumber = (event: React.KeyboardEvent<HTMLInputElement>) => {

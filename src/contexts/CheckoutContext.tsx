@@ -3,6 +3,7 @@ import * as React from "react";
 const defaultState = {
   onSubmit: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {},
   change: (event: React.ChangeEvent<HTMLInputElement>) => {},
+  paymentMethod: (event: React.ChangeEvent<HTMLInputElement>) => {},
   changecardnr: (event: React.ChangeEvent<HTMLInputElement>) => {},
   firstname: "",
   firstnameError: "",
@@ -19,6 +20,9 @@ const defaultState = {
   adress: "",
   adressError: "",
   validdate: "",
+  creditCard: false,
+  swish: false,
+  presentCard: false,
   validdateError: "",
   email: "",
   noError: false,
@@ -31,6 +35,7 @@ export interface Props {}
 
 export interface State {
   change: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  paymentMethod: (event: React.ChangeEvent<HTMLInputElement>) => void;
   changecardnr: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onSubmit: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   noError: boolean;
@@ -52,12 +57,18 @@ export interface State {
   adress: string;
   validdate: string;
   cardnumber: string;
+  creditCard: boolean;
+  swish: boolean;
+  presentCard: boolean;
 }
 
 class CheckoutProvider extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
+      creditCard: false,
+      swish: false,
+      presentCard: false,
       firstname: "",
       firstnameError: "",
       cardnumber: "",
@@ -80,9 +91,24 @@ class CheckoutProvider extends React.Component<Props, State> {
       change: this.change,
       changecardnr: this.changecardnr,
       onSubmit: this.onSubmit,
+      paymentMethod: this.paymentMethod,
     };
   }
-
+  paymentMethod = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.value === "CreditCard") {
+      this.setState({ creditCard: true });
+      this.setState({ swish: false });
+      this.setState({ presentCard: false });
+    } else if (event.target.value === "Swish") {
+      this.setState({ swish: true });
+      this.setState({ creditCard: false });
+      this.setState({ presentCard: false });
+    } else if (event.target.value === "PresentCard") {
+      this.setState({ presentCard: true });
+      this.setState({ creditCard: false });
+      this.setState({ swish: false });
+    }
+  };
   change = (event: React.ChangeEvent<HTMLInputElement>) => {
     const e = event.target;
     this.setState({ [e.name]: e.value } as any);
@@ -94,43 +120,69 @@ class CheckoutProvider extends React.Component<Props, State> {
 
   validate = () => {
     let isError = false;
-    if (
-      this.state.email.indexOf("@") === -1 ||
-      this.state.email.indexOf(".") === -1
-    ) {
-      this.setState({ emailError: "Must contain '@' and '.'" });
-      isError = true;
-    }
-    if (this.state.validdate.indexOf("/") === -1) {
-      this.setState({ validdateError: "Must contain '/'." });
-      isError = true;
-    }
-    if (this.state.country.length <= 3) {
-      this.setState({ countryError: "Not a valid country" });
-      isError = true;
-    }
-    if (this.state.firstname.length <= 2) {
-      this.setState({
-        firstnameError: "Your name must have more than 2 letters",
-      });
-      isError = true;
-    }
-    if (this.state.lastname.length <= 2) {
-      this.setState({
-        lastnameError: "Your name must have more than 2 letters",
-      });
-      isError = true;
-    }
-    if (this.state.ccv.length < 3) {
-      this.setState({ ccvError: "Minimum 3 numbers" });
-      isError = true;
-    }
-    if (this.state.cardnumber.length + 12 < 16) {
-      this.setState({ cardnumberError: "Cardnumber must be 16 numbers" });
-      isError = true;
+    if (this.state.creditCard === true) {
+      if (this.state.validdate.indexOf("/") === -1) {
+        this.setState({ validdateError: "Must contain '/'." });
+        isError = true;
+      }
+      if (this.state.ccv.length < 3) {
+        this.setState({ ccvError: "Minimum 3 numbers" });
+        isError = true;
+      }
+      if (this.state.cardnumber.length + 12 < 16) {
+        this.setState({ cardnumberError: "Cardnumber must be 16 numbers" });
+        isError = true;
+      }
+      if (
+        this.state.email.indexOf("@") === -1 ||
+        this.state.email.indexOf(".") === -1
+      ) {
+        this.setState({ emailError: "Must contain '@' and '.'" });
+        isError = true;
+      }
+      if (this.state.country.length <= 3) {
+        this.setState({ countryError: "Not a valid country" });
+        isError = true;
+      }
+      if (this.state.firstname.length <= 2) {
+        this.setState({
+          firstnameError: "Your name must have more than 2 letters",
+        });
+        isError = true;
+      }
+      if (this.state.lastname.length <= 2) {
+        this.setState({
+          lastnameError: "Your name must have more than 2 letters",
+        });
+        isError = true;
+      }
+    } else {
+      if (
+        this.state.email.indexOf("@") === -1 ||
+        this.state.email.indexOf(".") === -1
+      ) {
+        this.setState({ emailError: "Must contain '@' and '.'" });
+        isError = true;
+      }
+      if (this.state.country.length <= 3) {
+        this.setState({ countryError: "Not a valid country" });
+        isError = true;
+      }
+      if (this.state.firstname.length <= 2) {
+        this.setState({
+          firstnameError: "Your name must have more than 2 letters",
+        });
+        isError = true;
+      }
+      if (this.state.lastname.length <= 2) {
+        this.setState({
+          lastnameError: "Your name must have more than 2 letters",
+        });
+        isError = true;
+      }
     }
 
-    console.log(this.state.cardnumber.length);
+    console.log(isError);
     return isError;
   };
 
