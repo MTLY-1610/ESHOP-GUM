@@ -1,7 +1,16 @@
 GUM
 
-Vi har valt att göra en webbshop på sneakers där vi tänkt en startsida, sedan en productsida, betalning och shoppingcart.
+We built a website called GUM and its set up with React + Typescript + Material ui. The website is a sneaker shop, 8 different sneakers.
+Link to the material design system. https://v0.material-ui.com/#/
 
-Vi har byggs projektet i react & typescript och valt ett designsystem till.
+When you download the app, first you:
 
-Vi har valt Material UI, här är länken till designsystemet som används: https://v0.material-ui.com/#/
+npm install
+
+then you:
+
+npm start
+
+after it will open automatically in https://localhost:3000
+link to github: https://github.com/MattinNajafi/sneakers
+link to website: https://mattinnajafi.github.io/sneakers/
