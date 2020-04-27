@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/sneakers/static/css/main.bb600456.chunk.css",
-    "main.js": "/sneakers/static/js/main.41e4f0b5.chunk.js",
-    "main.js.map": "/sneakers/static/js/main.41e4f0b5.chunk.js.map",
+    "main.css": "/sneakers/static/css/main.02f561e7.chunk.css",
+    "main.js": "/sneakers/static/js/main.1f766c13.chunk.js",
+    "main.js.map": "/sneakers/static/js/main.1f766c13.chunk.js.map",
     "runtime-main.js": "/sneakers/static/js/runtime-main.da45dab3.js",
     "runtime-main.js.map": "/sneakers/static/js/runtime-main.da45dab3.js.map",
-    "static/js/2.a2ad7a7c.chunk.js": "/sneakers/static/js/2.a2ad7a7c.chunk.js",
-    "static/js/2.a2ad7a7c.chunk.js.map": "/sneakers/static/js/2.a2ad7a7c.chunk.js.map",
+    "static/js/2.aad3066a.chunk.js": "/sneakers/static/js/2.aad3066a.chunk.js",
+    "static/js/2.aad3066a.chunk.js.map": "/sneakers/static/js/2.aad3066a.chunk.js.map",
     "index.html": "/sneakers/index.html",
-    "precache-manifest.53ca934100f2551bb7955b2b7979ea62.js": "/sneakers/precache-manifest.53ca934100f2551bb7955b2b7979ea62.js",
+    "precache-manifest.4073e2db0f08a2b22893ba7c5f17bd53.js": "/sneakers/precache-manifest.4073e2db0f08a2b22893ba7c5f17bd53.js",
     "service-worker.js": "/sneakers/service-worker.js",
-    "static/css/main.bb600456.chunk.css.map": "/sneakers/static/css/main.bb600456.chunk.css.map",
-    "static/js/2.a2ad7a7c.chunk.js.LICENSE.txt": "/sneakers/static/js/2.a2ad7a7c.chunk.js.LICENSE.txt",
+    "static/css/main.02f561e7.chunk.css.map": "/sneakers/static/css/main.02f561e7.chunk.css.map",
+    "static/js/2.aad3066a.chunk.js.LICENSE.txt": "/sneakers/static/js/2.aad3066a.chunk.js.LICENSE.txt",
     "static/media/adidas-lxcon-x-wm.jpg": "/sneakers/static/media/adidas-lxcon-x-wm.484ebaa3.jpg",
     "static/media/air-force-1-07-qs.jpg": "/sneakers/static/media/air-force-1-07-qs.d2f95448.jpg",
     "static/media/converse-pro-leather-og-ox.jpg": "/sneakers/static/media/converse-pro-leather-og-ox.8af8beb5.jpg",
@@ -24,8 +24,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.da45dab3.js",
-    "static/js/2.a2ad7a7c.chunk.js",
-    "static/css/main.bb600456.chunk.css",
-    "static/js/main.41e4f0b5.chunk.js"
+    "static/js/2.aad3066a.chunk.js",
+    "static/css/main.02f561e7.chunk.css",
+    "static/js/main.1f766c13.chunk.js"
   ]
 }
